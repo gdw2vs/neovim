@@ -179,9 +179,46 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Fennel
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         Fennel
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fennel-overview">
+    Fennel Overview
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fennel-packages">
+    Fennel Packages
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#runtime-conversion">
+    Runtime conversion
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#development-tooling">
+    Development tooling
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#playing-games">
+    Playing Games
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../contributing/">
@@ -519,6 +556,37 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fennel-overview">
+    Fennel Overview
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fennel-packages">
+    Fennel Packages
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#runtime-conversion">
+    Runtime conversion
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#development-tooling">
+    Development tooling
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#playing-games">
+    Playing Games
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -530,11 +598,10 @@
 </a>
 <h1 id="fennel-configuration">Fennel configuration<a class="headerlink" href="#fennel-configuration" title="Permanent link">λ︎</a></h1>
 <p>Practicalli uses Fennel to define all configuration for Neovim.  Fennel is a LISP dialect and should quickly become comfortable to Clojure developers.</p>
-<p>Lua is the defacto language for configuring Neovim and plugin development, although converting between Lua examples to Fennel is relatively simple.</p>
-<p>Neovim fully supports Vimscript, although it is felt that this is a relatively hard to understand way of configuring neovim and will not be used if at all possible.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://fennel-lang.org/logo.svg"><img alt="Fennel Language logo" src="https://fennel-lang.org/logo.svg"/></a></p>
-<h1 id="fennel">Fennel<a class="headerlink" href="#fennel" title="Permanent link">λ︎</a></h1>
-<p>Important packages used in this guide are written in Fennel, especially the excellent Conjure package that provides the Clojure REPL (and support for several other language environments).</p>
+<p>Lua is the defacto language to configuring Neovim and for plugin development and neovim packages written in lua are preferred over those in Vimscript, assuming a Fennel package is not available.</p>
+<p>Although Neovim fully supports Vimscript, Practicalli encourages Fennel or Lua, as Vimscript is quite a niche language and quite complex syntax.</p>
+<h2 id="fennel-overview">Fennel Overview<a class="headerlink" href="#fennel-overview" title="Permanent link">λ︎</a></h2>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://fennel-lang.org/logo.svg"><img align="right" alt="Fennel Language logo" loading="lazy" src="https://fennel-lang.org/logo.svg"/></a></p>
 <p><a href="https://fennel-lang.org/" target="_blank">Fennel</a> is a programming language that brings together the speed, simplicity, and reach of <a href="https://www.lua.org/" target="_blank">Lua</a> with the flexibility of a <a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)" target="_blank">lisp syntax and macro system.</a></p>
 <ul>
 <li>Full Lua compatibility: Easily call any Lua function or library from Fennel and vice-versa.</li>
@@ -543,19 +610,24 @@
 <li>Embeddable: Fennel is a one-file library as well as an executable. Embed it in other programs to support runtime extensibility and interactive development.</li>
 </ul>
 <p>Anywhere you can run Lua code, you can run Fennel code.</p>
-<h2 id="fennel-to-lua">Fennel to Lua<a class="headerlink" href="#fennel-to-lua" title="Permanent link">λ︎</a></h2>
-<p>Lua is the defacto language for writing Neovim packages, although there are more developers seeing Fennel as a viable alternative.</p>
+<div class="admonition tip">
+<p class="admonition-title">Translate Lua to Fennel</p>
+<p><a href="https://fennel-lang.org/see" target="_blank">See Fennel</a> is an online antifennel tool to convert Lua to Fennel or Fennel to Lua.</p>
+<p><a href="https://github.com/practicalli/neovim-config-redux" target="_blank">practicalli/neovim-config-redux configuration</a> provides helper functions to minimise the translation required.</p>
+</div>
+<h2 id="fennel-packages">Fennel Packages<a class="headerlink" href="#fennel-packages" title="Permanent link">λ︎</a></h2>
+<p>The Conjure package which provides the Clojure REPL (and much more) is written in Fennel.</p>
+<h2 id="runtime-conversion">Runtime conversion<a class="headerlink" href="#runtime-conversion" title="Permanent link">λ︎</a></h2>
 <p>Fennel is converted to Lua using the aniseed package</p>
 <p>Aniseed bridges the gap between <a href="https://fennel-lang.org/" target="_blank">Fennel</a> (a Lisp that compiles to Lua) and <a href="https://neovim.io/" target="_blank">Neovim</a>. Allowing you to easily write plugins or configuration in a <a href="https://clojure.org/" target="_blank">Clojure</a> like Lisp with great runtime performance.</p>
-<h2 id="lua-to-fennel">Lua to Fennel<a class="headerlink" href="#lua-to-fennel" title="Permanent link">λ︎</a></h2>
-<p>Neovim package configuration is typically provided in Lua code, so requires translation into fennel.  Although this conversion should be fairly straightforward, <a href="https://git.sr.ht/~technomancy/antifennel" target="_blank">Anti-fennel</a> converts from Lua code to Fennel code.</p>
-<p><a href="https://fennel-lang.org/see" target="_blank">See Fennel</a> is an online antifennel tool to convert between Lua and Fennel.</p>
 <h2 id="development-tooling">Development tooling<a class="headerlink" href="#development-tooling" title="Permanent link">λ︎</a></h2>
 <p>Neovim support</p>
 <ul>
+<li><a href="https://git.sr.ht/~technomancy/antifennel" target="_blank">Anti-fennel</a> - convert from Lua code to Fennel code.</li>
 <li><a href="https://github.com/Olical/aniseed" target="_blank">aniseed</a> - write plugins or configuration for Neovim with great runtime performance</li>
 <li><a href="https://github.com/rktjmp/hotpot.nvim" target="_blank">hotpot</a> - seamless Fennel inside Neovim</li>
 </ul>
+<p><a href="https://fennel-lang.org/see" target="_blank">See Fennel</a> is an online antifennel tool to convert between Lua and Fennel.</p>
 <p>Emacs support:</p>
 <ul>
 <li><a href="https://git.sr.ht/~technomancy/fennel-mode" target="_blank">technomancy/fennel-mode</a> and <a href="https://github.com/emacsmirror/fennel-mode" target="_blank">Emacs mirror repository</a></li>
@@ -569,7 +641,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2022</span>
 </small>
 </div>
 </article>
