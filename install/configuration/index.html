@@ -675,16 +675,17 @@
 <h1 id="neovim-configuration">Neovim Configuration<a class="headerlink" href="#neovim-configuration" title="Permanent link">λ︎</a></h1>
 <p><a class="md-button" href="https://github.com/practicalli/neovim-config-redux" target="_blank">practicalli/neovim-config-redux</a></p>
 <p><a href="https://github.com/practicalli/neovim-config-redux" target="_blank">practicalli/neovim-config-redux</a> provides a complete Fennel based configuraion for Neovim, with a wide range of plugins and associated setup and key bindings.</p>
-<p>Clone <a href="https://github.com/practicalli/neovim-config-redux" target="_blank">practicalli/neovim-config-redux</a> to <code>~/.config</code> directory (or a preferred location and create a symbolic link).</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>git clone https://github.com/practicalli/neovim-config-redux.git
+<p>Clone <a href="https://github.com/practicalli/neovim-config-redux" target="_blank">practicalli/neovim-config-redux</a> to <code>~/.config/nvim</code> directory (or a preferred location and create a symbolic link).</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>git clone https://github.com/practicalli/neovim-config-redux.git ~/.config/nvim
 </code></pre></div>
 <blockquote>
 <p>Create a fork of <a href="https://github.com/practicalli/neovim-config-redux" target="_blank">practicalli/neovim-config-redux</a> first if intending to customise this configuration</p>
 </blockquote>
 <h2 id="initlua"><code>init.lua</code><a class="headerlink" href="#initlua" title="Permanent link">λ︎</a></h2>
 <ul>
-<li>bootstraps the <a href="https://github.com/Olical/aniseed" target="_blank">aniseed package</a> which compiles the Fennel configuration into Lua, which is then read by Neovim. Defines the entry point to the Fennel configuration as <code>fnl/config/init.fnl</code></li>
+<li>bootstrap the <a href="https://github.com/Olical/aniseed" target="_blank">aniseed package</a> which compiles the Fennel configuration into Lua, which is then read by Neovim. Defines the entry point to the Fennel configuration as <code>fnl/config/init.fnl</code></li>
 <li>installs <a href="https://github.com/wbthomason/packer.nvim" target="_blank">packer.nvim</a> for package management</li>
+<li>examples to <a href="/neovim/reference/neovim/language-providers/">disable language providers</a> if programming language support is not required (node, perl, python3, ruby)</li>
 </ul>
 <h2 id="fnlconfiginitfnl"><code>fnl/config/init.fnl</code><a class="headerlink" href="#fnlconfiginitfnl" title="Permanent link">λ︎</a></h2>
 <ul>
@@ -850,7 +851,7 @@ in file located in the following path <code>fnl/config/plugin/telescope</code></
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2022</span>
 </small>
 </div>
 </article>
