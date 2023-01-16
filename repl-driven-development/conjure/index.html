@@ -11,9 +11,9 @@
 <link href="../" rel="prev"/>
 <link href="../language-server-protocol/" rel="next"/>
 <link href="../../assets/favicon.svg" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.4" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.5" name="generator"/>
 <title>Conjure - Practicalli Neovim</title>
-<link href="../../assets/stylesheets/main.9c788c91.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.558e4712.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -50,7 +50,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#conjure-cheat-sheet">
+<a class="md-skip" href="#conjure">
           Skip to content
         </a>
 </div>
@@ -114,7 +114,7 @@
 <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list"></ol>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
 </div>
 </div>
@@ -586,45 +586,53 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="conjure-cheat-sheet">Conjure cheat sheet<a class="headerlink" href="#conjure-cheat-sheet" title="Permanent link">λ︎</a></h1>
-<p>Common commands used with Conjure.</p>
-<div class="admonition hint">
-<p class="admonition-title">Conjure interactive tutorial</p>
-<p><code>:ClojureSchool</code> runs an interactive Conjure tutorial in Neovim when Conjure package is installed.</p>
+<h1 id="conjure">Conjure<a class="headerlink" href="#conjure" title="Permanent link">λ︎</a></h1>
+<p>Conjure is the Clojure REPL client for Neovim.  Code in source code buffers can be evaluated and show the results in-line, providing instant feedback on the behaviour of the code as it develops.</p>
+<p>Start a REPL on the command line in the root of a Clojure project, e.g. using Clojure CLI and <a href="https://github.com/practicalli/clojure-deps-edn/" target="_blank">practicalli/clojure-deps-edn</a>, start a Rebel rich terminal UI REPL with nREPL server support.  Conjure will detect the nREPL server when a Clojure file is opended (.clj .edn .cljs .cljc).</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure<span class="w"> </span>-M:repl/rebel
+</code></pre></div>
+<p><code>,eb</code> to evaluate all the Clojure source code in the current buffer, or <code>,ef</code> to evaluate the current function.  The result is displayed inline until the cursor moves.  Open the REPL buffer to see larger results or a complete history.</p>
+<div class="admonition info">
+<p class="admonition-title">Conjure School interative tutorial</p>
+<p><code>:ConjureSchool</code> runs an interactive tutorial in Neovim, walking through the essential Conjure commands and key bindings </p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Practicalli Neovim config replaces some key bindings</p>
+<p><a href="https://github.com/practicalli/neovim-config-redux" target="_blank">practicalli/neovim-config-redux</a> replaces several key bindings to make them consistent with other Clojure editors</p>
 </div>
 <h2 id="evaluation">Evaluation<a class="headerlink" href="#evaluation" title="Permanent link">λ︎</a></h2>
-<p><code>,eb</code> - evaluate current buffer</p>
-<p><code>,ee</code> - evaluate expression (from start of current form)</p>
-<p><code>,ef</code> - evaluates top-level expression (<code>,er</code> is conjure defualt, over-ridden by practicalli/neovim-config-redux)</p>
-<p><code>,ei</code> - interrupt evaluation (stop long running evaluations)</p>
+<p>Clojure REPL workflow encourages code expressions to be evaluated as it is written, providing feedback to ensure expressions are returning the expected results (or to help learn what results a function returns).</p>
+<p><code>,eb</code> - evaluate current buffer - used after first starting the REPL to load in a whole namespace and any required namespaces, or to ensure all changes have been evaluated in the REPL</p>
+<p><code>,ee</code> - evaluate expression (from start of current form) - especially useful for nested forms</p>
+<p><code>,ef</code> - evaluates top-level expression (<code>,er</code> is conjure defualt) - most common command</p>
+<p><code>,ei</code> - interrupt evaluation (stop long running evaluations) - stop a long running evaluation</p>
 <p><code>,ew</code> - evaluate word (symbol) - inspect value of form - i.e. for def names</p>
-<p><code>,e!</code> - replace form with its result</p>
-<p><code>,emf</code> - evaluate marked form - mark form with mf (or any character with m). Use a capital letter to mark a form in a different namespace / buffer and evaluate if from current buffer</p>
+<p><code>,e!</code> - replace form with its result - helps understand a more complex function by replacing code with a specific value</p>
+<p><code>,emf</code> - evaluate marked form - mark forms regularly re-evaluted with <code>mf</code> (or any character with <code>m</code>) to avoid jumping to that form each time . A capital letter to mark form in a different namespace and evaluate  from the current buffer. </p>
 <p><code>"cp</code> - paste contents of the register into buffer. The result of every evaluation is stored in a Neovim register as well as the log.</p>
 <h2 id="hud">HUD<a class="headerlink" href="#hud" title="Permanent link">λ︎</a></h2>
-<p>The HUD appears when first opening a Clojure file in Neovim.  If a REPL is running in the current project, then the HUD shows the REPL is connected.</p>
+<p><a href="https://github.com/practicalli/neovim-config-redux" target="_blank">practicalli/neovim-config-redux</a> hides the HUD popup.  Practicalli recommends using the REPL log if the inline evaluation results are not sufficient.</p>
+<p>If a REPL is running in the current project, then the HUD shows the REPL is connected.</p>
 <p>evaluating an expression shows the result in the HUD as well as inline with the code</p>
 <p><code>,lr</code> - clear (refresh HUD and keep it visible)</p>
 <h2 id="repl-buffer-log">REPL buffer (log)<a class="headerlink" href="#repl-buffer-log" title="Permanent link">λ︎</a></h2>
+<p>The REPL buffer shows a log of the evaluation results for this session and can use more of the available screen than the HUD.</p>
 <p><code>,ls</code> - open log in horizontal tab</p>
 <p><code>,ls</code> - open log in vertical tab</p>
 <p><code>,lt</code> - open log in tab</p>
 <p><code>,lq</code> - close log windows (and tabs ??)</p>
 <p><code>,lr</code> - soft REPL reset - lead window open</p>
 <p><code>,lR</code> - hard REPL reset - close window, delete buffer</p>
-<div class="admonition todo">
-<p class="admonition-title">Todo</p>
-<p>How to switch between log and source code buffer ??</p>
-</div>
 <h2 id="rich-comments">Rich comments<a class="headerlink" href="#rich-comments" title="Permanent link">λ︎</a></h2>
-<p>For expressions in a rich comment, move cursor to top level form within the comment, rather than the comment itself</p>
-<p><code>,ee</code> - eval top level form</p>
+<p>Rich comments are a useful way to contain experimental expressions, or expresisons that should only be evaluated directly by a person developing the code (e.g. starting / stoping services, testing api calls, etc.)</p>
+<p>Expressions in rich comments are not included when evaluating the buffer or when expressions are evaluated via a namespace require.</p>
+<p><code>,ef</code> to evaluate the top level form within the rich comment, without evaluating the comment expression itself (<code>,ee</code> default in Conjure)</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 16, 2023</span>
 </small>
 </div>
 </article>
@@ -675,6 +683,6 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate", "content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+<script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
