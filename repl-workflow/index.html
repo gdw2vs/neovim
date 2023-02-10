@@ -11,7 +11,7 @@
 <link href=".." rel="prev"/>
 <link href="../introduction/features/" rel="next"/>
 <link href="../assets/favicon.svg" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.11" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.12" name="generator"/>
 <title>REPL Workflow - Practicalli Neovim</title>
 <link href="../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -644,11 +644,16 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="repl-driven-development">REPL Driven Development<a class="headerlink" href="#repl-driven-development" title="Permanent link">λ︎</a></h1>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-driven-development-lifecycle-concept.png"><img align="left" alt="Clojure repl driven development" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-driven-development-lifecycle-concept.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-workflow-concept.png"><img alt="Clojure repl driven development" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-workflow-concept.png"/></a></p>
+<div class="admonition quote">
+<p class="admonition-title">Always be REPL'ing</p>
+<p>Coding without a REPL feels limiting. The REPL provides fast feedback from code as its crafted, testing assumptions and design choices every step of the journey to a solution
+ - John Stevenson, Practical.li</p>
+</div>
 <p>Clojure is a powerful, fun and highly productive language for developing applications and services.
  The clear language design is supported by a powerful development environment known as the REPL (read, evaluate, print, loop).  The REPL gives you instant feedback on what your code does and enables you to test either a single expression or run the whole application (including tests).</p>
 <p><strong>REPL driven development is the foundation of working with Clojure effectively</strong></p>
-<p>Coding with a REPL provides instant feedback as design decisions are coded.  The REPL feedback helps test the assumptions that are driving the design choices.</p>
+<p>An effective Clojure workflow begins by running a REPL process.  Clojure expressions are written and evaluated immediately to provide instant feedback. The REPL feedback helps test the assumptions that are driving the design choices.</p>
 <ul>
 <li>Read - code is read by the Clojure reader, passing any macros to the macro reader which converts those macros into Clojure code.</li>
 <li>Evaluate - code is compiled into the host language (e.g. Java bytecode) and executed</li>
@@ -656,18 +661,13 @@
 <li>Loop - the REPL is a continuous process that evaluates code, either a single expression or the whole application.</li>
 </ul>
 <p>Design decisions and valuable data from REPL experiments can be codified as <a href="#data-and-function-specifications">specifications</a> and <a href="#test-driven-development-and-repl-driven-development">unit tests</a></p>
-<div class="admonition quote">
-<p class="admonition-title">Always be REPL'ing</p>
-<p><em>Coding without a REPL feels like so limiting.  I want instant fast feedback from my code as I craft it, testing my assumptions and design choices every step of the journey to a solution</em>
- - John Stevenson, Practical.li</p>
-</div>
 <h2 id="evaluating-source-code">Evaluating source code<a class="headerlink" href="#evaluating-source-code" title="Permanent link">λ︎</a></h2>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-driven-development-clojure-aware-editor.png"><img align="right" alt="Clojure repl driven development using Clojure aware editor" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-driven-development-clojure-aware-editor.png"/></a></p>
 <p>A REPL connected editor is the primary tool for evaluating Clojure code from source code files, displaying the results inline.</p>
 <p>Source code is evaluated in its respective namespace, removing the need to change namespaces in the REPL directly, (<code>in-ns</code>), or use fully qualified names to call functions.</p>
 <div class="admonition hint">
 <p class="admonition-title">Evaluate Clojure in Neovim with Conjure</p>
-<p><code>, e e</code> evaluates the top level form under the cursor</p>
+<p><code>, e b</code> evaluates the code in the current buffer</p>
 </div>
 <p style="text-align:center">
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/rQ802kSaip4" title="YouTube video player" width="560"></iframe>
@@ -678,9 +678,9 @@
 <p>Adding result comment is an effective way to show the expected results of the code design, especially as a journal.</p>
 </div>
 <h2 id="rich-comment-blocks-living-documentation">Rich Comment blocks - living documentation<a class="headerlink" href="#rich-comment-blocks-living-documentation" title="Permanent link">λ︎</a></h2>
-<p>The <code>(comment ,,,)</code> function wraps code that is only run directly by the developer using a <a href="/clojure-editors/">Clojure aware editor</a>.</p>
+<p>The <code>(comment ,,,)</code> function wraps code that is only run directly by the developer using a <a href="https://practical.li/clojure/clojure-editors/" target="_blank">Clojure aware editor</a>.</p>
 <p>Expressions in rich comment blocks can represent how to use the functions that make up the namespace API.  For example, starting/restarting the system, updating the database, etc.  Expressions provide examples of calling functions with typical arguments and make a project more accessible and easier to work with.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/practicalli-clojure-repl-driven-development-rich-comment-blocks.png"><img alt="Practicalli Clojure Repl Driven Development - Rich comment blocks example" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/practicalli-clojure-repl-driven-development-rich-comment-blocks.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/practicalli-clojure-repl-driven-development-rich-comment-light.png"><img alt="Practicalli Clojure Repl Driven Development - Rich comment blocks example" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/practicalli-clojure-repl-driven-development-rich-comment-light.png"/></a></p>
 <p>Rich comment blocks are very useful for rapidly iterating over different design decisions by including the same function but with different implementations.  Hide <a href="https://practical.li/clojure/clojure-cli/install/code-analysis.html" target="_blank">clj-kondo linter</a> warnings for redefined vars (<code>def</code>, <code>defn</code>) when using this approach.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">;; Rich comment block with redefined vars ignored</span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="o">#</span><span class="nv">_</span><span class="p">{</span><span class="ss">:clj-kondo/ignore</span><span class="w"> </span><span class="p">[</span><span class="ss">:redefined-var</span><span class="p">]}</span>
@@ -716,10 +716,12 @@
 <h2 id="code-style-and-idiomatic-clojure">Code Style and idiomatic Clojure<a class="headerlink" href="#code-style-and-idiomatic-clojure" title="Permanent link">λ︎</a></h2>
 <p>Clojure aware editors should automatically apply formatting that follows the <a href="https://github.com/bbatsov/clojure-style-guide" target="_blank">Clojure Style guide</a>.</p>
 <p>Live linting with <a href="https://github.com/borkdude/clj-kondo" target="_blank">clj-kondo</a> suggests common idioms and highlights a wide range of syntax errors as code is written, minimizing bugs and therefore speeding up the development process.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/spacemacs-clojure-linting-code-marks-and-flycheck-list-errors.png"><img alt="clj-kondo static analysis for live linting of Clojure code" src="/images/spacemacs-clojure-linting-code-marks-and-flycheck-list-errors.png"/></a></p>
-<blockquote>
-<p>The <a href="https://github.com/bbatsov/clojure-style-guide" target="_blank">Clojure Style guide</a> provides examples of common formatting approaches, although the development team should decide which of these to adopt.  Treesitter and Clojure LSP will automatically format code via cljfmt which encodes many of the style guide rules.  These tools are configurable and should be tailored to the teams standard.</p>
-</blockquote>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/spacemacs/screenshots/spacemacs-clojure-live-linting-flycheck-errors-light.png#only-light"><img alt="Clojure code static analysis for live linting" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/spacemacs/screenshots/spacemacs-clojure-live-linting-flycheck-errors-light.png#only-light"/></a>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/spacemacs/screenshots/spacemacs-clojure-live-linting-flycheck-errors-dark.png#only-dark"><img alt="Clojure code static analysis for live linting" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/spacemacs/screenshots/spacemacs-clojure-live-linting-flycheck-errors-dark.png#only-dark"/></a></p>
+<div class="admonition info">
+<p class="admonition-title">Clojure Style Guide</p>
+<p>The <a href="https://github.com/bbatsov/clojure-style-guide" target="_blank">Clojure Style guide</a> provides examples of common formatting approaches, although the development team should decide which of these to adopt.  Emacs <code>clojure-mode</code> will automatically format code and so will Clojure LSP (via cljfmt).  These tools are configurable and should be tailored to the teams standard.</p>
+</div>
 <h2 id="data-and-function-specifications">Data and Function specifications<a class="headerlink" href="#data-and-function-specifications" title="Permanent link">λ︎</a></h2>
 <p><a href="https://practical.li/clojure/clojure-spec/" target="_blank">Clojure spec</a> is used to define a contract on incoming and outgoing data, to ensure it is of the correct form.</p>
 <p>As data structures are identified in REPL experiments, create data specification to validate the keys and value types of that data.</p>
@@ -752,7 +754,8 @@
 </ul>
 <p><a href="https://practical.li/clojure/testing/unit-testing/" target="_blank">Unit tests</a> should support the public API of each namespace in a project to help prevent regressions in the code.  Its far more efficient in terms of thinking time to define unit tests as the design starts to stabilize than as an after thought.</p>
 <p><code>clojure.test</code> library is part of the Clojure standard library that provides a simple way to start writing unit tests.</p>
-<p>Clojure has a number of <a href="https://practical.li/clojure/testing/test-runners/" target="_blank">test runners</a> available.  Kaocha is a comprehensive test runner which can run unit tests and function specification checks.</p>
+<p><a href="https://practical.li/clojure/clojure-spec/" target="_blank">Clojure spec</a> can also be used for generative testing, providing far greater scope in values used when running unit tests.  Specifications can be defined for values and functions.</p>
+<p>Clojure has a number of <a href="https://practical.li/clojure/testing/test-runners/" target="_blank">test runners</a> available.  Kaocha is a test runner that will run unit tests and function specification checks.</p>
 <div class="admonition hint">
 <p class="admonition-title">Automate local test runner</p>
 <p>Use <a href="https://practical.li/clojure/testing/test-runners/kaocha-test-runner.html" target="_blank">kaocha test runner</a> in watch mode to run tests and specification check automatically (when changes are saved)
@@ -779,7 +782,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 13, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2023</span>
 </small>
 </div>
 </article>
@@ -830,6 +833,6 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "content.code.annotate", "content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.indexes"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../assets/javascripts/bundle.6df46069.min.js"></script>
+<script src="../assets/javascripts/bundle.4b2c34cd.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
