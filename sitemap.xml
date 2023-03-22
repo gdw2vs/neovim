@@ -2,252 +2,252 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://practical.li/neovim/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/contributing/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/repl-workflow/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/writing-tips/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/assets/images/social/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/install/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/install/clojure/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/install/configuration/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/install/neovim/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/install/package-manager/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/install/packages/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/install/packages/lualine/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/install/packages/nvim-treesitter/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/introduction/features/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/introduction/fennel/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/neovim-basics/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/neovim-basics/comments/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/neovim-basics/files-buffers-windows/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/neovim-basics/multiple-cursors/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/neovim-basics/package-management/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/reference/neovim/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/reference/neovim/language-providers/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/reference/vim-style/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/reference/vim-style/case/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/reference/vim-style/g-menu/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/reference/vim-style/key-binding-reference/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/reference/vim-style/motions/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/reference/vim-style/moving-around/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/reference/vim-style/narrowing/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/reference/vim-style/speaking-vim/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/reference/vim-style/vim-quick-reference/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/reference/vim-style/vim-tips-for-developers/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/reference/vim-style/visual-select/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/reference/vim-style/z-menu/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/repl-driven-development/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/repl-driven-development/conjure/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/repl-driven-development/language-server-protocol/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/repl-driven-development/testing/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/termux/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/termux/clojure-development/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/termux/custom-shell/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/termux/fdroid-install/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/termux/git/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/termux/neovim/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/termux/setup/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/termux/using-termux/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/version-control/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/version-control/diffview/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/version-control/neogit/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/neovim/version-control/octo/</loc>
-         <lastmod>2023-03-21</lastmod>
+         <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
