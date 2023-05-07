@@ -81,11 +81,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/neovim/introduction/neovim-configurations/</loc>
-         <lastmod>2023-05-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://practical.li/neovim/neovim-basics/</loc>
          <lastmod>2023-05-07</lastmod>
          <changefreq>daily</changefreq>
