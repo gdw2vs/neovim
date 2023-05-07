@@ -549,6 +549,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#suppoting-tools" class="md-nav__link">
+    Suppoting Tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-neovim-from-source" class="md-nav__link">
+    Build Neovim from Source
+  </a>
+  
+    <nav class="md-nav" aria-label="Build Neovim from Source">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-dep-package" class="md-nav__link">
+    Build dep package
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#post-install-checks" class="md-nav__link">
     Post Install checks
   </a>
@@ -1480,6 +1507,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#suppoting-tools" class="md-nav__link">
+    Suppoting Tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-neovim-from-source" class="md-nav__link">
+    Build Neovim from Source
+  </a>
+  
+    <nav class="md-nav" aria-label="Build Neovim from Source">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-dep-package" class="md-nav__link">
+    Build dep package
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#post-install-checks" class="md-nav__link">
     Post Install checks
   </a>
@@ -1519,12 +1573,64 @@
 
 <h1 id="install-neovim">Install Neovim<a class="headerlink" href="#install-neovim" title="Permanent link">λ︎</a></h1>
 <p><a class="md-button" href="https://github.com/neovim/neovim/releases" target="_blank">Neovim releases</a></p>
-<p>Neovim 8 is the minimum version for this configuration.  The latest release of Neovim 7 has been work well for Clojure development by the Practicalli team</p>
-<p>Practicalli recommends using the latest release from <a href="https://github.com/neovim/neovim/releases" target="_blank">the Neovim releases page</a></p>
+<p>Neovim 8 is the minimum version for this configuration and Neovim 0.9.0 is currently being tested.  </p>
 <p>Follow the <a href="https://github.com/neovim/neovim/wiki/Installing-Neovim" target="_blank">install Neovim guide for the specific operating system</a>.</p>
-<blockquote>
-<p>Update to a Neovim development build if there are issues with Treesitter and the nvim-treesitter package, as they are features under active development, e.g.  <a href="https://launchpad.net/~neovim-ppa/+archive/ubuntu/unstable" target="_blank">Ubuntu daily builds PPA</a> or <code>brew install --HEAD neovim</code> for Homebrew</p>
-</blockquote>
+<p>Neovim 9 only provides an AppImage install for Linux.  For an nvim binary, extract the AppImage or build Neovim from source, optionally creating a Debian/Ubuntu package.</p>
+<details class="example">
+<summary>Extract AppImage</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>chmod<span class="w"> </span>a+x<span class="w"> </span>./nvim.appimage
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>./nvim.appimage<span class="w"> </span>--appimage-extract
+</code></pre></div>
+</details>
+<details class="example">
+<summary>Extract AppImage via GitHub Workflow</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install Neovim</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bash</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="no">mkdir -p /tmp/nvim</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="no">wget -q https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage -O /tmp/nvim/nvim.appimage</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="no">cd /tmp/nvim</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="no">chmod a+x ./nvim.appimage</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="no">./nvim.appimage --appimage-extract</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">      </span><span class="no">echo &quot;/tmp/nvim/squashfs-root/usr/bin/&quot; &gt;&gt; $GITHUB_PATH</span>
+</code></pre></div>
+</details>
+<h2 id="suppoting-tools">Suppoting Tools<a class="headerlink" href="#suppoting-tools" title="Permanent link">λ︎</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Debian / Ubuntu</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Install the following packages to support Neovim</p>
+<ul>
+<li><code>ripgrep</code> fast file contents search (used by telescope)</li>
+<li><code>find-fd</code> advanced search tool </li>
+<li><code>xclip</code> clipboard </li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>find-fd<span class="w"> </span>xclip
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><code>set clipboard+=unnamedplus</code> in the Neovim configuration instructs Linux to use the clipboard tool </p>
+<div class="highlight"><pre><span></span><code>??? INFO &quot;Wayland requires wl-clipboard&quot;
+Install the `wl-clipboard` package to use the Wayland desktop clipboard with Neovim
+```shell
+sudo apt install wl-clipboard
+```
+</code></pre></div>
+<h2 id="build-neovim-from-source">Build Neovim from Source<a class="headerlink" href="#build-neovim-from-source" title="Permanent link">λ︎</a></h2>
+<p>Clone the <a href="https://github.com/neovim/neovim/wiki/Building-Neovim">Neovim GitHub repository</a> </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>clone<span class="w"> </span>
+</code></pre></div>
+<p>Change into the cloned directory and change to the <code>stable</code> release to build version 0.9.0</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>stable
+</code></pre></div>
+<p>Build a release</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>make<span class="w"> </span><span class="nv">CMAKE_BUILD_TYPE</span><span class="o">=</span>Release<span class="w">                                                                                                              </span>─╯
+</code></pre></div>
+<h3 id="build-dep-package">Build dep package<a class="headerlink" href="#build-dep-package" title="Permanent link">λ︎</a></h3>
+<p>Once the nvim release has been built, create a debian package for use with Ubuntu and Debian systems</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cpack<span class="w"> </span>-G<span class="w"> </span>DEB<span class="w"> </span>
+</code></pre></div>
 <h2 id="post-install-checks">Post Install checks<a class="headerlink" href="#post-install-checks" title="Permanent link">λ︎</a></h2>
 <p>Ensure supporting tools and binaries are available in the operating system by running the Neovim Heath Check.</p>
 <p><code>nvim</code> in a terminal to run NeoVim and check the installation is working without error.</p>
@@ -1545,7 +1651,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 7, 2023</span>
       
     
   </small>
