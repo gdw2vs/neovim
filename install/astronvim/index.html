@@ -1850,40 +1850,32 @@ Or clone to a separate directory and create a symbolic link
 <p>Add Conjure plugin that will load when Clojure, Fennel or Python file is opened.</p>
 <div class="admonition example">
 <p class="admonition-title">Clojure Packages in AstroNvim user configuration</p>
-<div class="highlight"><span class="filename">.config/astronvim-config/init.lua</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">-- Local variables</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">-- lisp dialets to enable with packages</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kd">local</span> <span class="n">lisps</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;clojure&quot;</span><span class="p">,</span> <span class="s2">&quot;fennel&quot;</span> <span class="p">}</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">-- Lazy Package manager configuration</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="kr">return</span> <span class="p">{</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>  <span class="p">{</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="s2">&quot;Olical/conjure&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="c1">-- lazy = false,</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="c1">-- load plugin on filetypes</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="n">ft</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="n">unpack</span><span class="p">(</span><span class="n">lisps</span><span class="p">)</span> <span class="p">},</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>  <span class="p">},</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>  <span class="c1">-- Possibly too aggressive with the parens</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>  <span class="c1">-- {</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>  <span class="c1">--   &quot;gpanders/nvim-parinfer&quot;,</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>  <span class="c1">--   ft = lisps,</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>  <span class="c1">--   config = function() vim.g.parinfer_force_balance = true end,</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>  <span class="c1">-- },</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="p">}</span>
-</code></pre></div>
+<p>```lua title=".config/astronvim-config/init.lua"</p>
 </div>
+<p>-- Local variables
+local lisp_dialects = { "clojure", "fennel" }</p>
+<p>-- Lazy Package manager configuration
+return {
+  {
+    "Olical/conjure",
+    -- load plugin on filetypes
+    ft = { "python", unpack(lisp_dialects) },
+  },
+}
+    ```</p>
 <h2 id="astronvim-community-packages">AstroNvim Community packages<a class="headerlink" href="#astronvim-community-packages" title="Permanent link">λ︎</a></h2>
 <p><a href="https://github.com/AstroNvim/astrocommunity" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> AstroNvim Community</a> provides a large number of packages currated by the community.</p>
 <p>Visit the AstroNvim Community repository on GitHub and browse the packages available.</p>
 <p><code>import</code> each package of interest to the <code>plugins/community.lua</code> file in the AstroNvim user configuration.</p>
-<div class="highlight"><span class="filename">.config/astronvim-config/plugins/community.lua</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">return</span> <span class="p">{</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  <span class="c1">-- Add the community repository of plugin specifications</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>  <span class="s2">&quot;AstroNvim/astrocommunity&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  <span class="p">{</span> <span class="n">import</span> <span class="o">=</span> <span class="s2">&quot;astrocommunity.editing-support.todo-comments&quot;</span> <span class="p">},</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>  <span class="p">{</span> <span class="n">import</span> <span class="o">=</span> <span class="s2">&quot;astrocommunity.git.neogit&quot;</span> <span class="p">},</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>  <span class="p">{</span> <span class="n">import</span> <span class="o">=</span> <span class="s2">&quot;astrocommunity.git.octo&quot;</span> <span class="p">},</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>  <span class="p">{</span> <span class="n">import</span> <span class="o">=</span> <span class="s2">&quot;astrocommunity.git.openingh&quot;</span> <span class="p">},</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span>
+<div class="highlight"><span class="filename">.config/astronvim-config/plugins/community.lua</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">return</span> <span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  <span class="c1">-- Add the community repository of plugin specifications</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  <span class="s2">&quot;AstroNvim/astrocommunity&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>  <span class="p">{</span> <span class="n">import</span> <span class="o">=</span> <span class="s2">&quot;astrocommunity.editing-support.todo-comments&quot;</span> <span class="p">},</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>  <span class="p">{</span> <span class="n">import</span> <span class="o">=</span> <span class="s2">&quot;astrocommunity.git.neogit&quot;</span> <span class="p">},</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>  <span class="p">{</span> <span class="n">import</span> <span class="o">=</span> <span class="s2">&quot;astrocommunity.git.octo&quot;</span> <span class="p">},</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>  <span class="p">{</span> <span class="n">import</span> <span class="o">=</span> <span class="s2">&quot;astrocommunity.git.openingh&quot;</span> <span class="p">},</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="configure-lazy-plugins">Configure Lazy plugins<a class="headerlink" href="#configure-lazy-plugins" title="Permanent link">λ︎</a></h3>
 <p><a class="md-button" href="https://github.com/folke/lazy.nvim#-plugin-spec" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Lazy.nvim Plugin specification</a></p>
