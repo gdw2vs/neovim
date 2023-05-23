@@ -1808,11 +1808,13 @@
 <h2 id="prerequisits">Prerequisits<a class="headerlink" href="#prerequisits" title="Permanent link">λ︎</a></h2>
 <ul>
 <li>Nerd Fonts version 3 (breaking changes between version 2 and 3)</li>
+<li>gtu (Ubuntu package archive)</li>
+<li>btm from <a href="https://github.com/ClementTsang/bottom/releases/">GitHub repository releases</a></li>
 </ul>
 <h2 id="clone-astronvim">Clone AstroNvim<a class="headerlink" href="#clone-astronvim" title="Permanent link">λ︎</a></h2>
 <p>Clone AstroNvim repository to either</p>
 <ul>
-<li><code>$HOME/.config/astronvim/</code> when using multiple configurations </li>
+<li><code>$HOME/.config/astronvim/</code> when using multiple configurations</li>
 <li><code>$HOME/.config/nvim</code> if only ever using one configuration.</li>
 </ul>
 <h2 id="clone-astronvim-user-config">Clone AstroNvim user config<a class="headerlink" href="#clone-astronvim-user-config" title="Permanent link">λ︎</a></h2>
@@ -1934,6 +1936,26 @@
 <a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>  <span class="p">},</span>
 <a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="p">}</span>
 </code></pre></div>
+</div>
+<p>Improve syntax highlighting by installing the Clojure parser for Treesitter.</p>
+<div class="admonition example">
+<p class="admonition-title">Treesitter Parser for clojure in AstroNvim user configuration</p>
+<p>```lua hl_lines="7" title=".config/astronvim-config/plugins/treesitter.lua"
+return {
+  "nvim-treesitter/nvim-treesitter",
+  opts = function(_, opts)
+    -- add more things to the ensure_installed table protecting against community packs modifying it
+    opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
+      -- "lua"
+    "clojure"
+    })
+  end,
+}</p>
+</div>
+<p>```</p>
+<div class="admonition hint">
+<p class="admonition-title">Install Treesitter Clojure Parser manually</p>
+<p><code>:TSInstall clojure</code> in Neovim will install the parser.  A parser not included in the <code>opts.ensure_installed</code> configuration must be updated manually each time treesitter plugin is updated</p>
 </div>
 <h2 id="snippets">Snippets<a class="headerlink" href="#snippets" title="Permanent link">λ︎</a></h2>
 <p>The AstroNvim user example includes a commented LuaSnip package code.</p>
