@@ -584,22 +584,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#build-neovim-from-source" class="md-nav__link">
-    Build Neovim from Source
+  <a href="#install-neovim_1" class="md-nav__link">
+    Install Neovim
   </a>
-  
-    <nav class="md-nav" aria-label="Build Neovim from Source">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#build-dep-package" class="md-nav__link">
-    Build dep package
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1650,22 +1637,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#build-neovim-from-source" class="md-nav__link">
-    Build Neovim from Source
+  <a href="#install-neovim_1" class="md-nav__link">
+    Install Neovim
   </a>
-  
-    <nav class="md-nav" aria-label="Build Neovim from Source">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#build-dep-package" class="md-nav__link">
-    Build dep package
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1709,28 +1683,8 @@
 
 <h1 id="install-neovim">Install Neovim<a class="headerlink" href="#install-neovim" title="Permanent link">λ︎</a></h1>
 <p><a class="md-button" href="https://github.com/neovim/neovim/releases" target="_blank">Neovim releases</a></p>
-<p>Neovim 8 is the minimum version for this configuration and Neovim 0.9.0 is currently being tested.  </p>
+<p>Neovim 8 is the minimum version for this configuration and Neovim 0.9.0 is currently being tested.</p>
 <p>Follow the <a href="https://github.com/neovim/neovim/wiki/Installing-Neovim" target="_blank">install Neovim guide for the specific operating system</a>.</p>
-<p>Neovim 9 only provides an AppImage install for Linux.  For an nvim binary, extract the AppImage or build Neovim from source, optionally creating a Debian/Ubuntu package.</p>
-<details class="example">
-<summary>Extract AppImage</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>chmod<span class="w"> </span>a+x<span class="w"> </span>./nvim.appimage
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>./nvim.appimage<span class="w"> </span>--appimage-extract
-</code></pre></div>
-</details>
-<details class="example">
-<summary>Extract AppImage via GitHub Workflow</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install Neovim</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bash</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="no">mkdir -p /tmp/nvim</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="no">wget -q https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage -O /tmp/nvim/nvim.appimage</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="no">cd /tmp/nvim</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="no">chmod a+x ./nvim.appimage</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="no">./nvim.appimage --appimage-extract</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">      </span><span class="no">echo &quot;/tmp/nvim/squashfs-root/usr/bin/&quot; &gt;&gt; $GITHUB_PATH</span>
-</code></pre></div>
-</details>
 <h2 id="suppoting-tools">Suppoting Tools<a class="headerlink" href="#suppoting-tools" title="Permanent link">λ︎</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Debian / Ubuntu</label></div>
 <div class="tabbed-content">
@@ -1738,35 +1692,68 @@
 <p>Install the following packages to support Neovim</p>
 <ul>
 <li><code>ripgrep</code> fast file contents search (used by telescope)</li>
-<li><code>find-fd</code> advanced search tool </li>
-<li><code>xclip</code> clipboard </li>
+<li><code>find-fd</code> advanced search tool</li>
+<li><code>xclip</code> clipboard</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>find-fd<span class="w"> </span>xclip
+<div class="admonition note">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>find-fd<span class="w"> </span>xclip
 </code></pre></div>
+</div>
+<p>Add <code>set clipboard+=unnamedplus</code> to the Neovim configuration to use the Linux clipboard tool</p>
+<details class="info">
+<summary>Wayland requires wl-clipboard</summary>
+<p>Install the <code>wl-clipboard</code> package to use the Wayland desktop clipboard with Neovim
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>wl-clipboard
+</code></pre></div></p>
+</details>
 </div>
 </div>
 </div>
-<p><code>set clipboard+=unnamedplus</code> in the Neovim configuration instructs Linux to use the clipboard tool </p>
-<div class="highlight"><pre><span></span><code>??? INFO &quot;Wayland requires wl-clipboard&quot;
-Install the `wl-clipboard` package to use the Wayland desktop clipboard with Neovim
-```shell
-sudo apt install wl-clipboard
-```
+<h2 id="install-neovim_1">Install Neovim<a class="headerlink" href="#install-neovim_1" title="Permanent link">λ︎</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Linux AppImage</label><label for="__tabbed_2_2">Ubuntu/Debian</label><label for="__tabbed_2_3">Build from Source</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Download the AppImage from the Neovim Release page and place the file on the executable path, e.g. <code>$HOME/.local/bin</code></p>
+<p>Make the AppImage executable</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>chmod<span class="w"> </span>u+x<span class="w"> </span>nvim.appimage
 </code></pre></div>
-<h2 id="build-neovim-from-source">Build Neovim from Source<a class="headerlink" href="#build-neovim-from-source" title="Permanent link">λ︎</a></h2>
-<p>Clone the <a href="https://github.com/neovim/neovim/wiki/Building-Neovim">Neovim GitHub repository</a> </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>clone<span class="w"> </span>
+<p>Run neovim from the AppImage</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>nvim.appimage
 </code></pre></div>
-<p>Change into the cloned directory and change to the <code>stable</code> release to build version 0.9.0</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>stable
+<p>Create a symbolic link called <code>nvim</code> to the nvim.appimage</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ln<span class="w"> </span>-s<span class="w"> </span><span class="nv">$HOME</span>/.local/bin/nvim.appimage<span class="w"> </span><span class="nv">$HOME</span>/.local/bin/nvim
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Download the Linux AppImage from the Neovim Releases page</p>
+<p>Or build Neovim from source and generate a <code>.deb</code> file from the build.</p>
+<details class="info">
+<summary>Linux version only packaged as AppImage from Neovim 0.9 onward</summary>
+</details>
+</div>
+<div class="tabbed-block">
+<p><a href="https://github.com/neovim/neovim/wiki/Building-Neovim#build-prerequisites">Neovim Build Prerequisites for each operating system</a></p>
+<details class="info">
+<summary>Ubuntu/Debian Packages</summary>
+<p>Install packages to support building Neovim
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>ninja-build<span class="w"> </span>gettext<span class="w"> </span>cmake<span class="w"> </span>unzip<span class="w"> </span>curl
+</code></pre></div></p>
+</details>
+<p>Clone the <a href="https://github.com/neovim/neovim/wiki/Building-Neovim">Neovim GitHub repository</a></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>clone<span class="w"> </span>--origin<span class="w"> </span>neovim<span class="w"> </span>https://github.com/neovim/neovim.git
+</code></pre></div>
+Change into the cloned directory and change to the <code>stable</code> release to build version 0.9.0</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>stable
 </code></pre></div>
 <p>Build a release</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>make<span class="w"> </span><span class="nv">CMAKE_BUILD_TYPE</span><span class="o">=</span>Release<span class="w">                                                                                                              </span>─╯
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>make<span class="w"> </span><span class="nv">CMAKE_BUILD_TYPE</span><span class="o">=</span>Release<span class="w">                                                                                                              </span>─╯
 </code></pre></div>
-<h3 id="build-dep-package">Build dep package<a class="headerlink" href="#build-dep-package" title="Permanent link">λ︎</a></h3>
 <p>Once the nvim release has been built, create a debian package for use with Ubuntu and Debian systems</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cpack<span class="w"> </span>-G<span class="w"> </span>DEB<span class="w"> </span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>cpack<span class="w"> </span>-G<span class="w"> </span>DEB
 </code></pre></div>
+</div>
+</div>
+</div>
 <h2 id="post-install-checks">Post Install checks<a class="headerlink" href="#post-install-checks" title="Permanent link">λ︎</a></h2>
 <p>Ensure supporting tools and binaries are available in the operating system by running the Neovim Heath Check.</p>
 <p><code>nvim</code> in a terminal to run NeoVim and check the installation is working without error.</p>
@@ -1787,7 +1774,7 @@ sudo apt install wl-clipboard
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 7, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 23, 2023</span>
       
     
   </small>
@@ -1860,7 +1847,7 @@ sudo apt install wl-clipboard
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy 2023  Practicali <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+      Copyright &copy 2023 Practicali <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
     </div>
   
   
