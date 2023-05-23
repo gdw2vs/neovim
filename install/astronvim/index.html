@@ -709,6 +709,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#snippets" class="md-nav__link">
+    Snippets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#astronvim-community-packages" class="md-nav__link">
     AstroNvim Community packages
   </a>
@@ -1725,6 +1732,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#snippets" class="md-nav__link">
+    Snippets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#astronvim-community-packages" class="md-nav__link">
     AstroNvim Community packages
   </a>
@@ -1907,21 +1921,64 @@
 <a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="p">}</span>
 </code></pre></div>
 </div>
+<h2 id="snippets">Snippets<a class="headerlink" href="#snippets" title="Permanent link">λ︎</a></h2>
+<p>The AstroNvim user example includes a commented LuaSnip package code.</p>
+<div class="admonition example">
+<p class="admonition-title">AstroNvim user example</p>
+<div class="highlight"><span class="filename">.config/astronvim-config/plugins/core.lua</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>  <span class="c1">-- {</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  <span class="c1">--   &quot;L3MON4D3/LuaSnip&quot;,</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  <span class="c1">--   config = function(plugin, opts)</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>  <span class="c1">--     require &quot;plugins.configs.luasnip&quot; (plugin, opts)  -- include the default astronvim config that calls the setup call</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>  <span class="c1">--     -- add more custom luasnip configuration such as filetype extend or custom snippets</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>  <span class="c1">--     local luasnip = require &quot;luasnip&quot;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>  <span class="c1">--     luasnip.filetype_extend(&quot;javascript&quot;, { &quot;javascriptreact&quot; })</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>  <span class="c1">--   end,</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>  <span class="c1">-- },</span>
+</code></pre></div>
+</div>
+<p>AstroNvim includes a <a href="https://astronvim.com/Recipes/snippets">Recipe for custom snippets</a></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">return</span> <span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  <span class="n">plugins</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="p">{</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>      <span class="s2">&quot;L3MON4D3/LuaSnip&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>      <span class="n">config</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">plugin</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>        <span class="nb">require</span> <span class="s2">&quot;plugins.configs.luasnip&quot;</span><span class="p">(</span><span class="n">plugin</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span> <span class="c1">-- include the default astronvim config that calls the setup call</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>        <span class="nb">require</span><span class="p">(</span><span class="s2">&quot;luasnip.loaders.from_vscode&quot;</span><span class="p">).</span><span class="n">lazy_load</span> <span class="p">{</span> <span class="n">paths</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;./lua/user/snippets&quot;</span> <span class="p">}</span> <span class="p">}</span> <span class="c1">-- load snippets paths</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>      <span class="kr">end</span><span class="p">,</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="p">},</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>  <span class="p">},</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="p">}</span>
+</code></pre></div>
+<p>Practicalli AstroNvim Config combines the two examples to get</p>
+<div class="admonition example">
+<p class="admonition-title">AstroNvim config with custom VS Code style snippets</p>
+<div class="highlight"><span class="filename">.config/astronvim-config/plugins/core.lua</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>  <span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="s2">&quot;L3MON4D3/LuaSnip&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="n">config</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">plugin</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>      <span class="nb">require</span> <span class="s2">&quot;plugins.configs.luasnip&quot;</span> <span class="p">(</span><span class="n">plugin</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>                                       <span class="c1">-- include the default astronvim config that calls the setup call</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>      <span class="c1">-- add more custom luasnip configuration such as filetype extend or custom snippets</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>      <span class="nb">require</span><span class="p">(</span><span class="s2">&quot;luasnip.loaders.from_vscode&quot;</span><span class="p">).</span><span class="n">lazy_load</span> <span class="p">{</span> <span class="n">paths</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;./lua/user/snippets&quot;</span> <span class="p">}</span> <span class="p">}</span> <span class="c1">-- load snippets paths</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>      <span class="kd">local</span> <span class="n">luasnip</span> <span class="o">=</span> <span class="nb">require</span> <span class="s2">&quot;luasnip&quot;</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>      <span class="n">luasnip</span><span class="p">.</span><span class="n">filetype_extend</span><span class="p">(</span><span class="s2">&quot;javascript&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="s2">&quot;javascriptreact&quot;</span> <span class="p">})</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="kr">end</span><span class="p">,</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>  <span class="p">},</span>
+</code></pre></div>
+</div>
 <h2 id="astronvim-community-packages">AstroNvim Community packages<a class="headerlink" href="#astronvim-community-packages" title="Permanent link">λ︎</a></h2>
 <p><a href="https://github.com/AstroNvim/astrocommunity" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> AstroNvim Community</a> provides a large number of packages currated by the community.</p>
 <p>Visit the AstroNvim Community repository on GitHub and browse the packages available.</p>
 <p><code>import</code> each package of interest to the <code>plugins/community.lua</code> file in the AstroNvim user configuration.</p>
 <div class="admonition example">
 <p class="admonition-title">AstroNvim Community Packages in AstroNvim user configuration</p>
-<div class="highlight"><span class="filename">.config/astronvim-config/plugins/community.lua</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">return</span> <span class="p">{</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  <span class="c1">-- Add the community repository of plugin specifications</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  <span class="s2">&quot;AstroNvim/astrocommunity&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>  <span class="p">{</span> <span class="n">import</span> <span class="o">=</span> <span class="s2">&quot;astrocommunity.editing-support.todo-comments&quot;</span> <span class="p">},</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>  <span class="p">{</span> <span class="n">import</span> <span class="o">=</span> <span class="s2">&quot;astrocommunity.git.neogit&quot;</span> <span class="p">},</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>  <span class="p">{</span> <span class="n">import</span> <span class="o">=</span> <span class="s2">&quot;astrocommunity.git.octo&quot;</span> <span class="p">},</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>  <span class="p">{</span> <span class="n">import</span> <span class="o">=</span> <span class="s2">&quot;astrocommunity.git.openingh&quot;</span> <span class="p">},</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="p">}</span>
+<div class="highlight"><span class="filename">.config/astronvim-config/plugins/community.lua</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">return</span> <span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>  <span class="c1">-- Add the community repository of plugin specifications</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>  <span class="s2">&quot;AstroNvim/astrocommunity&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>  <span class="p">{</span> <span class="n">import</span> <span class="o">=</span> <span class="s2">&quot;astrocommunity.editing-support.todo-comments&quot;</span> <span class="p">},</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>  <span class="p">{</span> <span class="n">import</span> <span class="o">=</span> <span class="s2">&quot;astrocommunity.git.neogit&quot;</span> <span class="p">},</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>  <span class="p">{</span> <span class="n">import</span> <span class="o">=</span> <span class="s2">&quot;astrocommunity.git.octo&quot;</span> <span class="p">},</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>  <span class="p">{</span> <span class="n">import</span> <span class="o">=</span> <span class="s2">&quot;astrocommunity.git.openingh&quot;</span> <span class="p">},</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="p">}</span>
 </code></pre></div>
 </div>
 <h3 id="configure-lazy-plugins">Configure Lazy plugins<a class="headerlink" href="#configure-lazy-plugins" title="Permanent link">λ︎</a></h3>
@@ -1932,7 +1989,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 21, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 23, 2023</span>
       
     
   </small>
