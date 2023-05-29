@@ -29,7 +29,7 @@
         <link rel="next" href="../repl-workflow/">
       
       <link rel="icon" href="../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
@@ -37,10 +37,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -152,7 +152,7 @@
             
             
 
-<a href="https://practical.li/neovim">Practicalli Neovim</a> is an alpha stage book and development will continue over the coming year
+<a href="https://practical.li/neovim">Practicalli Neovim</a> is switching to AstroNvim based configuration
 
 
           </div>
@@ -410,6 +410,20 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#practicalli-neovim-config-redux" class="md-nav__link">
+    Practicalli Neovim Config Redux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astronvim-and-practicalli-astronvim-config" class="md-nav__link">
+    AstroNvim and Practicalli AstroNvim Config
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#alternative-configurations" class="md-nav__link">
@@ -894,6 +908,8 @@
         
           
         
+          
+        
       
       
         
@@ -936,6 +952,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../neovim-basics/multi-modal-editing/" class="md-nav__link">
+        Multi-modal Editing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../neovim-basics/comments/" class="md-nav__link">
         Comments
       </a>
@@ -951,7 +981,7 @@
   
     <li class="md-nav__item">
       <a href="../../neovim-basics/snippets/" class="md-nav__link">
-        Comments
+        Snippets
       </a>
     </li>
   
@@ -964,7 +994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../neovim-basics/package-management/" class="md-nav__link">
+      <a href="../../neovim-basics/plugin-manager/" class="md-nav__link">
         Package Manager
       </a>
     </li>
@@ -1116,6 +1146,8 @@
         
           
         
+          
+        
       
       
         
@@ -1144,8 +1176,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../version-control/diffview/" class="md-nav__link">
-        Diffview
+      <a href="../../version-control/lazygit/" class="md-nav__link">
+        Lazygit
       </a>
     </li>
   
@@ -1174,6 +1206,20 @@
     <li class="md-nav__item">
       <a href="../../version-control/octo/" class="md-nav__link">
         Octo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../version-control/open-in-github/" class="md-nav__link">
+        Open In GitHub
       </a>
     </li>
   
@@ -1797,6 +1843,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#practicalli-neovim-config-redux" class="md-nav__link">
+    Practicalli Neovim Config Redux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astronvim-and-practicalli-astronvim-config" class="md-nav__link">
+    AstroNvim and Practicalli AstroNvim Config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#alternative-configurations" class="md-nav__link">
     Alternative configurations
   </a>
@@ -1836,9 +1896,29 @@
 
 <h1 id="community-configuration-projects">Community Configuration Projects<a class="headerlink" href="#community-configuration-projects" title="Permanent link">λ︎</a></h1>
 <p>Practicalli Neovim book covers the following configurations:</p>
+<h2 id="practicalli-neovim-config-redux">Practicalli Neovim Config Redux<a class="headerlink" href="#practicalli-neovim-config-redux" title="Permanent link">λ︎</a></h2>
+<p><a href="/neovim/configuration/practicalli/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Neovim Config Redux</a></p>
 <ul>
-<li><a href="https://github.com/practicalli/neovim-config-redux">Practicalli Neovim Config Redux</a> a fennel configuration with packer package manager and mnemonic key bindings</li>
-<li><a href="https://github.com/AstroNvim/AstroNvim">AstroNvim</a> and <a href="https://github.com/practicalli/astronvim-config">Practicalli AstroNvim Config</a> organised configuration with a polished UI aimed at Neovim 9 with Treesitter support, using Lazy for packages and  Mason for LSP components</li>
+<li>Fennel configuration</li>
+<li>Packer package manager &amp; Treesitter support</li>
+<li>Mnemonic key bindings</li>
+<li>Telescope selectors</li>
+<li>Autocompletion (cmp) &amp; snippets (luasnip)</li>
+<li>Esc with center row keys, e.g. "fd"</li>
+</ul>
+<h2 id="astronvim-and-practicalli-astronvim-config">AstroNvim and Practicalli AstroNvim Config<a class="headerlink" href="#astronvim-and-practicalli-astronvim-config" title="Permanent link">λ︎</a></h2>
+<p><a href="/neovim/configuration/astronvim.md"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> AstroNvim and Practicalli AstroNvim Config</a> organised configuration with a polished UI</p>
+<ul>
+<li>Neovim 9 support</li>
+<li>Lazy for plugins (packages for Neovim)</li>
+<li>Mason to manage install for LSP, DAP, lint and format tools</li>
+<li>Treesitter and language parser support</li>
+<li>Telescope selectors</li>
+<li>Notification dialogs</li>
+<li>Autocompletion (cmp) &amp; snippets (luasnip)</li>
+<li>Neovim 9 background switch (live toggle light &amp; dark theme)</li>
+<li>Hidden command line <code>cmdheight=0</code> (Neovim 0.8 onward)</li>
+<li>Esc with center row keys, e.g. "fd" (user: <code>plugins/core.lua</code>)</li>
 </ul>
 <h2 id="alternative-configurations">Alternative configurations<a class="headerlink" href="#alternative-configurations" title="Permanent link">λ︎</a></h2>
 <p>Practicalli Neovim does not cover the following Community configurations.</p>
@@ -1860,7 +1940,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 29, 2023</span>
       
     
   </small>

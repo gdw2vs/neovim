@@ -116,12 +116,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://practical.li/neovim/neovim-basics/multi-modal-editing/</loc>
+         <lastmod>2023-05-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://practical.li/neovim/neovim-basics/multiple-cursors/</loc>
          <lastmod>2023-05-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/neovim/neovim-basics/package-management/</loc>
+         <loc>https://practical.li/neovim/neovim-basics/plugin-manager/</loc>
          <lastmod>2023-05-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -276,7 +281,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/neovim/version-control/diffview/</loc>
+         <loc>https://practical.li/neovim/version-control/lazygit/</loc>
          <lastmod>2023-05-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -287,6 +292,11 @@
     </url>
     <url>
          <loc>https://practical.li/neovim/version-control/octo/</loc>
+         <lastmod>2023-05-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/neovim/version-control/open-in-github/</loc>
          <lastmod>2023-05-29</lastmod>
          <changefreq>daily</changefreq>
     </url>

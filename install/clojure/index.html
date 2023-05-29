@@ -29,7 +29,7 @@
         <link rel="next" href="../neovim/">
       
       <link rel="icon" href="../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
@@ -37,10 +37,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -152,7 +152,7 @@
             
             
 
-<a href="https://practical.li/neovim">Practicalli Neovim</a> is an alpha stage book and development will continue over the coming year
+<a href="https://practical.li/neovim">Practicalli Neovim</a> is switching to AstroNvim based configuration
 
 
           </div>
@@ -556,8 +556,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#clojure-lsp" class="md-nav__link">
-    Clojure LSP
+  <a href="#language-server-protocol" class="md-nav__link">
+    Language Server Protocol
   </a>
   
 </li>
@@ -908,6 +908,8 @@
         
           
         
+          
+        
       
       
         
@@ -950,6 +952,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../neovim-basics/multi-modal-editing/" class="md-nav__link">
+        Multi-modal Editing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../neovim-basics/comments/" class="md-nav__link">
         Comments
       </a>
@@ -965,7 +981,7 @@
   
     <li class="md-nav__item">
       <a href="../../neovim-basics/snippets/" class="md-nav__link">
-        Comments
+        Snippets
       </a>
     </li>
   
@@ -978,7 +994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../neovim-basics/package-management/" class="md-nav__link">
+      <a href="../../neovim-basics/plugin-manager/" class="md-nav__link">
         Package Manager
       </a>
     </li>
@@ -1130,6 +1146,8 @@
         
           
         
+          
+        
       
       
         
@@ -1158,8 +1176,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../version-control/diffview/" class="md-nav__link">
-        Diffview
+      <a href="../../version-control/lazygit/" class="md-nav__link">
+        Lazygit
       </a>
     </li>
   
@@ -1188,6 +1206,20 @@
     <li class="md-nav__item">
       <a href="../../version-control/octo/" class="md-nav__link">
         Octo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../version-control/open-in-github/" class="md-nav__link">
+        Open In GitHub
       </a>
     </li>
   
@@ -1818,8 +1850,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#clojure-lsp" class="md-nav__link">
-    Clojure LSP
+  <a href="#language-server-protocol" class="md-nav__link">
+    Language Server Protocol
   </a>
   
 </li>
@@ -1866,31 +1898,34 @@
 <p>A rich Clojure REPL workflow is provided by the Conjure package, which works with <a href="#clojure-cli">Clojure CLI</a> and <a href="#leiningen">Leiningen</a> projects, assuming the respective tool is installed.</p>
 <p>Clojure LSP is highly recommended and packages to use an <a href="#clojure-lsp">installed clojure-lsp tool</a> are in the <a href="https://github.com/practicalli/neovim-config-redux">practicalli/neovim-config-redux</a> configuration</p>
 <h2 id="clojure-cli">Clojure CLI<a class="headerlink" href="#clojure-cli" title="Permanent link">λ︎</a></h2>
-<p><a class="md-button" href="https://practical.li/clojure/install/" target="_blank">Practicalli Clojure install guide</a></p>
-<p><a href="https://clojure.org/guides/deps_and_cli" target="_blank">Clojure CLI</a> provides a way to run Clojure code, packaged Clojure (jar) and of course run a Clojure REPL.</p>
-<p><a href="https://practical.li/clojure/install/" target="_blank">Practicalli Clojure install guide</a> details prerequisites, Clojure install options and supporting tools for an enhanced developer workflow.</p>
+<p><a class="md-button" href="https://practical.li/clojure/install/" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Practicalli Clojure install guide</a></p>
+<p><a href="https://clojure.org/guides/deps_and_cli" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Clojure CLI</a> provides a way to run Clojure code, packaged Clojure (jar) and run a Clojure REPL.</p>
+<p><a href="https://practical.li/clojure/install/" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Practicalli Clojure install guide</a> details prerequisites, Clojure install options and supporting tools for an enhanced developer workflow.</p>
 <blockquote>
-<p>Visit the <a href="https://clojure.org/guides/getting_started" target="_blank">Clojure Getting Started guide</a> for the Clojure CLI or to check the latest release version.</p>
+<p>Visit the <a href="https://clojure.org/guides/getting_started" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Clojure Getting Started guide</a> for the Clojure CLI or to check the latest release version.</p>
 </blockquote>
-<p><a href="https://practical.li/clojure/clojure-cli/install/community-tools.html" target="_blank">Practicalli Clojure CLI Config</a> provides a wide range of community tools that extend the features of Clojure CLI, creating a rich development environment for use across all projects.</p>
+<p><a href="https://practical.li/clojure/clojure-cli/practicalli-config/" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Practicalli Clojure CLI Config</a> provides a wide range of community tools that extend the features of Clojure CLI, creating a rich development environment for use across all projects.</p>
 <div class="admonition warning">
 <p class="admonition-title">Aliases are required for many examples</p>
-<p>Without <a href="https://practical.li/clojure/install/clojure-cli/#practicalli-clojure-cli-config" target="_blank">Practicalli Clojure CLI Config</a> many commands provided in this book are not available unless similar alias definitions are added to a either a project or user level <code>deps.edn</code> configuration.</p>
+<p>Without <a href="https://practical.li/clojure/install/clojure-cli/#practicalli-clojure-cli-config" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Practicalli Clojure CLI Config</a> many commands provided in this book are not available unless similar alias definitions are added to a either a project or user level <code>deps.edn</code> configuration.</p>
 </div>
-<h2 id="clojure-lsp">Clojure LSP<a class="headerlink" href="#clojure-lsp" title="Permanent link">λ︎</a></h2>
-<p><a class="md-button" href="https://clojure-lsp.io/installation/" target="_blank">Clojure LSP installation guide</a>
-<a class="md-button" href="/neovim/install/configuration/#fnlconfigplugintreesitterfnl" target="_blank">Treesitter Fennel Configuration</a></p>
-<p><a href="https://clojure-lsp.io/installation/">Clojure LSP installation guide</a> shows how to install the Clojure LSP binary for the relevant operating system.</p>
-<p>clj-kondo provides static analysis of source code files, providing subtle warnings as Clojure code is written to help the developer follow idioms and avoid syntatic errors.</p>
-<p>Clojure LSP includes clj-kondo to provide <a href="https://clojure-lsp.io/" target="_blank">an implementation of the Language Server Protocol for the Clojure Language</a>.</p>
-<p>Neovim Treesitter uses and visualises information from the Clojure LSP server to assist with development and refactor of Clojure code.</p>
+<h2 id="language-server-protocol">Language Server Protocol<a class="headerlink" href="#language-server-protocol" title="Permanent link">λ︎</a></h2>
+<p>Neovim Treesitter surfaces information from Language Server Protocol (LSP) servers to assist with development and refactor of Clojure code.</p>
+<p><a href="https://clojure-lsp.io/installation/"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Clojure LSP installation guide</a> shows how to install the Clojure LSP binary for the relevant operating system.</p>
 <p>Once installed, run <code>clojure-lsp -v</code> in a terminal to ensure the command is working.</p>
 <div class="admonition hint">
 <p class="admonition-title">practicalli/clojure-lsp-config</p>
-<p><a href="https://github.com/practicalli/clojure-lsp-config">practicalli/clojure-lsp-config</a> provides a complete configuration for clojure-lsp (<code>config.edn</code>), including a wide range of snippets and less restrictive formatting rules (<code>cljfmt.edn</code>)</p>
+<p><a href="https://github.com/practicalli/clojure-lsp-config"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span> practicalli/clojure-lsp-config</a> provides a complete configuration for clojure-lsp (<code>config.edn</code>), including a wide range of snippets and less restrictive formatting rules (<code>cljfmt.edn</code>)</p>
 </div>
+<blockquote>
+<p>clj-kondo provides static analysis of source code files, providing subtle warnings as Clojure code is written to help the developer follow idioms and avoid syntatic errors.</p>
+<p>Clojure LSP includes clj-kondo to provide <a href="https://clojure-lsp.io/" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> an implementation of the Language Server Protocol for the Clojure Language</a>.</p>
+</blockquote>
+<p><a class="md-button" href="https://clojure-lsp.io/installation/" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Clojure LSP installation guide</a>
+<a class="md-button" href="/neovim/install/configuration/#fnlconfigplugintreesitterfnl" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Treesitter Fennel Configuration</a></p>
 <h2 id="leiningen">Leiningen<a class="headerlink" href="#leiningen" title="Permanent link">λ︎</a></h2>
-<p>Many existing Clojure projects have used Leiningen build automation tool (although there is a growing number of new projects using Clojure CLI as well or instead of Leiningen)</p>
+<p>Many existing Clojure projects use Leiningen build automation tool (although many new projects use Clojure CLI as well or instead of Leiningen).  </p>
+<p>The code is the same regardless of tooling choice.  The overall workflow is the same, although Clojure CLI may provide more workflow options.</p>
 <p>Follow the install instructions at <a href="https://leiningen.org/" target="_blank">Leiningen.org</a> if required.</p>
 
   <hr>
@@ -1898,7 +1933,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 29, 2023</span>
       
     
   </small>

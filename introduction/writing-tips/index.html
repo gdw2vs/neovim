@@ -29,7 +29,7 @@
         <link rel="next" href="../../install/">
       
       <link rel="icon" href="../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
@@ -37,10 +37,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -152,7 +152,7 @@
             
             
 
-<a href="https://practical.li/neovim">Practicalli Neovim</a> is an alpha stage book and development will continue over the coming year
+<a href="https://practical.li/neovim">Practicalli Neovim</a> is switching to AstroNvim based configuration
 
 
           </div>
@@ -1031,6 +1031,8 @@
         
           
         
+          
+        
       
       
         
@@ -1073,6 +1075,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../neovim-basics/multi-modal-editing/" class="md-nav__link">
+        Multi-modal Editing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../neovim-basics/comments/" class="md-nav__link">
         Comments
       </a>
@@ -1088,7 +1104,7 @@
   
     <li class="md-nav__item">
       <a href="../../neovim-basics/snippets/" class="md-nav__link">
-        Comments
+        Snippets
       </a>
     </li>
   
@@ -1101,7 +1117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../neovim-basics/package-management/" class="md-nav__link">
+      <a href="../../neovim-basics/plugin-manager/" class="md-nav__link">
         Package Manager
       </a>
     </li>
@@ -1253,6 +1269,8 @@
         
           
         
+          
+        
       
       
         
@@ -1281,8 +1299,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../version-control/diffview/" class="md-nav__link">
-        Diffview
+      <a href="../../version-control/lazygit/" class="md-nav__link">
+        Lazygit
       </a>
     </li>
   
@@ -1311,6 +1329,20 @@
     <li class="md-nav__item">
       <a href="../../version-control/octo/" class="md-nav__link">
         Octo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../version-control/open-in-github/" class="md-nav__link">
+        Open In GitHub
       </a>
     </li>
   
@@ -2323,6 +2355,7 @@ semper lorem quam in massa.</p>
 <h3 id="highlight-lines-in-code-blocks">Highlight lines in code blocks<a class="headerlink" href="#highlight-lines-in-code-blocks" title="Permanent link">λ︎</a></h3>
 <p>Add highlight line meta data to a code block after the opening backticks and code block language.</p>
 <p><code>hl_lines="2"</code> highlights line 2 in the codeblock</p>
+<p><code>hl_lines="2 3 4"</code> highlights line 2, 3 and 4 in the codeblock</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">my-function</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="s">&quot;With a lovely doc-string&quot;</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="p">[</span><span class="nv">arguments</span><span class="p">]</span>
@@ -2540,12 +2573,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla.
 <p>Task lists</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Vestibulum convallis sit amet nisi a tincidunt<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Vestibulum convallis sit amet nisi a tincidunt</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> In hac habitasse platea dictumst</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> In scelerisque nibh non dolor mollis congue sed et metus</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Praesent sed risus massa</li>
-</ul>
-</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque</li>
 </ul>
 <div class="admonition example">
@@ -2579,7 +2610,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla.
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 14, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 29, 2023</span>
       
     
   </small>

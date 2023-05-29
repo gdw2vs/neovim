@@ -29,7 +29,7 @@
         <link rel="next" href="files-buffers-windows/">
       
       <link rel="icon" href="../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
@@ -37,10 +37,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -152,7 +152,7 @@
             
             
 
-<a href="https://practical.li/neovim">Practicalli Neovim</a> is an alpha stage book and development will continue over the coming year
+<a href="https://practical.li/neovim">Practicalli Neovim</a> is switching to AstroNvim based configuration
 
 
           </div>
@@ -853,6 +853,8 @@
         
           
         
+          
+        
       
       
         
@@ -895,6 +897,20 @@
   
   
     <li class="md-nav__item">
+      <a href="multi-modal-editing/" class="md-nav__link">
+        Multi-modal Editing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="comments/" class="md-nav__link">
         Comments
       </a>
@@ -910,7 +926,7 @@
   
     <li class="md-nav__item">
       <a href="snippets/" class="md-nav__link">
-        Comments
+        Snippets
       </a>
     </li>
   
@@ -923,7 +939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="package-management/" class="md-nav__link">
+      <a href="plugin-manager/" class="md-nav__link">
         Package Manager
       </a>
     </li>
@@ -1075,6 +1091,8 @@
         
           
         
+          
+        
       
       
         
@@ -1103,8 +1121,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../version-control/diffview/" class="md-nav__link">
-        Diffview
+      <a href="../version-control/lazygit/" class="md-nav__link">
+        Lazygit
       </a>
     </li>
   
@@ -1133,6 +1151,20 @@
     <li class="md-nav__item">
       <a href="../version-control/octo/" class="md-nav__link">
         Octo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version-control/open-in-github/" class="md-nav__link">
+        Open In GitHub
       </a>
     </li>
   
@@ -1756,15 +1788,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#managing-files-and-directories" class="md-nav__link">
-    Managing files and directories
+  <a href="#fundamentals" class="md-nav__link">
+    Fundamentals
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#manage-buffers-and-windows" class="md-nav__link">
-    Manage buffers and windows
+  <a href="#editing-tools" class="md-nav__link">
+    Editing Tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-tools" class="md-nav__link">
+    Writing Tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-tools" class="md-nav__link">
+    Development Tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spellcheck" class="md-nav__link">
+    Spellcheck
   </a>
   
 </li>
@@ -1802,24 +1855,40 @@
 
 <h1 id="using-neovim">Using Neovim<a class="headerlink" href="#using-neovim" title="Permanent link">λ︎</a></h1>
 <p>The fundamental controls of Neovim which apply across all editing tasks.</p>
-<p><a class="md-button" href="../repl-driven-development/">Clojure Development</a>
-<a class="md-button" href="../version-control/">Version Control</a></p>
-<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-startup-dashboard-theme-light.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Neovim startup with dashboard theme" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-startup-dashboard-theme-light.png" /></a></p>
-<h2 id="managing-files-and-directories">Managing files and directories<a class="headerlink" href="#managing-files-and-directories" title="Permanent link">λ︎</a></h2>
-<p><code>SPC f f</code> to list files within the scope of the current directory path. <code>SPC f b</code> to open a file browser which can open, create and delete files and directories.</p>
-<p><code>:lcd</code> to set the current local directory</p>
-<p><code>:!</code> for a shell command, e.g. <code>:!mkdir -p path/to/new/directory</code> create a new directory and any intermediate path</p>
-<h2 id="manage-buffers-and-windows">Manage buffers and windows<a class="headerlink" href="#manage-buffers-and-windows" title="Permanent link">λ︎</a></h2>
-<p><code>SPC h</code> / <code>SPC l</code> to jump to left / right buffer,  <code>SPC j</code> / <code>SPC k</code> to jump to buffer below / above</p>
-<p><code>SPC b b</code> to list current buffers and switch between them using telescope</p>
-<p><code>C-w</code> and <code>hjkl</code> to navigate windows is the classic Vim approach</p>
+<h2 id="fundamentals">Fundamentals<a class="headerlink" href="#fundamentals" title="Permanent link">λ︎</a></h2>
+<p><a class="md-button" href="files-buffers-windows/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Files, buffers and windows</a>
+<a class="md-button" href="multi-modal-editing/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Multi-modal Editing</a></p>
+<h2 id="editing-tools">Editing Tools<a class="headerlink" href="#editing-tools" title="Permanent link">λ︎</a></h2>
+<p><a class="md-button" href="multiple-cursors/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Multiple Cursors</a></p>
+<h2 id="writing-tools">Writing Tools<a class="headerlink" href="#writing-tools" title="Permanent link">λ︎</a></h2>
+<p><a class="md-button" href="snippets/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Snippets</a></p>
+<h2 id="development-tools">Development Tools<a class="headerlink" href="#development-tools" title="Permanent link">λ︎</a></h2>
+<p><a class="md-button" href="comments/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Comments</a>
+<a class="md-button" href="../repl-driven-development/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Clojure Development</a>
+<a class="md-button" href="../version-control/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Version Control</a></p>
+<blockquote>
+<p>Format and Lint tools are installed via Mason</p>
+</blockquote>
+<!-- ![Neovim startup with dashboard theme](https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-startup-dashboard-theme-light.png) -->
+
+<h2 id="spellcheck">Spellcheck<a class="headerlink" href="#spellcheck" title="Permanent link">λ︎</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">AstroNvim</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><code>SPC u s</code> toggles spellcheck, marking misspelt words with a rew wavy underline</p>
+<p><code>] s</code> jumps to next misspelt word, <code>[ s</code> jumps to previous misspelt word, </p>
+<p><code>z =</code> shows numbered list of possible words, enter the number next to the work to replace the misspelt word.</p>
+<p><code>z g</code> to add the current word to the spell list, infroming spellcheck that this is a correct word.</p>
+</div>
+</div>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 29, 2023</span>
       
     
   </small>
