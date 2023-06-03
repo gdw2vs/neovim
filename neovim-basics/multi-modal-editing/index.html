@@ -908,9 +908,73 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Multi-modal Editing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Multi-modal Editing
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#surround" class="md-nav__link">
+    Surround
+  </a>
+  
+    <nav class="md-nav" aria-label="Surround">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvim-surround" class="md-nav__link">
+    nvim-surround
+  </a>
+  
+    <nav class="md-nav" aria-label="nvim-surround">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visual-mode" class="md-nav__link">
+    Visual Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normal-mode" class="md-nav__link">
+    Normal mode
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1807,6 +1871,54 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#surround" class="md-nav__link">
+    Surround
+  </a>
+  
+    <nav class="md-nav" aria-label="Surround">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvim-surround" class="md-nav__link">
+    nvim-surround
+  </a>
+  
+    <nav class="md-nav" aria-label="nvim-surround">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visual-mode" class="md-nav__link">
+    Visual Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normal-mode" class="md-nav__link">
+    Normal mode
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1842,13 +1954,50 @@
 <p><a href="https://practical.li/spacemacs/spacemacs-basics/evil/">Practicalli Spacemacs</a> has useful reference content on multi-modal editing (Evil mode).</p>
 <p>Most of this content is the same in Neovim with a few exceptions</p>
 </div>
+<h2 id="surround">Surround<a class="headerlink" href="#surround" title="Permanent link">λ︎</a></h2>
+<p><code>viw</code> selects the current word, using j/k to modify the selection where required. <code>o</code> toggles which end of the selection is expanded/shrunk</p>
+<p><code>s</code> substitues the selection, type the characters to surround the selection.</p>
+<p><code>p</code> to pase the original text</p>
+<h3 id="nvim-surround">nvim-surround<a class="headerlink" href="#nvim-surround" title="Permanent link">λ︎</a></h3>
+<div class="admonition info">
+<p class="admonition-title">nvim-surround included in Practicalli AstroNvim Config</p>
+</div>
+<h4 id="visual-mode">Visual Mode<a class="headerlink" href="#visual-mode" title="Permanent link">λ︎</a></h4>
+<p><code>viw</code> to select the current word (visual in word)</p>
+<p><code>S</code> on a visual selection to surround with next that character, e.g. <code>S)</code> to surround with parens.</p>
+<h4 id="normal-mode">Normal mode<a class="headerlink" href="#normal-mode" title="Permanent link">λ︎</a></h4>
+<p><code>cs</code> inside an existing pair of characters to change them to another pair of surrounding characters, e.g. <code>cs(}</code> to change (text) to {text}</p>
+<p><code>ds</code> inside a pair of surrounding characters to delete them, e.g. <code>ds(</code> to change (text) to text</p>
+<p><code>ys</code> you surround followed by motion and character, e.g. <code>ysw)</code> surrounds word with (parens)</p>
+<p><code>yS</code> to surround current line</p>
+<p><code>ySS</code> to surround current line, placing characters on new lines, e.g. <code>ySS{</code> will change "Olical/conjure" to:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="s2">&quot;Olical/conjure&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span>
+</code></pre></div>
+<p>The three "core" operations of add/delete/change can be done with the keymaps ys{motion}{char}, ds{char}, and cs{target}{replacement}, respectively. For the following examples, * will denote the cursor position:</p>
+<div class="highlight"><pre><span></span><code>Old text                    Command         New text
+----------------------------------------------------
+surr*ound_words             ysiw)           (surround_words)
+*make strings               ys$&quot;            &quot;make strings&quot;
+[delete ar*ound me!]        ds]             delete around me!
+remove &lt;b&gt;HTML t*ags&lt;/b&gt;    dst             remove HTML tags
+&#39;change quot*es&#39;            cs&#39;&quot;            &quot;change quotes&quot;
+&lt;b&gt;or tag* types&lt;/b&gt;        csth1&lt;CR&gt;       &lt;h1&gt;or tag types&lt;/h1&gt;
+delete(functi*on calls)     dsf             function calls
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Neovim help provides details on using nvim-surround</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>:help nvim-surround.usage
+</code></pre></div>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 3, 2023</span>
       
     
   </small>
