@@ -29,7 +29,7 @@
         <link rel="next" href="../testing/">
       
       <link rel="icon" href="../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.16">
     
     
       
@@ -136,7 +136,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#language-server-protocol-lsp-configuration" class="md-skip">
+        <a href="#language-server-protocol-lsp" class="md-skip">
           Skip to content
         </a>
       
@@ -1092,6 +1092,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#limitations-to-investigate" class="md-nav__link">
+    Limitations to investigate
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1851,6 +1858,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#limitations-to-investigate" class="md-nav__link">
+    Limitations to investigate
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1882,9 +1896,30 @@
   
 
 
-<h1 id="language-server-protocol-lsp-configuration">Language Server Protocol (LSP) Configuration<a class="headerlink" href="#language-server-protocol-lsp-configuration" title="Permanent link">λ︎</a></h1>
+<h1 id="language-server-protocol-lsp">Language Server Protocol (LSP)<a class="headerlink" href="#language-server-protocol-lsp" title="Permanent link">λ︎</a></h1>
 <p>Using <a href="https://clojure-lsp.io/">clojure-lsp</a> server and <a href="https://tree-sitter.github.io/tree-sitter/">Neovim Treesitter</a> as an LSP client, code is statically analysed to provide auto-completion data, advanced editing actions such as refactor, live formatting, etc.</p>
 <h2 id="key-maps">Key maps<a class="headerlink" href="#key-maps" title="Permanent link">λ︎</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Practicalli AstroNvim Config</label><label for="__tabbed_1_2">Practicalli Neovim Config Redux</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><code>&lt;leader&gt;la</code> code actions (popup with available actions)</li>
+<li><code>&lt;leader&gt;ld</code> hover diagnostics</li>
+<li><code>&lt;leader&gt;lD</code> search diagnostics</li>
+<li><code>&lt;leader&gt;lf</code> format buffer</li>
+<li><code>&lt;leader&gt;lG</code> search workspace symbols</li>
+<li><code>&lt;leader&gt;lh</code> function signature help</li>
+<li><code>&lt;leader&gt;li</code> information about the LSP client and running LSP servers</li>
+<li><code>&lt;leader&gt;lI</code> null-ls information (format &amp; lint tools)</li>
+<li><code>&lt;leader&gt;ll</code> code lens refresh</li>
+<li><code>&lt;leader&gt;lL</code> code lens run</li>
+<li><code>&lt;leader&gt;lr</code> rename current symbol (namespace rename not supported it seems)</li>
+<li><code>&lt;leader&gt;lR</code> search references</li>
+<li><code>&lt;leader&gt;ls</code> search symbols</li>
+<li><code>&lt;leader&gt;lS</code> symbols outline</li>
+</ul>
+</div>
+<div class="tabbed-block">
 <ul>
 <li><code>gd</code> Go to definition</li>
 <li><code>K</code> Show documentations</li>
@@ -1903,13 +1938,20 @@
 <li><code>&lt;leader&gt;lr</code> Show all references list for item under the cursor (Using telescope plugin interface)</li>
 <li><code>&lt;leader&gt;lr</code> Show all implementations list for item under the cursor (Using telescope plugin interface)</li>
 </ul>
+</div>
+</div>
+</div>
+<h2 id="limitations-to-investigate">Limitations to investigate<a class="headerlink" href="#limitations-to-investigate" title="Permanent link">λ︎</a></h2>
+<ul>
+<li>Neovim client does not seem to support namespace rename (AstroNvim)</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 8, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 19, 2023</span>
       
     
   </small>
@@ -2064,7 +2106,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a51614de.min.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
