@@ -742,6 +742,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#override-key-binding" class="md-nav__link">
+    Override Key binding
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1975,6 +1982,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#override-key-binding" class="md-nav__link">
+    Override Key binding
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2384,6 +2398,25 @@
 <a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>  <span class="p">},</span>
 </code></pre></div>
 </details>
+<h2 id="override-key-binding">Override Key binding<a class="headerlink" href="#override-key-binding" title="Permanent link">λ︎</a></h2>
+<p>AstroNvim uses Lazy package manager to set keys for packages.  </p>
+<p>Astrocommunity configuration defines a <code>keys</code> table that is used by Lazy.</p>
+<p>In the user configuration, return a function that sets key bindings to overide the <code>keys</code> table provided by astrocommunity</p>
+<details class="example">
+<summary>Override Key bindings for vim highlighter</summary>
+</details>
+<div class="highlight"><span class="filename">.config/astronvim-config/plugins/community.lua</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="s2">&quot;vim-highlighter&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="n">keys</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span> 
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>        <span class="kr">return</span> <span class="p">{</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>            <span class="p">{</span> <span class="s2">&quot;&lt;leader&gt;nn&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;cmd&gt;Hi&gt;&lt;CR&gt;&quot;</span><span class="p">,</span> <span class="n">desc</span> <span class="o">=</span> <span class="s2">&quot;Next Recently Set Highlight&quot;</span> <span class="p">},</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>            <span class="p">{</span> <span class="s2">&quot;&lt;leader&gt;ng&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;cmd&gt;Hi&lt;&lt;CR&gt;&quot;</span><span class="p">,</span> <span class="n">desc</span> <span class="o">=</span> <span class="s2">&quot;Previous Recently Set Highlight&quot;</span> <span class="p">},</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>            <span class="p">{</span> <span class="s2">&quot;&lt;leader&gt;n[&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;cmd&gt;Hi{&lt;CR&gt;&quot;</span><span class="p">,</span> <span class="n">desc</span> <span class="o">=</span> <span class="s2">&quot;Next Nearest Highlight&quot;</span> <span class="p">},</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>            <span class="p">{</span> <span class="s2">&quot;&lt;leader&gt;n]&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;cmd&gt;Hi}&lt;CR&gt;&quot;</span><span class="p">,</span> <span class="n">desc</span> <span class="o">=</span> <span class="s2">&quot;Previous Nearest Highlight&quot;</span> <span class="p">},</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>        <span class="p">}</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>    <span class="kr">end</span><span class="p">,</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="p">}</span>
+</code></pre></div>
 <!--
 
 ## Telescope Extensions
@@ -2475,7 +2508,7 @@ Other extensions
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 1, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 8, 2023</span>
       
     
   </small>
