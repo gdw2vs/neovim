@@ -2111,9 +2111,6 @@
 </div>
 <div class="tabbed-block">
 <p>Add Conjure plugin that will load when Clojure, Fennel or Python file is opened.</p>
-</div>
-</div>
-</div>
 <div class="admonition example">
 <p class="admonition-title">Clojure Packages in AstroNvim user configuration<div class="highlight"><span class="filename">.config/astronvim-config/init.lua</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">-- Local variables</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">local</span> <span class="n">lisp_dialects</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;clojure&quot;</span><span class="p">,</span> <span class="s2">&quot;fennel&quot;</span> <span class="p">}</span>
@@ -2129,23 +2126,27 @@
 </p>
 </div>
 <p>Improve syntax highlighting by installing the Clojure parser for Treesitter.</p>
-<div class="highlight"><pre><span></span><code>!!! EXAMPLE &quot;Treesitter Parser for clojure in AstroNvim user configuration&quot;
-    ```lua hl_lines=&quot;7&quot; title=&quot;.config/astronvim-config/plugins/treesitter.lua&quot;
-    return {
-      &quot;nvim-treesitter/nvim-treesitter&quot;,
-      opts = function(_, opts)
-        -- add more things to the ensure_installed table protecting against community packs modifying it
-        opts.ensure_installed = require(&quot;astronvim.utils&quot;).list_insert_unique(opts.ensure_installed, {
-          -- &quot;lua&quot;
-        &quot;clojure&quot;
-        })
-      end,
-    }
-    ```
-
-!!! HINT &quot;Install Treesitter Clojure Parser manually&quot;
-    `:TSInstall clojure` in Neovim will install the parser. A parser not included in the `opts.ensure_installed` configuration must be updated manually each time treesitter plugin is updated
+<div class="admonition example">
+<p class="admonition-title">Treesitter Parser for clojure in AstroNvim user configuration</p>
+<div class="highlight"><span class="filename">.config/astronvim-config/plugins/treesitter.lua</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">return</span> <span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  <span class="s2">&quot;nvim-treesitter/nvim-treesitter&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  <span class="n">opts</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="c1">-- add more things to the ensure_installed table protecting against community packs modifying it</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">opts</span><span class="p">.</span><span class="n">ensure_installed</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">&quot;astronvim.utils&quot;</span><span class="p">).</span><span class="n">list_insert_unique</span><span class="p">(</span><span class="n">opts</span><span class="p">.</span><span class="n">ensure_installed</span><span class="p">,</span> <span class="p">{</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>      <span class="c1">-- &quot;lua&quot;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="hll">    <span class="s2">&quot;clojure&quot;</span>
+</span><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="p">})</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>  <span class="kr">end</span><span class="p">,</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="p">}</span>
 </code></pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Install Treesitter Clojure Parser manually</p>
+<p><code>:TSInstall clojure</code> in Neovim will install the parser. A parser not included in the <code>opts.ensure_installed</code> configuration must be updated manually each time treesitter plugin is updated</p>
+</div>
+</div>
+</div>
+</div>
 <h3 id="clojure-mappings">Clojure Mappings<a class="headerlink" href="#clojure-mappings" title="Permanent link">λ︎</a></h3>
 <p>Conjure mappings are defined respective to a <code>&lt;localleader&gt;</code> value. Define a local leader in the AstroNvim user configuration, e.g. <code>,</code> and all Conjure mappings become available.</p>
 <details class="info">
