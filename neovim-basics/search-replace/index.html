@@ -20,20 +20,16 @@
         <meta name="author" content="Practicalli">
       
       
-        <link rel="canonical" href="https://practical.li/neovim/neovim-basics/multiple-cursors/">
+        <link rel="canonical" href="https://practical.li/neovim/neovim-basics/search-replace/">
       
       
-        <link rel="prev" href="../plugin-manager/">
-      
-      
-        <link rel="next" href="../zen-mode/">
       
       <link rel="icon" href="../../assets/favicon.svg">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
-        <title>Multiple Cursors - Practicalli Neovim</title>
+        <title>Search and Replace - Practicalli Neovim</title>
       
     
     
@@ -79,11 +75,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Multiple Cursors - Practicalli Neovim" >
+        <meta  property="og:title"  content="Search and Replace - Practicalli Neovim" >
       
         <meta  property="og:description"  content="Practical guide to Clojure development with Neovim" >
       
-        <meta  property="og:image"  content="https://practical.li/neovim/assets/images/social/neovim-basics/multiple-cursors.png" >
+        <meta  property="og:image"  content="https://practical.li/neovim/assets/images/social/neovim-basics/search-replace.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -91,15 +87,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://practical.li/neovim/neovim-basics/multiple-cursors/" >
+        <meta  property="og:url"  content="https://practical.li/neovim/neovim-basics/search-replace/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Multiple Cursors - Practicalli Neovim" >
+        <meta  name="twitter:title"  content="Search and Replace - Practicalli Neovim" >
       
         <meta  name="twitter:description"  content="Practical guide to Clojure development with Neovim" >
       
-        <meta  name="twitter:image"  content="https://practical.li/neovim/assets/images/social/neovim-basics/multiple-cursors.png" >
+        <meta  name="twitter:image"  content="https://practical.li/neovim/assets/images/social/neovim-basics/search-replace.png" >
       
     
     
@@ -136,7 +132,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#multiple-cursors" class="md-skip">
+        <a href="#search-and-replace" class="md-skip">
           Skip to content
         </a>
       
@@ -188,7 +184,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Multiple Cursors
+              Search and Replace
             
           </span>
         </div>
@@ -826,16 +822,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
       
       
         
@@ -870,7 +864,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Neovim Basics
@@ -953,191 +947,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Multiple Cursors
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../multiple-cursors/" class="md-nav__link">
         Multiple Cursors
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#search-and-replace" class="md-nav__link">
-    Search and Replace
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#command-quick-reference" class="md-nav__link">
-    Command quick reference
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#searching" class="md-nav__link">
-    Searching
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#find-with-regex" class="md-nav__link">
-    Find with Regex
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#smart-case-change" class="md-nav__link">
-    Smart case change
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#filter-regions" class="md-nav__link">
-    Filter regions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#transform-regions-with-expression" class="md-nav__link">
-    Transform regions with expression
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vm-motions" class="md-nav__link">
-    VM Motions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vm-operators" class="md-nav__link">
-    vm-operators
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vm-multiline-mode" class="md-nav__link">
-    vm-multiline-mode
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#alignment" class="md-nav__link">
-    Alignment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#replace-pattern-in-regions" class="md-nav__link">
-    Replace pattern in regions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#subtract-pattern-from-regions" class="md-nav__link">
-    Subtract pattern from regions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#transposition" class="md-nav__link">
-    Transposition
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#duplication" class="md-nav__link">
-    Duplication
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#shift-selections" class="md-nav__link">
-    Shift Selections
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#case-conversion" class="md-nav__link">
-    Case conversion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modes" class="md-nav__link">
-    Modes
-  </a>
-  
-    <nav class="md-nav" aria-label="Modes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#vm-cursor-mode" class="md-nav__link">
-    VM Cursor Mode
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vm-extend-mode" class="md-nav__link">
-    VM Extend Mode
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2022,160 +1836,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#search-and-replace" class="md-nav__link">
-    Search and Replace
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#command-quick-reference" class="md-nav__link">
-    Command quick reference
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#searching" class="md-nav__link">
-    Searching
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#find-with-regex" class="md-nav__link">
-    Find with Regex
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#smart-case-change" class="md-nav__link">
-    Smart case change
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#filter-regions" class="md-nav__link">
-    Filter regions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#transform-regions-with-expression" class="md-nav__link">
-    Transform regions with expression
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vm-motions" class="md-nav__link">
-    VM Motions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vm-operators" class="md-nav__link">
-    vm-operators
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vm-multiline-mode" class="md-nav__link">
-    vm-multiline-mode
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#alignment" class="md-nav__link">
-    Alignment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#replace-pattern-in-regions" class="md-nav__link">
-    Replace pattern in regions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#subtract-pattern-from-regions" class="md-nav__link">
-    Subtract pattern from regions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#transposition" class="md-nav__link">
-    Transposition
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#duplication" class="md-nav__link">
-    Duplication
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#shift-selections" class="md-nav__link">
-    Shift Selections
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#case-conversion" class="md-nav__link">
-    Case conversion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modes" class="md-nav__link">
-    Modes
-  </a>
-  
-    <nav class="md-nav" aria-label="Modes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#vm-cursor-mode" class="md-nav__link">
-    VM Cursor Mode
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vm-extend-mode" class="md-nav__link">
-    VM Extend Mode
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2189,7 +1849,7 @@
                   
 
   
-    <a href="https://github.com/practicalli/neovim/edit/main/docs/neovim-basics/multiple-cursors.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/practicalli/neovim/edit/main/docs/neovim-basics/search-replace.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -2198,398 +1858,31 @@
     
       
     
-    <a href="https://github.com/practicalli/neovim/raw/main/docs/neovim-basics/multiple-cursors.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/practicalli/neovim/raw/main/docs/neovim-basics/search-replace.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-<h1 id="multiple-cursors">Multiple cursors<a class="headerlink" href="#multiple-cursors" title="Permanent link">λ︎</a></h1>
-<p><a href="https://github.com/mg979/vim-visual-multi" target="_blank">Visual-Multi (VM)</a> is a multiple selections/cursors plugin that uses modal editing and provide visual feedback when editing multiple lines simultaneously.</p>
-<p>Mulitple cursors is generally useful when editing smilarly structured lines with diffferent content.  Cursors are moved by column position or by using vim motions.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">AstroNvim</label><label for="__tabbed_1_2">Practicalli Neovim Config Redux</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>g</kbd></span> <span class="keys"><kbd>m</kbd></span> opens the visual-multi menu </p>
-<p>Using visual select is a simple way to edit multiple lines as the same time.</p>
-<p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>g</kbd></span> <span class="keys"><kbd>m</kbd></span> <span class="keys"><kbd>c</kbd></span> on visually selected lines creates a cursor on each line.</p>
-<p><span class="keys"><kbd class="key-escape">Esc</kbd></span> or <span class="keys"><kbd>f</kbd></span> <span class="keys"><kbd>d</kbd></span> to close multiple cursors.</p>
-</div>
-<div class="tabbed-block">
-<p><code>\ \ c</code> creates a cursor at the start of every visual selection line</p>
-<p><code>\ \ \</code> toggle cursor at position</p>
-</div>
-</div>
-</div>
-<h2 id="search-and-replace">Search and Replace<a class="headerlink" href="#search-and-replace" title="Permanent link">λ︎</a></h2>
-<p>Select a text pattern to search for and use multiple cursors to add a cursor each match, then change each selected occurance concurrently.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">AstroNvim</label><label for="__tabbed_2_2">Practicalli Neovim Config Redux</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>Select the pattern with visual select </p>
-<p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>g</kbd></span> <span class="keys"><kbd>m</kbd></span> <span class="keys"><kbd>a</kbd></span> on each matching text pattern in the buffer</p>
-<p><code>c</code> to change the original text and type the new pattern.  All cursors will update concurrently.</p>
-<p><span class="keys"><kbd class="key-escape">Esc</kbd></span> or <span class="keys"><kbd>f</kbd></span> <span class="keys"><kbd>d</kbd></span> to close multiple cursors.</p>
-</div>
-<div class="tabbed-block">
-<p><code>\ \ a</code> creates a cursor at the start of every visual selection line</p>
-<p><code>\ \ \</code> toggle cursor at position</p>
-<p><code>c</code> to change the original text and type the new pattern.  All cursors will update concurrently.</p>
-<p><span class="keys"><kbd class="key-escape">Esc</kbd></span> or <span class="keys"><kbd>f</kbd></span> <span class="keys"><kbd>d</kbd></span> to close multiple cursors.</p>
-</div>
-</div>
-</div>
-<h2 id="command-quick-reference">Command quick reference<a class="headerlink" href="#command-quick-reference" title="Permanent link">λ︎</a></h2>
-<blockquote>
-<p><code>:help g:VM_maps</code> for a reference of all mappings and instructions on how to change them</p>
-</blockquote>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">AstroNvim</label><label for="__tabbed_3_2">Practicalli Neovim Config Redux</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block"></div>
-<div class="tabbed-block">
-<!-- TODO: How to define the visuual-multi leader key in fennel
-    let g:VM_leader = '\'
--->
-<p><code>\ \</code> is the leader for multiple cursors and will show the visual-multi menu in which-key.</p>
-<p>These commands cover the large majority of use cases for multiple cursors.</p>
-<table>
-<thead>
-<tr>
-<th>Action</th>
-<th>Key</th>
-<th>Command</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Add Cursor at Position</td>
-<td><code>\\\</code></td>
-<td><code>vm-add-cursor</code></td>
-</tr>
-<tr>
-<td>Alignm VM cursors with cursor</td>
-<td><code>\\a</code></td>
-<td><code>vm-align</code></td>
-</tr>
-<tr>
-<td>Select All Words</td>
-<td><code>\\A</code></td>
-<td><code>vm-select-all</code></td>
-</tr>
-<tr>
-<td>Transposition</td>
-<td><code>\\t</code></td>
-<td><code>vm-transpose</code></td>
-</tr>
-<tr>
-<td>Toggle Mappings</td>
-<td><code>\\&lt;Space&gt;</code></td>
-<td><code>vm-mappings-toggle</code></td>
-</tr>
-<tr>
-<td>Find with Regex</td>
-<td><code>\\/</code></td>
-<td><code>vm-regex-search</code></td>
-</tr>
-<tr>
-<td>Reselect Last</td>
-<td><code>\\gS</code></td>
-<td><code>vm-reselect-last</code></td>
-</tr>
-</tbody>
-</table>
-<p>Once visual-multi has started the vm-mappings-buffer mappings are available:</p>
-<table>
-<thead>
-<tr>
-<th>Action</th>
-<th>Key</th>
-<th>Command</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Find Word</td>
-<td><code>&lt;C-n&gt;</code></td>
-<td>vm-find-word</td>
-</tr>
-<tr>
-<td>Next/Previous/Skip</td>
-<td><code>n</code> / <code>N</code> / <code>q</code></td>
-<td>vm-find-next</td>
-</tr>
-<tr>
-<td>Remove Region</td>
-<td><code>Q</code></td>
-<td>vm-remove-region</td>
-</tr>
-<tr>
-<td>Add Cursors Down/Up</td>
-<td><code>&lt;C-Down&gt;</code> / <code>&lt;C-Up&gt;</code></td>
-<td>vm-add-cursors</td>
-</tr>
-<tr>
-<td>Select Right/Left</td>
-<td><code>&lt;S-Right&gt;</code>, <code>&lt;S-Left&gt;</code></td>
-<td>vm-shift-select</td>
-</tr>
-<tr>
-<td>Slash motion</td>
-<td><code>g/</code></td>
-<td>vm-slash</td>
-</tr>
-<tr>
-<td>Select Operator</td>
-<td><code>s</code></td>
-<td>vm-select-operator</td>
-</tr>
-<tr>
-<td>Find Operator</td>
-<td><code>m</code></td>
-<td>vm-find-operator</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>NOTE: <code>C-n</code> conflicts with the Termux binding for naming a session</p>
-</blockquote>
-</div>
-</div>
-</div>
-<h2 id="searching">Searching<a class="headerlink" href="#searching" title="Permanent link">λ︎</a></h2>
-<p><code>g/</code> to search for a match to add when visual-multi is active, rather than the usual <code>/</code> vim search.</p>
-<p><code>n</code> and <code>N</code> can't be used to repeat the search, as they are used to get the next visual-multi match.</p>
-<h2 id="find-with-regex">Find with Regex<a class="headerlink" href="#find-with-regex" title="Permanent link">λ︎</a></h2>
-<p><code>\ \ /</code> followed by a regex pattern will create a selection with that pattern.</p>
-<p><code>n</code> and <code>N</code> finds the next occurrence of the regex pattern</p>
-<h2 id="smart-case-change">Smart case change<a class="headerlink" href="#smart-case-change" title="Permanent link">λ︎</a></h2>
-<p><code>gc</code> In extend-mode will use smartcase to change a selection</p>
-<ul>
-<li>at main cursor, text is always inserted as typed</li>
-<li>at other cursors, if region text was fully uppercased, replacement will be uppercased as well</li>
-<li>if the region text was capitalized, the replacement will be as well</li>
-</ul>
-<h2 id="filter-regions">Filter regions<a class="headerlink" href="#filter-regions" title="Permanent link">λ︎</a></h2>
-<p><code>\ \ f</code> filter out (remove) regions based on pattern or expression.</p>
-<p><code>C-x</code> to cycle filtering method:</p>
-<ul>
-<li>pattern: remove regions that don't match the pattern</li>
-<li>!pattern:  remove regions that match the pattern</li>
-<li>expression: remove regions that don't match the expression (same as below)</li>
-</ul>
-<h2 id="transform-regions-with-expression">Transform regions with expression<a class="headerlink" href="#transform-regions-with-expression" title="Permanent link">λ︎</a></h2>
-<p><code>\ \ e</code> to transform a region with a vim expression, run on each region</p>
-<p>Placeholders can be used in the expression</p>
-<ul>
-<li>`%t~ region's text as a string (as-is)</li>
-<li>`%f~ region's text evaluated as a floating point number</li>
-<li>`%n~ region's text evaluated as an integer number</li>
-<li>`%i~ region's index</li>
-<li>`%N~ total number of regions</li>
-</ul>
-<p>Examples:
-- <code>%f * 0.5</code> divide text of all regions by 2
-- <code>%t ." ". %i ." / ". %n</code>  append index / total to text of each region
-- <code>%i%2 ? %t : toupper(%t)</code>  uppercase all odd regions (1,3,5...)
-- <code>%i%3-2 ? %t : ''</code>  delete every third region</p>
-<h2 id="vm-motions">VM Motions<a class="headerlink" href="#vm-motions" title="Permanent link">λ︎</a></h2>
-<p>visual-multi supports vim motions although they behave differently as their result is dependent on the mode:</p>
-<ul>
-<li><code>cursor mode</code> will move cursors</li>
-<li><code>extend mode</code> motions extend selections</li>
-</ul>
-<p>Unless <em>multiline-mode</em> is enabled motions are restricted to the current line and cannot cross line boundaries</p>
-<p>Some <em>object-motions</em> and <em>various-motions</em> require <em>multiline-mode</em> and aliased to avoid conflict with VM mappings:</p>
-<table>
-<thead>
-<tr>
-<th>vim</th>
-<th>VM~</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>/</td>
-<td>g/</td>
-<td>to next match (for all regions)</td>
-</tr>
-<tr>
-<td>(</td>
-<td>(</td>
-<td>[count] sentences backward</td>
-</tr>
-<tr>
-<td>)</td>
-<td>)</td>
-<td>[count] sentences forward</td>
-</tr>
-<tr>
-<td>{</td>
-<td>{</td>
-<td>[count] paragraphs backward</td>
-</tr>
-<tr>
-<td>}</td>
-<td>}</td>
-<td>[count] paragraphs forward</td>
-</tr>
-<tr>
-<td>[(</td>
-<td>g(</td>
-<td>go to [count] previous unmatched '('</td>
-</tr>
-<tr>
-<td>[{</td>
-<td>g{</td>
-<td>go to [count] previous unmatched '{'</td>
-</tr>
-<tr>
-<td>])</td>
-<td>g)</td>
-<td>go to [count] next unmatched ')'</td>
-</tr>
-<tr>
-<td>]}</td>
-<td>g}</td>
-<td>go to [count] next unmatched '}'</td>
-</tr>
-</tbody>
-</table>
-<h2 id="vm-operators">vm-operators<a class="headerlink" href="#vm-operators" title="Permanent link">λ︎</a></h2>
-<p>Visual-Multi supports several operators by default:</p>
-<ul>
-<li><code>y</code> / <code>d</code> / <code>c</code> to yank / delete / change</li>
-<li><code>gu</code> / <code>gU</code> to change text case</li>
-</ul>
-<p>Visual-Multi uses its own registers that are lists of strings. One element for each region that is yanked/deleted.</p>
-<p>There is also built-in support for:</p>
-<ul>
-<li>vim-surround  e.g. <code>ysiw(</code> to enclose in parentheses</li>
-<li>vim-abolish e.g. <code>cr_</code> to change current word to snake case</li>
-</ul>
-<blockquote>
-<p>`:help g:VM_user_operators to disccover how to doefine other operators</p>
-</blockquote>
-<h2 id="vm-multiline-mode">vm-multiline-mode<a class="headerlink" href="#vm-multiline-mode" title="Permanent link">λ︎</a></h2>
-<p>In normal and insert mode, cursors and selections are kept within their own line.  Cursors are blocked from moving off the current line to the next line.</p>
-<p><code>M</code> enables multiline-mode that allows cuursors to move onto another line.</p>
-<p>Multiline mode must be enabled for an object motions, or they will fail. See |vm-motions|.</p>
-<h2 id="alignment">Alignment<a class="headerlink" href="#alignment" title="Permanent link">λ︎</a></h2>
-<p><code>\\a</code> aligns by setting the minimum column to the highest of all regions
-<code>\\&lt;</code> aligns by character, or [count] characters
-<code>\\&gt;</code> aligns by regex pattern</p>
-<p>In extend-mode selections are collapsed to cursors first, although will work regardless.</p>
-<h2 id="replace-pattern-in-regions">Replace pattern in regions<a class="headerlink" href="#replace-pattern-in-regions" title="Permanent link">λ︎</a></h2>
-<p><code>R</code> to replace with a pattern and then the replacement text</p>
-<p>substitution will take place in all selected regions, leaving unselected text untouched.</p>
-<p>Only working in |extend-mode|. When |R| is pressed in |cursor-mode|, it will start |vm-replace-mode| instead.</p>
-<h2 id="subtract-pattern-from-regions">Subtract pattern from regions<a class="headerlink" href="#subtract-pattern-from-regions" title="Permanent link">λ︎</a></h2>
-<p><code>\\s</code> subtract the entered pattern from regions, splitting them. Only working in |extend-mode|.</p>
-<h2 id="transposition">Transposition<a class="headerlink" href="#transposition" title="Permanent link">λ︎</a></h2>
-<p><code>\ \ t</code> swaps the contents of selections, cycling them if there are more than two.</p>
-<p>If there is an equal number of selections in each line, swapping takes place within the same line only. Only in |extend-mode|.</p>
-<h2 id="duplication">Duplication<a class="headerlink" href="#duplication" title="Permanent link">λ︎</a></h2>
-<p><code>\ \ d</code> duplicates in place the contents of the selections, reselecting the original ones. Only in extend-mode.</p>
-<h2 id="shift-selections">Shift Selections<a class="headerlink" href="#shift-selections" title="Permanent link">λ︎</a></h2>
-<p><M-S-Right> and <M-S-Left> move the selections right or left, preserving the surroundings.</p>
-<h2 id="case-conversion">Case conversion<a class="headerlink" href="#case-conversion" title="Permanent link">λ︎</a></h2>
-<p><code>\\C</code> runs on inner words in cursor mode</p>
-<ul>
-<li><code>u</code> lowercase</li>
-<li><code>U</code> UPPERCASE</li>
-<li><code>C</code> Captialize</li>
-<li><code>t</code> Title Case</li>
-<li><code>c</code> camelCase</li>
-<li><code>P</code> PascalCase</li>
-<li><code>s</code> snake_case</li>
-<li><code>S</code> SNAKE_UPPERCASE</li>
-<li><code>-</code> dash-case</li>
-<li><code>.</code> dot.case</li>
-<li><code>&lt;space&gt;</code> space case</li>
-</ul>
-<h2 id="modes">Modes<a class="headerlink" href="#modes" title="Permanent link">λ︎</a></h2>
-<p><em>cursor-mode</em> and <em>extend-mode</em> are two Visual-Multi modes, roughly corresponding to <em>normal-mode</em> and <em>visual-mode</em></p>
-<p><code>TAB</code> switches between cursor-mode and extended-mode</p>
-<h3 id="vm-cursor-mode">VM Cursor Mode<a class="headerlink" href="#vm-cursor-mode" title="Permanent link">λ︎</a></h3>
-<p>cursor-mode commands expect a motion, e.g. <code>c</code> should be followed by a text object to be changed.</p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>operators</code></td>
-<td>see vm-operators</td>
-</tr>
-<tr>
-<td><code>motions</code></td>
-<td>see vm-motions</td>
-</tr>
-<tr>
-<td><code>|</code></td>
-<td>set column for all cursors (to current column or [count])</td>
-</tr>
-<tr>
-<td><code>r</code></td>
-<td>replace single character</td>
-</tr>
-<tr>
-<td><code>R</code></td>
-<td>enter vm-replace-mode</td>
-</tr>
-<tr>
-<td><code>~</code></td>
-<td>change case of single character</td>
-</tr>
-<tr>
-<td><code>&amp;</code></td>
-<td>repeat last substitution</td>
-</tr>
-<tr>
-<td><code>&lt;C-A&gt;</code></td>
-<td>increase numbers</td>
-</tr>
-<tr>
-<td><code>&lt;C-X&gt;</code></td>
-<td>decrease numbers</td>
-</tr>
-<tr>
-<td><code>g&lt;C-A&gt;</code></td>
-<td>progressively increase numbers (<code>v_g_CTRL-A</code>)</td>
-</tr>
-<tr>
-<td><code>g&lt;C-X&gt;</code></td>
-<td>progressively decrease numbers (<code>v_g_CTRL-X</code>)</td>
-</tr>
-</tbody>
-</table>
-<p>You can enter |insert-mode| with <code>i</code>, <code>I</code>, <code>a</code>, <code>A</code>, and only from cursor mode also with <code>o</code> and <code>O</code>.</p>
-<p>Also see <code>vm-motions</code> for supported motions in VM (some with differences).</p>
-<h3 id="vm-extend-mode">VM Extend Mode<a class="headerlink" href="#vm-extend-mode" title="Permanent link">λ︎</a></h3>
-<p>extend-mode is like having multiple visual selections.  motions extend the slections and change / yank / delete commands don't wait for a motion, just like in visual mode.</p>
-<p>Even the key <code>o</code> works as in visual mode, inverting the anchor of the selections.</p>
-<p>Some commands are specific to |extend-mode|, such as:</p>
-<ul>
-<li><code>s</code> vim-surround</li>
-<li><code>R</code> replace pattern in regions</li>
-<li><code>\\s</code> split regions by pattern</li>
-<li><code>\\e</code> transform regions text with vim expression</li>
-</ul>
-<p>Some commands enforce <em>cursor-mode</em> when run from <em>extend-mode</em>:</p>
-<ul>
-<li><code>&lt;C-A&gt;</code> increase numbers</li>
-<li><code>&lt;C-X&gt;</code> decrease numbers</li>
-</ul>
-<p>Others can use a different mapping:</p>
-<ul>
-<li><code>gu/gU</code> change case (instead of vim <code>u</code> / <code>U</code>)</li>
-<li><code>o</code> and <code>O</code> mappings are used to invert the facing of the selected regions and not to start insert mode.</li>
-</ul>
+<h1 id="search-and-replace">Search and Replace<a class="headerlink" href="#search-and-replace" title="Permanent link">λ︎</a></h1>
+<p><code>:substitute</code> or <code>:s</code> vim command will highlight the matches for a text pattern and substitute for a new pattern</p>
+<p>Built-in help for the command </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">:</span>help :substitute
+</code></pre></div>
+<details class="hint">
+<summary>Multiple cursors can also be used for multiple substitutions</summary>
+<p><a href="../multiple-cursors/">multiple cursors</a> created on each occurance can be used to search and replace a pattern</p>
+</details>
+<p>Subsitute the first matching patterns in the current line</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">:</span>s<span class="sr">/current-pattern/</span><span class="k">new</span><span class="p">-</span>pattern
+</code></pre></div>
+<p>Subsitute all the matching patterns in the current line,  <code>g</code> representing all occurances in a line</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">:</span>s<span class="sr">/current-pattern/</span><span class="k">new</span><span class="p">-</span>pattern/<span class="k">g</span>
+</code></pre></div>
+<p>Use <code>%</code> to specify the current buffer as the scope to change all matches</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">:</span>%s<span class="sr">/current-pattern/</span><span class="k">new</span><span class="p">-</span>pattern/<span class="k">g</span>
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
@@ -2626,42 +1919,6 @@
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../plugin-manager/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Package Manager" rel="prev">
-            <div class="md-footer__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Package Manager
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../zen-mode/" class="md-footer__link md-footer__link--next" aria-label="Next: Zen Mode" rel="next">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Zen Mode
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">

@@ -136,6 +136,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://practical.li/neovim/neovim-basics/search-replace/</loc>
+         <lastmod>2023-07-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://practical.li/neovim/neovim-basics/snippets/</loc>
          <lastmod>2023-07-11</lastmod>
          <changefreq>daily</changefreq>
