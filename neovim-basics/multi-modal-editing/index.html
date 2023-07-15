@@ -2050,12 +2050,18 @@
 <p><code>s</code> substitues the selection, type the characters to surround the selection.</p>
 <p><code>p</code> to pase the original text</p>
 <h3 id="nvim-surround">nvim-surround<a class="headerlink" href="#nvim-surround" title="Permanent link">λ︎</a></h3>
+<p><a href="https://github.com/kylechui/nvim-surround">nvim-surround</a> provides enhancments over the neovim surround command.</p>
 <div class="admonition info">
 <p class="admonition-title">nvim-surround included in Practicalli AstroNvim Config</p>
 </div>
 <h4 id="visual-mode">Visual Mode<a class="headerlink" href="#visual-mode" title="Permanent link">λ︎</a></h4>
 <p><code>viw</code> to select the current word (visual in word)</p>
-<p><code>S</code> on a visual selection to surround with next that character, e.g. <code>S)</code> to surround with parens.</p>
+<p><span class="keys"><kbd>S</kbd></span>  on a visual selection to surround with next that character, e.g. <code>S)</code> to surround with parens.</p>
+<div class="admonition hint">
+<p class="admonition-title">Closing paren surrounds without spaces</p>
+<p><code>)</code>, <code>]</code>, <code>}</code> surrounds the selected text without spaces between the text and the open and closing parens.</p>
+<p><code>(</code>, <code>[</code>, <code>{</code> surrounds the selected text with a space between the text and the open and closing parens.</p>
+</div>
 <h4 id="normal-mode">Normal mode<a class="headerlink" href="#normal-mode" title="Permanent link">λ︎</a></h4>
 <p><code>cs</code> inside an existing pair of characters to change them to another pair of surrounding characters, e.g. <code>cs(}</code> to change (text) to {text}</p>
 <p><code>ds</code> inside a pair of surrounding characters to delete them, e.g. <code>ds(</code> to change (text) to text</p>
@@ -2090,7 +2096,7 @@ delete(functi*on calls)     dsf             function calls
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 8, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 15, 2023</span>
       
     
   </small>
