@@ -2022,8 +2022,8 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Astronvim</label><label for="__tabbed_1_2">Practicalli Neovim Config Redux</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><code>SPC e</code> toggles neo-tree file browser</p>
-<p><code>SPC o</code> toggles between buffer and neo-tree</p>
+<p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>e</kbd></span> toggles neo-tree file browser</p>
+<p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>o</kbd></span> toggles between buffer and neo-tree</p>
 <p>Neotree icons</p>
 <ul>
 <li>yellow dot - unsaved changes</li>
@@ -2031,10 +2031,12 @@
 <li>cross - git deleted changes</li>
 <li>Warning triangle - lsp diagnostics issues</li>
 </ul>
+<p><span class="keys"><kbd>h</kbd></span> <span class="keys"><kbd>j</kbd></span> <span class="keys"><kbd>k</kbd></span> <span class="keys"><kbd>l</kbd></span> to navigate the file tree hierachy</p>
 <p><code>&lt;</code> and <code>&gt;</code> to navigate between File, Bufs and Git sources tabs</p>
+<p><span class="keys"><kbd class="key-question">?</kbd></span> shows neotree help, listing key bindings</p>
 </div>
 <div class="tabbed-block">
-<p><code>SPC f t t</code> to open file explorer</p>
+<p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>f</kbd></span> <span class="keys"><kbd>t</kbd></span> <span class="keys"><kbd>t</kbd></span> to open file explorer</p>
 </div>
 </div>
 </div>
@@ -2047,9 +2049,14 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Astronvim</label><label for="__tabbed_2_2">Practicalli Neovim Config Redux</label><label for="__tabbed_2_3">Neovim</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><code>SPC w</code> will write all buffer changes to the associate file.</p>
-<p><code>SPC n</code> creates a new buffer that can be written to a given file using <code>:write path/to/filename</code></p>
+<p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>w</kbd></span> will write all buffer changes to the associate file.</p>
+<p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>n</kbd></span> creates a new buffer that can be written to a given file using <code>:write path/to/filename</code></p>
 <p><code>:write path/to/filename</code> will write the current buffer to a new file.</p>
+<p>Use Neotree as a convienient way to create, rename, move and delete files and directories</p>
+<p><span class="keys"><kbd>a</kbd></span> to add a file using the given name, or directory if the name ends in a <code>/</code></p>
+<p><span class="keys"><kbd>m</kbd></span> to move a file or directory</p>
+<p><span class="keys"><kbd>r</kbd></span> to rename a file or directory</p>
+<p><span class="keys"><kbd>d</kbd></span> to delete a file or directory, showing a confirmation prompt first</p>
 </div>
 <div class="tabbed-block">
 <p><code>SPC f b ESC C</code> to create a new file or directory. The base path is shown in the command bar.  Type the name of directories and file name as required. <code>RTN</code> to create or <code>ESC</code> to cancel.  The newly created directories or file name appears n the Telescope list and scan be selected for opening.</p>
