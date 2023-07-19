@@ -2069,6 +2069,12 @@
 <div class="tabbed-block">
 <p><code>:write path/to/filename</code> will write the current buffer to a new file</p>
 <p><code>:!mkdir path/to/directory</code> will create a new directory</p>
+<p>If a file is already opened, i.e. with <code>:edit</code>, there is some short-hand syntax to simplify the typing</p>
+<p><code>:!mkdir -p %:h</code></p>
+<p><code>-p</code> option createst any parts of the path required to make the full path</p>
+<p><code>%</code> is the neovim name of the current file</p>
+<p><code>:h</code> for the current directory (the “head” of the path).</p>
+<p><code>!</code> is the NeoVim terminal shell command</p>
 </div>
 </div>
 </div>
