@@ -146,6 +146,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://practical.li/neovim/neovim-basics/terminal/</loc>
+         <lastmod>2023-07-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://practical.li/neovim/neovim-basics/zen-mode/</loc>
          <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
