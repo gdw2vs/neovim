@@ -1975,22 +1975,47 @@
 <p>Run unit tests from within Neovim, showing a summary of test results or a full test report (especially if there are failures)</p>
 <!-- TODO: investigate test runner with links in test report to jump to tests / code that is cause of error -->
 
-<p>Or run Kaocka or Cognitech-Labs test runners in watch mode in a separate terminal session</p>
-<div class="admonition hint">
-<p class="admonition-title">Kaocha test runner default</p>
-<p><a href="https://github.com/practicalli/neovim-config-redux">practicalli/neovim-config-redux</a> sets Kaocha as the default test runner</p>
-</div>
+<p>Or run Kaocka test runners in a terminal session, optionally in watch mode to re-run tests on every saved change.</p>
+<details class="info">
+<summary>Practicalli sets Kaocha test runner as default</summary>
+<p><a href="https://github.com/practicalli/neovim-config-redux"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> practicalli/neovim-config-redux</a> sets Kaocha as the default test runner</p>
+<p>Kaocha test runner set in <a href="https://github.com/AstroNvim/astrocommunity/tree/main/lua/astrocommunity/pack/clojure"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Astrocommunity Clojure language pack</a></p>
+<div class="highlight"><span class="filename">Astrocommunity Clojure language pack</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  <span class="s2">&quot;Olical/conjure&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  <span class="c1">-- load plugin on filetypes</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  <span class="n">ft</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;clojure&quot;</span> <span class="p">},</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  <span class="n">init</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">[</span><span class="s2">&quot;conjure#log#hud#width&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">[</span><span class="s2">&quot;conjure#log#hud#enabled&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">[</span><span class="s2">&quot;conjure#log#hud#anchor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;SE&quot;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">[</span><span class="s2">&quot;conjure#log#botright&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">[</span><span class="s2">&quot;conjure#extract#context_header_lines&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">[</span><span class="s2">&quot;conjure#eval#comment_prefix&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;;; &quot;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">[</span><span class="s2">&quot;conjure#client#clojure#nrepl#connection#auto_repl#enabled&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">[</span><span class="s2">&quot;conjure#client#clojure#nrepl#connection#auto_repl#hidden&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">[</span><span class="s2">&quot;conjure#client#clojure#nrepl#connection#auto_repl#cmd&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">nil</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">[</span><span class="s2">&quot;conjure#client#clojure#nrepl#eval#auto_require&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="hll">    <span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">[</span><span class="s2">&quot;conjure#client#clojure#nrepl#test#runner&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;kaocha&quot;</span>
+</span><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_create_autocmd</span><span class="p">(</span><span class="s2">&quot;BufNewFile&quot;</span><span class="p">,</span> <span class="p">{</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>      <span class="n">group</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_create_augroup</span><span class="p">(</span><span class="s2">&quot;conjure_log_disable_lsp&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="n">clear</span> <span class="o">=</span> <span class="kc">true</span> <span class="p">}),</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>      <span class="n">pattern</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;conjure-log-*&quot;</span> <span class="p">},</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>      <span class="n">callback</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span> <span class="n">vim</span><span class="p">.</span><span class="n">diagnostic</span><span class="p">.</span><span class="n">disable</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="kr">end</span><span class="p">,</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>      <span class="n">desc</span> <span class="o">=</span> <span class="s2">&quot;Conjure Log disable LSP diagnostics&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    <span class="p">})</span>
+</code></pre></div>
+</details>
 <h2 id="include-test-path">Include test path<a class="headerlink" href="#include-test-path" title="Permanent link">λ︎</a></h2>
 <p>Ensure the <code>test</code> directory is included in the classpath when starting a REPL.  Use a project or user-level alias that includes an <code>:extra-paths</code> key that includes <code>["test"]</code> path</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">clojure</span><span class="w"> </span><span class="nv">-M</span><span class="ss">:env/test:lib/reloaded:repl/rebel</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">clojure</span><span class="w"> </span><span class="nv">-M</span><span class="ss">:env/test:lib/reloaded:repl/rebel</span>
 </code></pre></div>
 <h2 id="conjure-test-runners">Conjure Test runners<a class="headerlink" href="#conjure-test-runners" title="Permanent link">λ︎</a></h2>
 <p><code>, t n</code> to run the tests for the current namespace</p>
 <p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-conjure-tests-results-hud.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Neovim - Conjure Clojure unit test runner with test results in HUD" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-conjure-tests-results-hud.png" /></a></p>
 <h2 id="external-test-runner">External test runner<a class="headerlink" href="#external-test-runner" title="Permanent link">λ︎</a></h2>
-<p>In a buffer or separate terminal session, start a test runner in watch mode.  Tests run automatically when the code changes are saved</p>
+<p>Open a terminal in Neovim or a separate terminal session to run start a test runner in watch mode.  Tests run automatically when the code changes are saved</p>
 <p>Include the <code>:env/test</code> alias to include additional paths and dependencies for the test environment configuration, e.g. using additional libraries to run the tests such as mocking or human readable output.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>clojure<span class="w"> </span>-X:env/test:test/watch
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>clojure<span class="w"> </span>-X:env/test:test/watch
 </code></pre></div>
 <p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/kaocha-test-runner-watch.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Kaocha test runner for Clojure in watch mode" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/kaocha-test-runner-watch.png" /></a></p>
 <div class="admonition hint">
@@ -1998,13 +2023,13 @@
 <p>Start the watcher with <a href="https://cljdoc.org/d/lambdaisland/kaocha/1.66.1034/doc/6-focusing-and-skipping" target="_blank">focused or skiped tests by name or meta data (test selectors)</a></p>
 </div>
 <p>Test selectors to run a sub-set of tests based on selector meta data added to <code>deftest</code> code</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>clojure -X:test/watch :skip-meta :persistence
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>clojure -X:test/watch :skip-meta :persistence
 </code></pre></div>
 <blockquote>
 <p>TODO: check syntax of Kaocha test selectors</p>
 </blockquote>
 <p>Using Kaocha, specific test namespaces (or specific tests) can be run (or excluded)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>clojure -X:test/watch :namespace &#39;[practicalli.server&quot;]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>clojure -X:test/watch :namespace &#39;[practicalli.server&quot;]
 </code></pre></div>
 <blockquote>
 <p>TODO: check syntax of Kaocha namespace and specific tests</p>
@@ -2015,7 +2040,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 23, 2023</span>
       
     
   </small>
