@@ -2053,7 +2053,9 @@
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># Set XDG location of Emacs Spacemacs configuration</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SPACEMACSDIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">/spacemacs&quot;</span>
 </code></pre></div>
-<p><code>source ~/.profile</code> to load the environment variables into the shell, or exit Termux and restart.</p>
+<p>Load the environment variables into the shell, or exit Termux and restart.</p>
+<div class="highlight"><span class="filename">Load .profile into shell</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">source</span><span class="w"> </span>~/.profile
+</code></pre></div>
 <div class="admonition hint">
 <p class="admonition-title">nano editor installed by default</p>
 <p><code>nano</code> editor is used to edit the commands as the package is installed by default in termux. <code>vim</code>, <code>neovim</code>, <code>emacs</code> or any other Linux command line editor can be used if the package is first installed.  Termux will list packages to install when trying to run a command that is from a package not yet installed.</p>
@@ -2065,12 +2067,16 @@
 <li><code>git</code> - clone configuration files and projects (see Git version control section)</li>
 <li><code>openssh</code> - SSH service and tools to generate SSH keys</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pkg install curl wget git openssh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pkg install curl wget git openssh
 </code></pre></div>
 <p><a href="../git/">Configure a Git Identify and SSH key</a> to before committing and pushing changes, or cloning repositories using the SSH protocol.  <a href="https://github.com/practicalli/dotfiles" target="_blank">practicalli/dotfiles</a> contains example configuration, ignore patterns and commit template for using Git.</p>
 <h2 id="optional-configure-termux-settings">[Optional] Configure Termux Settings<a class="headerlink" href="#optional-configure-termux-settings" title="Permanent link">λ︎</a></h2>
-<p><code>nano ~/.termu/termux.properties</code> to configure the default settings for termux.</p>
-<p><code>termux-reload-settings</code> if any of the values are set (restarting Termux is not enough to load setting changes)</p>
+<p>Edit <code>~/.termux/termux.properties</code> to configure the default settings for termux.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nano<span class="w"> </span>~/.termux/termux.properties
+</code></pre></div>
+<p>Load <code>termux.properties</code> if values are changed (restarting Termux is not enough to load setting changes)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>termux-reload-settings
+</code></pre></div>
 <p>The defaults are suitable for the majority of uses, although you may wish to consider:</p>
 <ul>
 <li><code>fullscreen</code> set to <code>true</code> to us the whole screen, hiding Android menu bars, etc.</li>
@@ -2101,7 +2107,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 27, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 4, 2023</span>
       
     
   </small>
