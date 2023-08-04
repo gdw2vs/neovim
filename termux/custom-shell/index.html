@@ -2027,54 +2027,46 @@
 <p>Powerline10k is a visually appealing prompt with a setup script to visually choose the presentation of the prompt.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 </code></pre></div>
-<p>Next time zsh is run, powerline10k setup script will run.  If Meslo is not set as the terminal font, the setup script offers to install the font.  Installing the font will restart Termux.</p>
-<p><code>p10k configure</code> to manually run the powerline10k setup script.</p>
-<!--
-## Install Prezto community configuration
-
-Clone prezto and its sub-modules into `XDG_CONFIG_HOME/zsh` which is typically `~/.config/zsh`
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git clone --recursive https://github.com/sorin-ionescu/prezto.git &quot;${ZDOTDIR:-${XDG_CONFIG_HOME:-$HOME/.config}/zsh}/.zprezto&quot;
+<p>Edit <code>~/.zshrc</code> and set the theme to <code>ZSH_THEME="powerlevel10k/powerlevel10k"</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>nano<span class="w"> </span>~/.zshrc
 </code></pre></div>
-
-
-Set the location of the Zsh configuration home with `$ZDOTDIR`, relative to the XDG locations
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>export ZDOTDIR=&quot;${ZDOTDIR:=$XDG_CONFIG_HOME/zsh}&quot;
+<p>Save the changes <code>exit</code> termux.</p>
+<p>Next time zsh is run, powerline10k setup script will run.  If Meslo is not set as the terminal font, the setup script offers to install the font.  Installing the font will restart Termux (without prompting for a restart).</p>
+<p>The powerline10k setup script provides a wizard to configure each part of the prompt.</p>
+<blockquote>
+<p><code>p10k configure</code> command will manually run the powerline10k setup script.</p>
+</blockquote>
+<details class="info">
+<summary>Prezto Zsh community configuration</summary>
+<p>NOTE: previous attempts to use Prezto proved to have issues</p>
+<p>Clone prezto and its sub-modules into <code>XDG_CONFIG_HOME/zsh</code> which is typically <code>~/.config/zsh</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/sorin-ionescu/prezto.git<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ZDOTDIR</span><span class="k">:-</span><span class="si">${</span><span class="nv">XDG_CONFIG_HOME</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.config</span><span class="si">}</span><span class="p">/zsh</span><span class="si">}</span><span class="s2">/.zprezto&quot;</span>
 </code></pre></div>
-
-
-Create a new Zsh configuration by copying/linking the Zsh configuration files provided:
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>setopt EXTENDED_GLOB
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>for rcfile in &quot;${ZDOTDIR:-$HOME}&quot;/.zprezto/runcoms/^README.md(.N); do
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  ln -s &quot;$rcfile&quot; &quot;${ZDOTDIR:-$HOME}/.${rcfile:t}&quot;
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>done
+<p>Set the location of the Zsh configuration home with <code>$ZDOTDIR</code>, relative to the XDG locations</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ZDOTDIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ZDOTDIR</span><span class="p">:=</span><span class="nv">$XDG_CONFIG_HOME</span><span class="p">/zsh</span><span class="si">}</span><span class="s2">&quot;</span>
 </code></pre></div>
-
-!!! Hint "Practicalli Zsh configuration"
-    Clone [practicalli/dotfiles](https://github.com/practicalli/dotfiles) and replace the symbolic links in `$XDG_CONFIG_HOME/zsh` with links to the respective Zsh configuration files in the cloned repository (or copy the files if you prefer)
-
-    Copy or create a symbolic like for the `.p10k configuration or skip this to create your own configuration when next starting `zsh`.`
-
-
-Edit `$XDG_CONFIG_HOME/.config/zsh/.zshenv` and add the following lines to enable zsh to find the prezto configuration
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">XDG_CONFIG_HOME</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">XDG_CONFIG_HOME</span><span class="p">:=</span><span class="nv">$HOME</span><span class="p">/.config</span><span class="si">}</span><span class="s2">&quot;</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ZDOTDIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ZDOTDIR</span><span class="p">:=</span><span class="nv">$XDG_CONFIG_HOME</span><span class="p">/zsh</span><span class="si">}</span><span class="s2">&quot;</span>
+<p>Create a new Zsh configuration by copying/linking the Zsh configuration files provided:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>setopt<span class="w"> </span>EXTENDED_GLOB
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">for</span><span class="w"> </span>rcfile<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ZDOTDIR</span><span class="k">:-</span><span class="nv">$HOME</span><span class="si">}</span><span class="s2">&quot;</span>/.zprezto/runcoms/^README.md<span class="o">(</span>.N<span class="o">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span>ln<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$rcfile</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ZDOTDIR</span><span class="k">:-</span><span class="nv">$HOME</span><span class="si">}</span><span class="s2">/.</span><span class="si">${</span><span class="nv">rcfile</span><span class="p">:</span><span class="nv">t</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">done</span>
 </code></pre></div>
-
-Create a symbolic link from `$HOME/.zshenv` to `$XDG_CONFIG_HOME/.config/zsh/.zshenv` (or to the .zshenv file from [practicalli/dotfiles](https://github.com/practicalli/dotfiles))
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>ln<span class="w"> </span>-s<span class="w"> </span><span class="nv">$XDG_CONFIG_HOME</span>/.config/zsh/.zshenv<span class="w"> </span><span class="nv">$HOME</span>/.zshenv
+<div class="admonition hint">
+<p class="admonition-title">Practicalli Zsh configuration</p>
+<p>Clone <a href="https://github.com/practicalli/dotfiles">practicalli/dotfiles</a> and replace the symbolic links in <code>$XDG_CONFIG_HOME/zsh</code> with links to the respective Zsh configuration files in the cloned repository (or copy the files if you prefer)</p>
+<p>Copy or create a symbolic like for the <code>.p10k configuration or skip this to create your own configuration when next starting</code>zsh<code>.</code></p>
+</div>
+<p>Edit <code>$XDG_CONFIG_HOME/.config/zsh/.zshenv</code> and add the following lines to enable zsh to find the prezto configuration</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">XDG_CONFIG_HOME</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">XDG_CONFIG_HOME</span><span class="p">:=</span><span class="nv">$HOME</span><span class="p">/.config</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ZDOTDIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ZDOTDIR</span><span class="p">:=</span><span class="nv">$XDG_CONFIG_HOME</span><span class="p">/zsh</span><span class="si">}</span><span class="s2">&quot;</span>
 </code></pre></div>
-
-Check the configuration is working by loading the .zshenv configuration
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">source</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ZDOTDIR</span><span class="s2">/.zshenv&quot;</span>
+<p>Create a symbolic link from <code>$HOME/.zshenv</code> to <code>$XDG_CONFIG_HOME/.config/zsh/.zshenv</code> (or to the .zshenv file from <a href="https://github.com/practicalli/dotfiles">practicalli/dotfiles</a>)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ln<span class="w"> </span>-s<span class="w"> </span><span class="nv">$XDG_CONFIG_HOME</span>/.config/zsh/.zshenv<span class="w"> </span><span class="nv">$HOME</span>/.zshenv
 </code></pre></div>
- -->
-
+<p>Check the configuration is working by loading the .zshenv configuration</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">source</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ZDOTDIR</span><span class="s2">/.zshenv&quot;</span>
+</code></pre></div>
+</details>
 <div class="admonition info">
 <p class="admonition-title">Using Oh My Bash</p>
 <p>If preferring Bash, then <a href="https://ohmybash.nntoan.com/" target="_blank">ohmybash</a> provides a nice command line experience, showing completions clearer, nice themes that provide information.</p>
@@ -2085,7 +2077,7 @@ Check the configuration is working by loading the .zshenv configuration
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 4, 2023</span>
       
     
   </small>
