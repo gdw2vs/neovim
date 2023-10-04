@@ -1174,6 +1174,19 @@
     Select files and directories
   </a>
   
+    <nav class="md-nav" aria-label="Select files and directories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swap-file" class="md-nav__link">
+    Swap file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2542,6 +2555,19 @@
     Select files and directories
   </a>
   
+    <nav class="md-nav" aria-label="Select files and directories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swap-file" class="md-nav__link">
+    Swap file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2685,6 +2711,24 @@
 </div>
 </div>
 </div>
+<h3 id="swap-file">Swap file<a class="headerlink" href="#swap-file" title="Permanent link">λ︎</a></h3>
+<p>Neovim creates a swap file, <code>.swp</code>, containing the changes made in a buffer, so changes are not be lost should there be an issue with the computer or Neovim. </p>
+<details class="info">
+<summary>Swap file location</summary>
+<p><code>:swapname</code> shows the full path to the swap file for the current buffer, e.g. 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/home/practicalli/.local/state/astronvim/swap//%home%practicalli%projects%practicalli%books%neovim%docs%neovim-basics%files-buffers-windows.md.swp<span class="sb">`</span>
+</code></pre></div></p>
+</details>
+<p>Opening a file checks if there is an associated swap file and prompts the user </p>
+<ul>
+<li>(A)bort opening the file</li>
+<li>(D)elete the swap file</li>
+<li>(E)dit anyway, select if the file is newer than the swap file</li>
+<li>(R)ecover the data in the swap file into the file buffer</li>
+</ul>
+<blockquote>
+<p><code>:edit</code> after the file is open also prompts if there is a swap file.  Selecting (D)elete will delete the swap file without changing the current buffer</p>
+</blockquote>
 <h2 id="buffer-management">Buffer management<a class="headerlink" href="#buffer-management" title="Permanent link">λ︎</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">AstroNvim</label><label for="__tabbed_4_2">Practicalli Neovim Config Redux</label></div>
 <div class="tabbed-content">
@@ -2693,7 +2737,7 @@
 <p><code>SPC b b</code> to select a buffer from the tab line, pressing the character that appears next to the buffer tab (case sensitive)</p>
 <p><code>SPC b D</code> to delete a buffer from the tab line, pressing the character that appears next to the buffer tab (case sensitive)</p>
 <p>Open multiple buffers when starting Neovim by specifying multiple files to open</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>astro<span class="w"> </span>README.md<span class="w"> </span>deps.edn<span class="w"> </span>src/practicalli/playground.clj<span class="w"> </span>test/practicalli/playground.clj
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>astro<span class="w"> </span>README.md<span class="w"> </span>deps.edn<span class="w"> </span>src/practicalli/playground.clj<span class="w"> </span>test/practicalli/playground.clj
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -2704,7 +2748,7 @@
 <p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-telescope-open-buffer.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Neovim - telescope - swtich between buffers" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-telescope-open-buffer.png" /></a></p>
 <!-- TODO: close a buffer (not just its window) -->
 <p>Open multiple buffers when starting Neovim by specifying multiple files to open</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nvim<span class="w"> </span>README.md<span class="w"> </span>deps.edn<span class="w"> </span>src/practicalli/playground.clj<span class="w"> </span>test/practicalli/playground.clj
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nvim<span class="w"> </span>README.md<span class="w"> </span>deps.edn<span class="w"> </span>src/practicalli/playground.clj<span class="w"> </span>test/practicalli/playground.clj
 </code></pre></div>
 </div>
 </div>
@@ -2718,7 +2762,7 @@
 </div>
 <div class="tabbed-block">
 <p>line wrap disabled in configuration by default.</p>
-<div class="highlight"><span class="filename">fnl/config/init.fnl</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="nv">nvim.ex.set</span><span class="w"> </span><span class="ss">:nowrap</span><span class="p">)</span>
+<div class="highlight"><span class="filename">fnl/config/init.fnl</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="nv">nvim.ex.set</span><span class="w"> </span><span class="ss">:nowrap</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -2749,7 +2793,7 @@
 <p><code>:wincmd</code> can be used as an alternative to the Normal mode key bindings</p>
 </blockquote>
 <p>Open file in a new window</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>:sp<span class="w"> </span>relative-or-full-filename-path
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>:sp<span class="w"> </span>relative-or-full-filename-path
 </code></pre></div>
 <p>Resize windows</p>
 <p><code>C-w</code> <code>-</code>, <code>+</code>, <code>&lt;</code> or <code>&gt;</code> for vertical or horizontal size adjustment</p>
