@@ -1198,8 +1198,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tab-management" class="md-nav__link">
-    Tab management
+  <a href="#tab-pages" class="md-nav__link">
+    Tab pages
   </a>
   
 </li>
@@ -2566,8 +2566,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tab-management" class="md-nav__link">
-    Tab management
+  <a href="#tab-pages" class="md-nav__link">
+    Tab pages
   </a>
   
 </li>
@@ -2765,12 +2765,18 @@
 <!-- nmap <silent> <A-Left> :wincmd h<CR> -->
 <!-- nmap <silent> <A-Right> :wincmd l<CR> -->
 
-<h2 id="tab-management">Tab management<a class="headerlink" href="#tab-management" title="Permanent link">λ︎</a></h2>
-<p>Tabs can hold one or more windows and are useful for grouping different types of files and information, e.g. Clojure source code in one tab, tests in a second tab and REPL log in a third.</p>
+<h2 id="tab-pages">Tab pages<a class="headerlink" href="#tab-pages" title="Permanent link">λ︎</a></h2>
+<p>A Tab page can hold one or more tabs and are useful for grouping different types of files and information. </p>
+<p>A Tab page holds one or more windows, each window is a view on a buffer, a buffer holds the contents of a file or any other information in the editor memory (repl log, etc).</p>
+<p>A tab page can provide a logical grouping of windows, e.g. Clojure source code in one tab, tests in a second tab and REPL log in a third.</p>
+<p>Neovim commands may be constrained within the bounds of a tab page (without using the :tab modifier)</p>
+<p>Tab pages are often referred to as tabs.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">AstroNvim</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>"g"++ <span class="keys"><kbd>T</kbd></span> toggles between tabs.</p>
+<p><span class="keys"><kbd>g</kbd></span> <span class="keys"><kbd class="key-tab">Tab</kbd></span> jump to previously selected tab, commonly used to toggle between two tabs  (Practicalli AstroNvim mapping)</p>
+<p><span class="keys"><kbd>g</kbd></span> <span class="keys"><kbd>t</kbd></span> jump to next tab page</p>
+<p><span class="keys"><kbd>g</kbd></span> <span class="keys"><kbd>T</kbd></span> jump to previous tab page</p>
 </div>
 </div>
 </div>
