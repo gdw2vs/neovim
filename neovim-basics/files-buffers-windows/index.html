@@ -2712,13 +2712,14 @@
 </div>
 </div>
 <h3 id="swap-file">Swap file<a class="headerlink" href="#swap-file" title="Permanent link">λ︎</a></h3>
-<p>Neovim creates a swap file, <code>.swp</code>, containing the changes made in a buffer, so changes are not be lost should there be an issue with the computer or Neovim. </p>
+<p>Neovim creates a swap file, <code>.swp</code>, containing the changes made in a buffer to minimise loss should there be an issue with the computer or Neovim.  Changes are written to the swap file after 200 characters or after 4 seconds pause. </p>
 <details class="info">
 <summary>Swap file location</summary>
 <p><code>:swapname</code> shows the full path to the swap file for the current buffer, e.g. 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/home/practicalli/.local/state/astronvim/swap//%home%practicalli%projects%practicalli%books%neovim%docs%neovim-basics%files-buffers-windows.md.swp<span class="sb">`</span>
 </code></pre></div></p>
 </details>
+<p><code>:preserve</code> command will write all text from current buffer to the swap file.</p>
 <p>Opening a file checks if there is an associated swap file and prompts the user </p>
 <ul>
 <li>(A)bort opening the file</li>
