@@ -2720,6 +2720,7 @@
 </code></pre></div></p>
 </details>
 <p><code>:preserve</code> command will write all text from current buffer to the swap file.</p>
+<p><code>:recover</code> command overwrites the current buffer with the data from the swap file.  <code>:recover!</code> command must be use if the buffer has newer changes than the swap file.  Add a filename after the command to recover to a different file than that contained in the current buffer. </p>
 <p>Opening a file checks if there is an associated swap file and prompts the user </p>
 <ul>
 <li>(A)bort opening the file</li>
