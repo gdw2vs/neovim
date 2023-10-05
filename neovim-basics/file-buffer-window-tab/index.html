@@ -20,7 +20,7 @@
         <meta name="author" content="Practicalli">
       
       
-        <link rel="canonical" href="https://practical.li/neovim/neovim-basics/files-buffers-windows/">
+        <link rel="canonical" href="https://practical.li/neovim/neovim-basics/file-buffer-window-tab/">
       
       
         <link rel="prev" href="../">
@@ -34,7 +34,7 @@
     
     
       
-        <title>File Buffer Window - Practicalli Neovim</title>
+        <title>File Buffer Window Tab - Practicalli Neovim</title>
       
     
     
@@ -81,11 +81,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="File Buffer Window - Practicalli Neovim" >
+        <meta  property="og:title"  content="File Buffer Window Tab - Practicalli Neovim" >
       
         <meta  property="og:description"  content="Practical guide to Clojure development with Neovim" >
       
-        <meta  property="og:image"  content="https://practical.li/neovim/assets/images/social/neovim-basics/files-buffers-windows.png" >
+        <meta  property="og:image"  content="https://practical.li/neovim/assets/images/social/neovim-basics/file-buffer-window-tab.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -93,15 +93,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://practical.li/neovim/neovim-basics/files-buffers-windows/" >
+        <meta  property="og:url"  content="https://practical.li/neovim/neovim-basics/file-buffer-window-tab/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="File Buffer Window - Practicalli Neovim" >
+        <meta  name="twitter:title"  content="File Buffer Window Tab - Practicalli Neovim" >
       
         <meta  name="twitter:description"  content="Practical guide to Clojure development with Neovim" >
       
-        <meta  name="twitter:image"  content="https://practical.li/neovim/assets/images/social/neovim-basics/files-buffers-windows.png" >
+        <meta  name="twitter:image"  content="https://practical.li/neovim/assets/images/social/neovim-basics/file-buffer-window-tab.png" >
       
     
     
@@ -208,7 +208,7 @@
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
-             File Buffer Window 
+             File Buffer Window Tab 
           </span>
         </div>
       </div>
@@ -1123,7 +1123,7 @@
           
   
   <span class="md-ellipsis">
-    File Buffer Window
+    File Buffer Window Tab
   </span>
   
 
@@ -1134,7 +1134,7 @@
         
   
   <span class="md-ellipsis">
-    File Buffer Window
+    File Buffer Window Tab
   </span>
   
 
@@ -1156,26 +1156,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#file-explorer" class="md-nav__link">
-    File explorer
+  <a href="#files" class="md-nav__link">
+    Files
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-file" class="md-nav__link">
-    New File
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#select-files-and-directories" class="md-nav__link">
-    Select files and directories
-  </a>
-  
-    <nav class="md-nav" aria-label="Select files and directories">
+    <nav class="md-nav" aria-label="Files">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-neo-tree" class="md-nav__link">
+    Using Neo-tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#telescope" class="md-nav__link">
+    Telescope
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-file" class="md-nav__link">
+    Save File
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#swap-file" class="md-nav__link">
@@ -1190,22 +1197,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#buffer-management" class="md-nav__link">
-    Buffer management
+  <a href="#buffers" class="md-nav__link">
+    Buffers
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Buffers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#buffer-text-wrapping" class="md-nav__link">
     Buffer text wrapping
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#window-management" class="md-nav__link">
-    Window management
+  <a href="#windows" class="md-nav__link">
+    Windows
   </a>
   
 </li>
@@ -2537,26 +2550,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#file-explorer" class="md-nav__link">
-    File explorer
+  <a href="#files" class="md-nav__link">
+    Files
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-file" class="md-nav__link">
-    New File
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#select-files-and-directories" class="md-nav__link">
-    Select files and directories
-  </a>
-  
-    <nav class="md-nav" aria-label="Select files and directories">
+    <nav class="md-nav" aria-label="Files">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-neo-tree" class="md-nav__link">
+    Using Neo-tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#telescope" class="md-nav__link">
+    Telescope
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-file" class="md-nav__link">
+    Save File
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#swap-file" class="md-nav__link">
@@ -2571,22 +2591,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#buffer-management" class="md-nav__link">
-    Buffer management
+  <a href="#buffers" class="md-nav__link">
+    Buffers
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Buffers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#buffer-text-wrapping" class="md-nav__link">
     Buffer text wrapping
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#window-management" class="md-nav__link">
-    Window management
+  <a href="#windows" class="md-nav__link">
+    Windows
   </a>
   
 </li>
@@ -2613,7 +2639,7 @@
                   
 
   
-    <a href="https://github.com/practicalli/neovim/edit/main/docs/neovim-basics/files-buffers-windows.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/practicalli/neovim/edit/main/docs/neovim-basics/file-buffer-window-tab.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -2622,7 +2648,7 @@
     
       
     
-    <a href="https://github.com/practicalli/neovim/raw/main/docs/neovim-basics/files-buffers-windows.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/practicalli/neovim/raw/main/docs/neovim-basics/file-buffer-window-tab.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
@@ -2630,49 +2656,68 @@
 
 
 <h1 id="files-buffers-windows-and-tabs">Files Buffers Windows and Tabs<a class="headerlink" href="#files-buffers-windows-and-tabs" title="Permanent link">λ︎</a></h1>
-<p>Buffers hold the contents of files and any other information from processes, e.g. the REPL evaluation log</p>
-<p>Windows are a container for a buffer and windows can swap which buffer they show.  Multiple windows, also known as splits, can be present in a Neovim frame.  By default, neovim starts with only one window.</p>
-<p>A tab can hold one or more windows and tabs can be shown on a tab-line. <span class="keys"><kbd>g</kbd></span> <span class="keys"><kbd>T</kbd></span> toggles between tabs, e.g. Clojure source code and Clojure Log</p>
-<h2 id="file-explorer">File explorer<a class="headerlink" href="#file-explorer" title="Permanent link">λ︎</a></h2>
-<p>Visually manage files with a tree view of the current project, using <a href="https://github.com/nvim-neo-tree/neo-tree.nvim" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span> Neo-tree.nvim</a></p>
+<p><a href="#files">Files</a> are text written to perminant storage, e.g. disk or usb drive and are names with an extension that represents the file type, e.g. <code>.clj</code> for clojure, <code>.md</code> for markdown, etc.</p>
+<p>A <a href="#buffers">Buffer</a> hold the contents of a file or any other information from processes, e.g. the REPL evaluation log.</p>
+<p><a href="#windows">Windows</a> are a view on a buffer and windows can swap which buffer they show.  Multiple windows, also known as splits, can be present in a Neovim frame.  </p>
+<p>A <a href="#tab-pages">tab page</a> (or tab) can hold one or more windows and multiple tab pages can be shown on a tab-line. </p>
+<h2 id="files">Files<a class="headerlink" href="#files" title="Permanent link">λ︎</a></h2>
+<p>Use <a href="#using-neo-tree">Neo-tree.nvim</a> to visually navigate and manage files using a tree view of the current project. Files and directories can be added, renamed, moved and deleted.</p>
+<p>Use <a href="#telescope">Telescope</a> to select files, typing a name narrows the file list.</p>
+<h3 id="using-neo-tree">Using Neo-tree<a class="headerlink" href="#using-neo-tree" title="Permanent link">λ︎</a></h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Astronvim</label><label for="__tabbed_1_2">Practicalli Neovim Config Redux</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>e</kbd></span> toggles neo-tree file browser</p>
 <p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>o</kbd></span> toggles between buffer and neo-tree</p>
-<p>Neotree icons</p>
-<ul>
-<li>yellow dot - unsaved changes</li>
-<li>pencil - git added changes</li>
-<li>cross - git deleted changes</li>
-<li>Warning triangle - lsp diagnostics issues</li>
-</ul>
-<p><span class="keys"><kbd>h</kbd></span> <span class="keys"><kbd>j</kbd></span> <span class="keys"><kbd>k</kbd></span> <span class="keys"><kbd>l</kbd></span> to navigate the file tree hierachy</p>
-<p><code>&lt;</code> and <code>&gt;</code> to navigate between File, Bufs and Git sources tabs</p>
-<p><span class="keys"><kbd class="key-question">?</kbd></span> shows neotree help, listing key bindings</p>
 </div>
 <div class="tabbed-block">
 <p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>f</kbd></span> <span class="keys"><kbd>t</kbd></span> <span class="keys"><kbd>t</kbd></span> to open file explorer</p>
 </div>
 </div>
 </div>
-<h2 id="new-file">New File<a class="headerlink" href="#new-file" title="Permanent link">λ︎</a></h2>
+<p>Within Neo-tree:</p>
+<p><span class="keys"><kbd>h</kbd></span> <span class="keys"><kbd>j</kbd></span> <span class="keys"><kbd>k</kbd></span> <span class="keys"><kbd>l</kbd></span> to navigate the file tree hierachy</p>
+<p><span class="keys"><kbd class="key-less">&lt;</kbd></span> and <span class="keys"><kbd class="key-greater">&gt;</kbd></span> to navigate between File, Bufs and Git sources tabs</p>
+<p><span class="keys"><kbd class="key-question">?</kbd></span> shows neotree help, listing key bindings</p>
+<p><span class="keys"><kbd>a</kbd></span> adds a file, prompting for a name relative to the directory where <span class="keys"><kbd>a</kbd></span> was pressed. The name can include new directories to be created. A name ending with ++forward-slash++ will create a directory rather than a file.</p>
+<p><span class="keys"><kbd>d</kbd></span> deletes the current file or directory (including sub-directories), a conformation prompt is shown</p>
+<p><span class="keys"><kbd>r</kbd></span> to rename a file or directory (use move to change the path)</p>
+<p><span class="keys"><kbd>m</kbd></span> to move a file or directory, optionally renaming too</p>
+<div class="admonition info">
+<p class="admonition-title">Neotree icons</p>
+<ul>
+<li>yellow dot - unsaved changes</li>
+<li>pencil - git added changes</li>
+<li>cross - git deleted changes</li>
+<li>Warning triangle - lsp diagnostics issues</li>
+</ul>
+</div>
+<h3 id="telescope">Telescope<a class="headerlink" href="#telescope" title="Permanent link">λ︎</a></h3>
+<p>Telescope provides a selector which will narrow the list of matches as a pattern is typed, providing a fast way to find an item in a list.</p>
+<p>Telescope provides a preview of the selected file (only if there is sufficient space in the Neovim frame)</p>
+<p>File lists are relative to the directory Neovim was opened from (or Path subsequently set in Neovim).</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">AstroNvim</label><label for="__tabbed_2_2">Practicalli Neovim Config Redux</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><code>SPC f f</code> selector for files within the scope of the current directory path. <code>SPC f F</code> to also show hidden files from the current directory path. </p>
+<p><code>SPC f a</code> selector for AstroNvim user configuration files</p>
+<p><code>SPC f p</code> selector for previously opened files (oldfiles)</p>
+</div>
+<div class="tabbed-block">
+<p><code>SPC f f</code> to list files within the scope of the current directory path.</p>
+<p><code>SPC f b</code> provides a file browser to open files, navigate the file space and create new files and directories</p>
+</div>
+</div>
+</div>
+<h3 id="save-file">Save File<a class="headerlink" href="#save-file" title="Permanent link">λ︎</a></h3>
 <p>Files and directories are created in the path given, relative to the directory in which Neovim was opened.</p>
-<blockquote>
-<p><code>:lcd</code> to set the current local directory</p>
-<p><code>:!</code> for a shell command, e.g. <code>:!mkdir -p path/to/new/directory</code> create a new directory and any intermediate path</p>
-</blockquote>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Astronvim</label><label for="__tabbed_2_2">Practicalli Neovim Config Redux</label><label for="__tabbed_2_3">Neovim</label></div>
+<p>A file must exist for Neovim to write to it.  Neo-tree and Telescope can be used to create files and directories, as can a terminal and the command line integration (<span class="keys"><kbd class="key-exclam">!</kbd></span>)</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Astronvim</label><label for="__tabbed_3_2">Practicalli Neovim Config Redux</label><label for="__tabbed_3_3">Neovim</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>w</kbd></span> will write all buffer changes to the associate file.</p>
 <p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>n</kbd></span> creates a new buffer that can be written to a given file using <code>:write path/to/filename</code></p>
 <p><code>:write path/to/filename</code> will write the current buffer to a new file.</p>
-<p>Use Neotree as a convienient way to create, rename, move and delete files and directories</p>
-<p><span class="keys"><kbd>a</kbd></span> to add a file using the given name, or directory if the name ends in a <code>/</code></p>
-<p><span class="keys"><kbd>m</kbd></span> to move a file or directory</p>
-<p><span class="keys"><kbd>r</kbd></span> to rename a file or directory</p>
-<p><span class="keys"><kbd>d</kbd></span> to delete a file or directory, showing a confirmation prompt first</p>
 </div>
 <div class="tabbed-block">
 <p><code>SPC f b ESC C</code> to create a new file or directory. The base path is shown in the command bar.  Type the name of directories and file name as required. <code>RTN</code> to create or <code>ESC</code> to cancel.  The newly created directories or file name appears n the Telescope list and scan be selected for opening.</p>
@@ -2683,6 +2728,7 @@
 </div>
 </div>
 <div class="tabbed-block">
+<p><code>:lcd</code> to set the current local directory</p>
 <p><code>:write path/to/filename</code> will write the current buffer to a new file</p>
 <p><code>:!mkdir path/to/directory</code> will create a new directory</p>
 <p>If a file is already opened, i.e. with <code>:edit</code>, there is some short-hand syntax to simplify the typing</p>
@@ -2690,24 +2736,7 @@
 <p><code>-p</code> option createst any parts of the path required to make the full path</p>
 <p><code>%</code> is the neovim name of the current file</p>
 <p><code>:h</code> for the current directory (the “head” of the path).</p>
-<p><code>!</code> is the NeoVim terminal shell command</p>
-</div>
-</div>
-</div>
-<h2 id="select-files-and-directories">Select files and directories<a class="headerlink" href="#select-files-and-directories" title="Permanent link">λ︎</a></h2>
-<p>Telescope provides a selector which will narrow the list of matches as a pattern is typed, providing a fast way to find an item in a list.</p>
-<p>Telescope provides a preview of the selected file (only if there is sufficient space in the Neovim frame)</p>
-<p>File lists are relative to the directory Neovim was opened from (or Path subsequently set in Neovim).</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">AstroNvim</label><label for="__tabbed_3_2">Practicalli Neovim Config Redux</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><code>SPC f f</code> selector for files within the scope of the current directory path. <code>SPC f F</code> to also show hidden files from the current directory path. </p>
-<p><code>SPC f a</code> selector for AstroNvim user configuration files</p>
-<p><code>SPC f p</code> selector for previously opened files (oldfiles)</p>
-</div>
-<div class="tabbed-block">
-<p><code>SPC f f</code> to list files within the scope of the current directory path.</p>
-<p><code>SPC f b</code> provides a file browser to open files, navigate the file space and create new files and directories</p>
+<p><code>!</code> is the NeoVim terminal shell command, e.g. <code>:!mkdir -p path/to/new/directory</code> creates a new directory and any intermediate path</p>
 </div>
 </div>
 </div>
@@ -2731,7 +2760,7 @@
 <blockquote>
 <p><code>:edit</code> after the file is open also prompts if there is a swap file.  Selecting (D)elete will delete the swap file without changing the current buffer</p>
 </blockquote>
-<h2 id="buffer-management">Buffer management<a class="headerlink" href="#buffer-management" title="Permanent link">λ︎</a></h2>
+<h2 id="buffers">Buffers<a class="headerlink" href="#buffers" title="Permanent link">λ︎</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">AstroNvim</label><label for="__tabbed_4_2">Practicalli Neovim Config Redux</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2755,7 +2784,7 @@
 </div>
 </div>
 </div>
-<h2 id="buffer-text-wrapping">Buffer text wrapping<a class="headerlink" href="#buffer-text-wrapping" title="Permanent link">λ︎</a></h2>
+<h3 id="buffer-text-wrapping">Buffer text wrapping<a class="headerlink" href="#buffer-text-wrapping" title="Permanent link">λ︎</a></h3>
 <p>The test in a buffer is not wrapped by default. Set and unset soft text wrapping in a buffer</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">AstroNvim</label><label for="__tabbed_5_2">Practicalli Neovim Config Redux</label><label for="__tabbed_5_3">Neovim</label></div>
 <div class="tabbed-content">
@@ -2773,7 +2802,7 @@
 </div>
 </div>
 </div>
-<h2 id="window-management">Window management<a class="headerlink" href="#window-management" title="Permanent link">λ︎</a></h2>
+<h2 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">λ︎</a></h2>
 <p>Windows can be active (contains the cursor), hidden (open but not shown) or inactive.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">AstroNvim</label><label for="__tabbed_6_2">Practicalli Neovim Config Redux</label><label for="__tabbed_6_3">Neovim</label></div>
 <div class="tabbed-content">
@@ -2815,7 +2844,7 @@
 <p>A Tab page can hold one or more tabs and are useful for grouping different types of files and information. </p>
 <p>A Tab page holds one or more windows, each window is a view on a buffer, a buffer holds the contents of a file or any other information in the editor memory (repl log, etc).</p>
 <p>A tab page can provide a logical grouping of windows, e.g. Clojure source code in one tab, tests in a second tab and REPL log in a third.</p>
-<p>Neovim commands may be constrained within the bounds of a tab page (without using the :tab modifier)</p>
+<p>Neovim window commands may be constrained within the bounds of a tab page (without using the :tab modifier)</p>
 <p>Tab pages are often referred to as tabs.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">AstroNvim</label></div>
 <div class="tabbed-content">
@@ -2832,7 +2861,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 4, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 5, 2023</span>
       
     
   </small>
