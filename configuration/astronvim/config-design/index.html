@@ -30,7 +30,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.4">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
@@ -38,7 +38,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.bd3936ea.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35e1ed30.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
@@ -1195,6 +1195,8 @@
       
         
       
+        
+      
     
     
     
@@ -1246,6 +1248,26 @@
   
   <span class="md-ellipsis">
     File Buffer Window Tab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../neovim-basics/notifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notifications
   </span>
   
 
@@ -2766,25 +2788,27 @@
 <div class="tabbed-block">
 <p>Add Conjure and parinfer plugin that will load when Clojure or Fennel file is opened.</p>
 <div class="admonition example">
-<p class="admonition-title">Clojure Packages in AstroNvim user configuration<div class="highlight"><span class="filename">.config/astronvim-config/plugins/clojure.lua</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">-- Lazy Package manager configuration</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kr">return</span> <span class="p">{</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  <span class="p">{</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="s2">&quot;Olical/conjure&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="c1">-- load plugin on filetypes</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">ft</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;clojure&quot;</span><span class="p">,</span> <span class="s2">&quot;fennel&quot;</span> <span class="p">},</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  <span class="p">},</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>  <span class="p">{</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="s2">&quot;gpanders/nvim-parinfer&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="n">ft</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;clojure&quot;</span><span class="p">,</span> <span class="s2">&quot;fennel&quot;</span> <span class="p">},</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="n">config</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>      <span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="n">parinfer_force_balance</span> <span class="o">=</span> <span class="kc">true</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>      <span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="n">parinfer_comment_chars</span> <span class="o">=</span> <span class="s2">&quot;;;&quot;</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    <span class="kr">end</span><span class="p">,</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>  <span class="p">},</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="p">}</span>
+<p class="admonition-title">Clojure Packages in AstroNvim user configuration</p>
+<div class="highlight"><pre><span></span><code>```lua title=&quot;.config/astronvim-config/plugins/clojure.lua&quot;
+-- Lazy Package manager configuration
+return {
+  {
+    &quot;Olical/conjure&quot;,
+    -- load plugin on filetypes
+    ft = { &quot;clojure&quot;, &quot;fennel&quot; },
+  },
+
+  {
+    &quot;gpanders/nvim-parinfer&quot;,
+    ft = { &quot;clojure&quot;, &quot;fennel&quot; },
+    config = function()
+      vim.g.parinfer_force_balance = true
+      vim.g.parinfer_comment_chars = &quot;;;&quot;
+    end,
+  },
+}
+```
 </code></pre></div>
-</p>
 </div>
 <p>Improve syntax highlighting by installing the Clojure parser for Treesitter.</p>
 <div class="admonition example">
@@ -3353,7 +3377,7 @@ Other extensions
     <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.94c44541.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
