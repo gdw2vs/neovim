@@ -1437,13 +1437,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hud" class="md-nav__link">
-    HUD
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#repl-buffer-log" class="md-nav__link">
     REPL buffer (log)
   </a>
@@ -2546,13 +2539,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hud" class="md-nav__link">
-    HUD
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#repl-buffer-log" class="md-nav__link">
     REPL buffer (log)
   </a>
@@ -2621,7 +2607,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">  </span><span class="c1">;; Interactive client REPL with nREPL server for Clojure Editor support</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="ss">:repl/basic</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">nrepl/nrepl</span><span class="w">       </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span><span class="p">}</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">                </span><span class="nv">cider/cider-nrepl</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">&quot;0.37.0&quot;</span><span class="p">}}</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">                </span><span class="nv">cider/cider-nrepl</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">&quot;0.40.0&quot;</span><span class="p">}}</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">   </span><span class="ss">:main-opts</span><span class="w">  </span><span class="p">[</span><span class="s">&quot;--main&quot;</span><span class="w"> </span><span class="s">&quot;nrepl.cmdline&quot;</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">                </span><span class="s">&quot;--middleware&quot;</span><span class="w"> </span><span class="s">&quot;[cider.nrepl/cider-middleware]&quot;</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">                </span><span class="s">&quot;--interactive&quot;</span><span class="p">]}</span>
@@ -2629,7 +2615,7 @@
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="c1">;; Headless REPL with nREPL server for Clojure Editor support</span>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="ss">:repl/headless</span>
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">nrepl/nrepl</span><span class="w">       </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span><span class="p">}</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">                </span><span class="nv">cider/cider-nrepl</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">&quot;0.37.0&quot;</span><span class="p">}}</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">                </span><span class="nv">cider/cider-nrepl</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">&quot;0.40.0&quot;</span><span class="p">}}</span>
 <a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">   </span><span class="ss">:main-opts</span><span class="w">  </span><span class="p">[</span><span class="s">&quot;--main&quot;</span><span class="w"> </span><span class="s">&quot;nrepl.cmdline&quot;</span>
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">                </span><span class="s">&quot;--middleware&quot;</span><span class="w"> </span><span class="s">&quot;[cider.nrepl/cider-middleware]&quot;</span><span class="p">]}</span>
 </code></pre></div></p>
@@ -2644,39 +2630,39 @@
 <p><code>,eb</code> to evaluate all the Clojure source code in the current buffer, or <code>,ef</code> to evaluate the current function.  The result is displayed inline until the cursor moves.  Open the REPL buffer to see larger results or a complete history.</p>
 <div class="admonition info">
 <p class="admonition-title">Conjure School interative tutorial</p>
-<p><code>:ConjureSchool</code> runs an interactive tutorial in Neovim, walking through the essential Conjure commands and key bindings </p>
+<p><code>:ConjureSchool</code> runs an interactive tutorial in Neovim, walking through the essential Conjure commands and key bindings. Use the commands provided to move through the guide or <span class="keys"><kbd>j</kbd></span> / <span class="keys"><kbd>k</kbd></span> to scroll through the guide content.</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Practicalli Neovim config replaces some key bindings</p>
+<details class="warning">
+<summary>Practicalli Neovim config replaces some key bindings</summary>
 <p><a href="https://github.com/practicalli/neovim-config-redux" target="_blank">practicalli/neovim-config-redux</a> replaces several key bindings to make them consistent with other Clojure editors</p>
-</div>
+</details>
 <h2 id="evaluation">Evaluation<a class="headerlink" href="#evaluation" title="Permanent link">λ︎</a></h2>
-<p>Clojure REPL workflow encourages code expressions to be evaluated as it is written, providing feedback to ensure expressions are returning the expected results (or to help learn what results a function returns).</p>
-<p><code>,eb</code> - evaluate current buffer - used after first starting the REPL to load in a whole namespace and any required namespaces, or to ensure all changes have been evaluated in the REPL</p>
+<p>Clojure REPL workflow encourages code expressions to be evaluated as the are written, providing instant feedback to ensure expected results are returned (or learn the kind of results a function returns).</p>
+<p><code>,eb</code> - evaluate current buffer - used after first starting the REPL to load in a whole namespace and any required namespaces. Use to ensure all changes have been evaluated in the REPL (except those within a <code>(comment )</code> form or otherwise commented)</p>
+<p><code>,er</code> - evaluate top-level expression (root), ignoring a surrounding <code>(comment )</code> form to support the rich comments approach</p>
 <p><code>,ee</code> - evaluate expression (from start of current form) - especially useful for nested forms</p>
-<p><code>,ef</code> - evaluates top-level expression (<code>,er</code> is conjure defualt) - most common command</p>
 <p><code>,ei</code> - interrupt evaluation (stop long running evaluations) - stop a long running evaluation</p>
 <p><code>,ew</code> - evaluate word (symbol) - inspect value of form - i.e. for def names</p>
 <p><code>,e!</code> - replace form with its result - helps understand a more complex function by replacing code with a specific value</p>
 <p><code>,emf</code> - evaluate marked form - mark forms regularly re-evaluted with <code>mf</code> (or any character with <code>m</code>) to avoid jumping to that form each time . A capital letter to mark form in a different namespace and evaluate  from the current buffer. </p>
 <p><code>"cp</code> - paste contents of the register into buffer. The result of every evaluation is stored in a Neovim register as well as the log.</p>
-<h2 id="hud">HUD<a class="headerlink" href="#hud" title="Permanent link">λ︎</a></h2>
-<p><a href="https://github.com/practicalli/neovim-config-redux" target="_blank">practicalli/neovim-config-redux</a> hides the HUD popup.  Practicalli recommends using the REPL log if the inline evaluation results are not sufficient.</p>
-<p>If a REPL is running in the current project, then the HUD shows the REPL is connected.</p>
-<p>evaluating an expression shows the result in the HUD as well as inline with the code</p>
-<p><code>,lr</code> - clear (refresh HUD and keep it visible)</p>
 <h2 id="repl-buffer-log">REPL buffer (log)<a class="headerlink" href="#repl-buffer-log" title="Permanent link">λ︎</a></h2>
-<p>The REPL buffer shows a log of the evaluation results for this session and can use more of the available screen than the HUD.</p>
-<p><code>,ls</code> - open log in horizontal tab</p>
-<p><code>,ls</code> - open log in vertical tab</p>
-<p><code>,lt</code> - open log in tab</p>
-<p><code>,lq</code> - close log windows (and tabs ??)</p>
-<p><code>,lr</code> - soft REPL reset - lead window open</p>
-<p><code>,lR</code> - hard REPL reset - close window, delete buffer</p>
+<p>The Conjure REPL log shows the results of every evaluation for the current session.</p>
+<p><code>,lt</code> opens log in a new tab page (tab), <code>,ls</code> in horizontal split, <code>,ls</code> in vertical tab</p>
+<p><code>,lq</code> - close log window / tab page</p>
+<p><code>,lr</code> - soft REPL reset, leave window open</p>
+<p><code>,lR</code> - hard REPL reset, close window &amp; delete buffer</p>
+<div class="admonition hint">
+<p class="admonition-title">Inline evaluation over HUD log popup</p>
+<p><a href="https://practical.li/neovim/configuration/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Neovim configurations</a> hide the HUD log popup that is otherwise shown when Conjure connects to the REPL process, i.e. <code>vim.g["conjure#log#hud#enabled"] = false</code></p>
+<p>In-line evaluation results are the main feedback approach used by Practicalli when evaluating code.</p>
+<p>Practicalli recommends using the REPL log when larger results are returned</p>
+<p>Portal data inspector can be sent evaluation history and provides rich visualisation and navigation tools to explore that history in detail.</p>
+</div>
 <h2 id="rich-comments">Rich comments<a class="headerlink" href="#rich-comments" title="Permanent link">λ︎</a></h2>
-<p>Rich comments are a useful way to contain experimental expressions, or expresisons that should only be evaluated directly by a person developing the code (e.g. starting / stoping services, testing api calls, etc.)</p>
+<p>Rich comments are a useful way to contain experimental expressions, or expresisons only evaluated directly by a person developing the code (e.g. starting / stoping services, testing api calls, etc.)</p>
 <p>Expressions in rich comments are not included when evaluating the buffer or when expressions are evaluated via a namespace require.</p>
-<p><code>,ef</code> to evaluate the top level form within the rich comment, without evaluating the comment expression itself (<code>,ee</code> default in Conjure)</p>
+<p><code>,er</code> to evaluate the top level form within the rich comment, without evaluating the comment expression itself.</p>
 
   <hr>
 <div class="md-source-file">
