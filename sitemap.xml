@@ -251,7 +251,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/neovim/repl-driven-development/language-server-protocol/</loc>
+         <loc>https://practical.li/neovim/repl-driven-development/refactor-tools/</loc>
+         <lastmod>2023-10-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/neovim/repl-driven-development/structural-editing/</loc>
          <lastmod>2023-10-17</lastmod>
          <changefreq>daily</changefreq>
     </url>

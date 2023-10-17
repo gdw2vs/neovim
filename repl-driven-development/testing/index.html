@@ -23,7 +23,7 @@
         <link rel="canonical" href="https://practical.li/neovim/repl-driven-development/testing/">
       
       
-        <link rel="prev" href="../language-server-protocol/">
+        <link rel="prev" href="../refactor-tools/">
       
       
         <link rel="next" href="../../version-control/">
@@ -1331,6 +1331,8 @@
       
         
       
+        
+      
     
     
     
@@ -1397,11 +1399,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../language-server-protocol/" class="md-nav__link">
+      <a href="../structural-editing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    LSP
+    Structural Editing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../refactor-tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Refactor Tools
   </span>
   
 
@@ -1479,6 +1501,13 @@
         <li class="md-nav__item">
   <a href="#external-test-runner" class="md-nav__link">
     External test runner
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-selectors" class="md-nav__link">
+    Test Selectors
   </a>
   
 </li>
@@ -2538,6 +2567,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#test-selectors" class="md-nav__link">
+    Test Selectors
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2573,7 +2609,7 @@
 <p>Run unit tests from within Neovim, showing a summary of test results or a full test report (especially if there are failures)</p>
 <!-- TODO: investigate test runner with links in test report to jump to tests / code that is cause of error -->
 
-<p>Or run Kaocka test runners in a terminal session, optionally in watch mode to re-run tests on every saved change.</p>
+<p>Or run and external test runner via a terminal session, optionally using watch mode to re-run tests on every saved change.</p>
 <details class="info">
 <summary>Practicalli sets Kaocha test runner as default</summary>
 <p><a href="https://github.com/practicalli/neovim-config-redux"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> practicalli/neovim-config-redux</a> sets Kaocha as the default test runner</p>
@@ -2604,41 +2640,98 @@
 </code></pre></div>
 </details>
 <h2 id="include-test-path">Include test path<a class="headerlink" href="#include-test-path" title="Permanent link">λ︎</a></h2>
-<p>Ensure the <code>test</code> directory is included in the classpath when starting a REPL.  Use a project or user-level alias that includes an <code>:extra-paths</code> key that includes <code>["test"]</code> path</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">clojure</span><span class="w"> </span><span class="nv">-M</span><span class="ss">:env/test:lib/reloaded:repl/rebel</span>
+<p>Ensure the <code>test</code> directory is included in the classpath when starting a REPL.  Use a project or user level alias which defines an <code>:extra-paths</code> key with the <code>["test"]</code> path</p>
+<div class="admonition note">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>clojure<span class="w"> </span>-M:test/env:repl/reloaded
 </code></pre></div>
+</div>
 <h2 id="conjure-test-runners">Conjure Test runners<a class="headerlink" href="#conjure-test-runners" title="Permanent link">λ︎</a></h2>
 <p><code>, t n</code> to run the tests for the current namespace</p>
+<p><code>, t a</code> to run all tests in the project</p>
 <p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-conjure-tests-results-hud.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Neovim - Conjure Clojure unit test runner with test results in HUD" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-conjure-tests-results-hud.png" /></a></p>
 <h2 id="external-test-runner">External test runner<a class="headerlink" href="#external-test-runner" title="Permanent link">λ︎</a></h2>
 <p>Open a terminal in Neovim or a separate terminal session to run start a test runner in watch mode.  Tests run automatically when the code changes are saved</p>
-<p>Include the <code>:env/test</code> alias to include additional paths and dependencies for the test environment configuration, e.g. using additional libraries to run the tests such as mocking or human readable output.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>clojure<span class="w"> </span>-X:env/test:test/watch
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Practicalli Clojure CLI Config</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><a href="https://practical.li/clojure/clojure-cli/practicalli-config/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Clojure CLI config</a> contains aliases for test runner tools</p>
+<ul>
+<li>
+<p><code>:test/run</code> uses Kaocha to run all tests, stopping on first failing test.  Add <code>:fail-fast? false</code> argument to run all tests regardless of failure</p>
+</li>
+<li>
+<p><code>:test/watch</code> as above and puts Kaocha in watch mode, triggering a test run each time a file is saved</p>
+</li>
+</ul>
+<p>Projects created with <a href="">Practicalli Project Templates</a> include a <code>test</code> and <code>test-watch</code> task to run Kaocha test runner</p>
+<div class="admonition note">
+<p class="admonition-title">Run all tests, stoping on first failing test</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>make<span class="w"> </span><span class="nb">test</span>
 </code></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Watch for changes and run all tests, stoping on first failing test</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>make<span class="w"> </span>test-watch
+</code></pre></div>
+</div>
+<p>The make tasks call Clojure CLI with the appropriate alias, e.g. <code>clojure -X:test/run</code> and <code>clojure -X:test/watch</code></p>
+</div>
+</div>
+</div>
 <p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/kaocha-test-runner-watch.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Kaocha test runner for Clojure in watch mode" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/kaocha-test-runner-watch.png" /></a></p>
+<h2 id="test-selectors">Test Selectors<a class="headerlink" href="#test-selectors" title="Permanent link">λ︎</a></h2>
+<p>Use Test selectors to run a sub-set of tests based on selector meta data added to <code>deftest</code> code</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="o">^</span><span class="ss">:infrastructure</span><span class="w"> </span><span class="nv">function-name-test</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span>,,,<span class="p">))</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="o">^</span><span class="ss">:persistence</span><span class="w"> </span><span class="nv">function-name-test</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span>,,,<span class="p">))</span>
+</code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Kaocha test runner</label><label for="__tabbed_2_2">Cognitect Labs Test Runner</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Kaocha test runner can focus or skip on a sub-set of unit tests using test id, metadata, namespaces or a specific deftest. </p>
+<ul>
+<li><code>:focus</code> or <code>:skip</code> a given namespace or specific test var, i.e. <code>deftest</code> </li>
+<li><code>:focus-meta</code> or <code>:skip-meta</code> test selectors (metadata) on test vars, i.e. <code>^:persistence</code></li>
+</ul>
+<p>Specifying test <code>:id</code> in the <code>tests.edn</code> configuration file allows different test suites to be run, e.g. <code>:unit</code> for unit tests, <code>:spec</code> for specification tests </p>
+<p>Focus and skip works with a single test run or with a continuous watcher.</p>
+<div class="admonition example">
+<p class="admonition-title">Skip all tests with :persistence metadata</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>clojure<span class="w"> </span>-X:test/watch<span class="w"> </span>:skip-meta<span class="w"> </span>:persistence
+</code></pre></div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Focus on a specific test namespace</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>clojure<span class="w"> </span>-X:test/watch<span class="w"> </span>:focus<span class="w"> </span><span class="err">&#39;</span><span class="o">[</span><span class="s2">&quot;practicalli.gameboard.api.scoreboard-test&quot;</span><span class="o">]</span>
+</code></pre></div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Focus on a specific unit test (deftest)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>clojure<span class="w"> </span>-X:test/watch<span class="w"> </span>:focus<span class="w"> </span><span class="err">&#39;</span><span class="o">[</span><span class="s2">&quot;practicalli.gameboard.api.scoreboard-test/total-score-test&quot;</span><span class="o">]</span>
+</code></pre></div>
+</div>
 <div class="admonition hint">
 <p class="admonition-title">Refine the tests that are watched</p>
-<p>Start the watcher with <a href="https://cljdoc.org/d/lambdaisland/kaocha/1.66.1034/doc/6-focusing-and-skipping" target="_blank">focused or skiped tests by name or meta data (test selectors)</a></p>
+<p>Start the watcher with <a href="https://cljdoc.org/d/lambdaisland/kaocha/1.66.1034/doc/6-focusing-and-skipping" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> focused or skiped tests by name or meta data (test selectors)</a></p>
 </div>
-<p>Test selectors to run a sub-set of tests based on selector meta data added to <code>deftest</code> code</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>clojure -X:test/watch :skip-meta :persistence
-</code></pre></div>
-<blockquote>
-<p>TODO: check syntax of Kaocha test selectors</p>
-</blockquote>
-<p>Using Kaocha, specific test namespaces (or specific tests) can be run (or excluded)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>clojure -X:test/watch :namespace &#39;[practicalli.server&quot;]
-</code></pre></div>
-<blockquote>
-<p>TODO: check syntax of Kaocha namespace and specific tests</p>
-</blockquote>
+</div>
+<div class="tabbed-block">
+<p><a href="">Cognitect Labs Test Runner</a> can include or exclude a sub-set of tests, identified by metadata on the var (<code>deftest</code>)</p>
+<p><a class="md-button" href="https://github.com/cognitect-labs/test-runner#using-inclusions-and-exclusions" target="_blank">Cognitect Labs Test Runner - inclusions &amp; exclusions</a> </p>
+</div>
+</div>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 17, 2023</span>
       
     
   </small>
@@ -2674,7 +2767,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../language-server-protocol/" class="md-footer__link md-footer__link--prev" aria-label="Previous: LSP">
+          <a href="../refactor-tools/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Refactor Tools">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2684,7 +2777,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                LSP
+                Refactor Tools
               </div>
             </div>
           </a>

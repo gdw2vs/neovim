@@ -26,7 +26,7 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../language-server-protocol/">
+        <link rel="next" href="../structural-editing/">
       
       
       <link rel="icon" href="../../assets/favicon.svg">
@@ -1331,6 +1331,8 @@
       
         
       
+        
+      
     
     
     
@@ -1423,8 +1425,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#fundamentals" class="md-nav__link">
-    Fundamentals
+  <a href="#start-repl" class="md-nav__link">
+    Start REPL
   </a>
   
 </li>
@@ -1437,8 +1439,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#repl-buffer-log" class="md-nav__link">
-    REPL buffer (log)
+  <a href="#repl-log" class="md-nav__link">
+    REPL log
   </a>
   
 </li>
@@ -1465,11 +1467,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../language-server-protocol/" class="md-nav__link">
+      <a href="../structural-editing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    LSP
+    Structural Editing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../refactor-tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Refactor Tools
   </span>
   
 
@@ -2525,8 +2547,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#fundamentals" class="md-nav__link">
-    Fundamentals
+  <a href="#start-repl" class="md-nav__link">
+    Start REPL
   </a>
   
 </li>
@@ -2539,8 +2561,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#repl-buffer-log" class="md-nav__link">
-    REPL buffer (log)
+  <a href="#repl-log" class="md-nav__link">
+    REPL log
   </a>
   
 </li>
@@ -2586,39 +2608,66 @@
 <h1 id="conjure">Conjure<a class="headerlink" href="#conjure" title="Permanent link">λ︎</a></h1>
 <p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/logos/conjure-logo-wizard.png?raw=true" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img align="right" alt="Conjure logo" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/logos/conjure-logo-wizard.png?raw=true" style="height:150px;width:150px" /></a></p>
 <p>Conjure is the Clojure REPL client for Neovim.  Code in source code buffers can be evaluated and show the results in-line, providing instant feedback on the behaviour of the code as it develops.</p>
+<div class="admonition info">
+<p class="admonition-title">Conjure School interative tutorial</p>
+<p><code>:ConjureSchool</code> runs an interactive tutorial in Neovim, walking through the essential Conjure commands and key bindings. Use the commands provided to move through the guide or <span class="keys"><kbd>j</kbd></span> / <span class="keys"><kbd>k</kbd></span> to scroll through the guide content.</p>
+</div>
+<h2 id="start-repl">Start REPL<a class="headerlink" href="#start-repl" title="Permanent link">λ︎</a></h2>
 <p>Start a REPL on the command line in the root of a Clojure project.  The REPL should also start an nREPL server for Conjure to connect too.</p>
-<p>Conjure will detect the nREPL server when a Clojure file is opended (.clj .edn .cljs .cljc).</p>
+<p>Conjure will detect an nREPL server (via <code>.nrepl-port</code> file) when a Clojure file is opended (.clj .edn .cljs .cljc) and connect to the REPL process via that nREPL server.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Practicalli Clojure CLI Config</label><label for="__tabbed_1_2">Manual Alias definition</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><a href="https://practical.li/clojure/clojure-cli/practicalli-config/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Clojure CLI config</a> contains aliases to  start a REPL process.</p>
-<p><code>:repl/rebel</code> alias starts Rebel rich terminal UI REPL with nREPL server support.  </p>
+<p><a href="https://practical.li/clojure/clojure-cli/practicalli-config/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Clojure CLI config</a> contains aliases to  start a REPL process that also start an nREPL server.</p>
+<p>Use <code>repl</code> make task for projects created by <a href="https://practical.li/clojure/clojure-cli/projects/templates/practicalli/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Project templates</a></p>
 <div class="admonition note">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>clojure<span class="w"> </span>-M:repl/rebel
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>make<span class="w"> </span>repl
 </code></pre></div>
 </div>
-<blockquote>
-<p><code>clojure -M:repl/basic</code> starts a REPL with nREPL with a minimal REPL UI</p>
-<p><code>clojure -M:repl/headless</code> starts a REPL with nREPL server but without a REPL prompt (to prevent accidental interaction via the command line)</p>
-</blockquote>
+<p>Or use the Clojure CLI command with the <code>:repl/rebel</code> alias directly</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>clojure<span class="w"> </span>-M:repl/rebel
+</code></pre></div>
+<details class="hint">
+<summary>Simplify the command line</summary>
+<p>Add <a href="https://practical.li/blog/posts/make-clojure-tasks-simple-and-consistent/" target="_blank">a <code>Makefile</code> to define common tasks to simplify and add consistency to working with Clojure across projects</a>  or shell script to simplify the commands used to call <code>clojure</code> to run common tasks</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nf">repl</span><span class="o">:</span><span class="w">  </span><span class="c">## Run Clojure REPL with rich terminal UI (Rebel Readline)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>---------<span class="w"> </span>Run<span class="w"> </span>Rebel<span class="w"> </span>REPL<span class="w"> </span>---------<span class="k">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span>clojure<span class="w"> </span>-M:env/dev:env/test:repl/rebel
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nf">repl-reloaded</span><span class="o">:</span><span class="w">  </span><span class="c">## Run Clojure REPL with hotload, reload and rich terminal UI (Rebel Readline)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>---------<span class="w"> </span>Run<span class="w"> </span>Rebel<span class="w"> </span>REPL<span class="w"> </span>---------<span class="k">)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span>clojure<span class="w"> </span>-M:env/dev:env/test:lib/reloaded:repl/rebel
+</code></pre></div>
+<p>A <code>Makefile</code> can also include supporting commands, such as lint and format tools.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c"># Run MegaLinter with custom configuration</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nf">lint</span><span class="o">:</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>---------<span class="w"> </span>MegaLinter<span class="w"> </span>Runner<span class="w"> </span>---------<span class="k">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span>mega-linter-runner<span class="w"> </span>--flavor<span class="w"> </span>java<span class="w"> </span>--env<span class="w"> </span><span class="s1">&#39;MEGALINTER_CONFIG=.github/linters/mega-linter.yml&#39;</span>
+</code></pre></div>
+<p><a href="https://github.com/practicalli/dotfiles/blob/main/Makefile" target="_blank">practicalli/dotfiles/Makefile</a> contains tasks for Clojure development, including running a REPL, preparing dependencies, building an uberjar, lint &amp; format Clojure and configuration files.</p>
+<p>Docker related tasks to build, run and compose common images and containers are also included.</p>
+</details>
 </div>
 <div class="tabbed-block">
 <p>Add aliases to the user configuration for Clojure, e.g. <code>XDG_HOME_CONFIG/clojure/deps.edn</code> or <code>HOME/.clojure/deps.edn</code>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">  </span><span class="c1">;; Interactive client REPL with nREPL server for Clojure Editor support</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="ss">:repl/basic</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">nrepl/nrepl</span><span class="w">       </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span><span class="p">}</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">                </span><span class="nv">cider/cider-nrepl</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">&quot;0.40.0&quot;</span><span class="p">}}</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">   </span><span class="ss">:main-opts</span><span class="w">  </span><span class="p">[</span><span class="s">&quot;--main&quot;</span><span class="w"> </span><span class="s">&quot;nrepl.cmdline&quot;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">                </span><span class="s">&quot;--middleware&quot;</span><span class="w"> </span><span class="s">&quot;[cider.nrepl/cider-middleware]&quot;</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">                </span><span class="s">&quot;--interactive&quot;</span><span class="p">]}</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="c1">;; Headless REPL with nREPL server for Clojure Editor support</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="ss">:repl/headless</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">nrepl/nrepl</span><span class="w">       </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span><span class="p">}</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">                </span><span class="nv">cider/cider-nrepl</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">&quot;0.40.0&quot;</span><span class="p">}}</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">   </span><span class="ss">:main-opts</span><span class="w">  </span><span class="p">[</span><span class="s">&quot;--main&quot;</span><span class="w"> </span><span class="s">&quot;nrepl.cmdline&quot;</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">                </span><span class="s">&quot;--middleware&quot;</span><span class="w"> </span><span class="s">&quot;[cider.nrepl/cider-middleware]&quot;</span><span class="p">]}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">  </span><span class="c1">;; Interactive client REPL with nREPL server for Clojure Editor support</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="ss">:repl/basic</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">nrepl/nrepl</span><span class="w">       </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span><span class="p">}</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">                </span><span class="nv">cider/cider-nrepl</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">&quot;0.40.0&quot;</span><span class="p">}}</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">   </span><span class="ss">:main-opts</span><span class="w">  </span><span class="p">[</span><span class="s">&quot;--main&quot;</span><span class="w"> </span><span class="s">&quot;nrepl.cmdline&quot;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">                </span><span class="s">&quot;--middleware&quot;</span><span class="w"> </span><span class="s">&quot;[cider.nrepl/cider-middleware]&quot;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">                </span><span class="s">&quot;--interactive&quot;</span><span class="p">]}</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="c1">;; Headless REPL with nREPL server for Clojure Editor support</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">  </span><span class="ss">:repl/headless</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">nrepl/nrepl</span><span class="w">       </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span><span class="p">}</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">                </span><span class="nv">cider/cider-nrepl</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">&quot;0.40.0&quot;</span><span class="p">}}</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">   </span><span class="ss">:main-opts</span><span class="w">  </span><span class="p">[</span><span class="s">&quot;--main&quot;</span><span class="w"> </span><span class="s">&quot;nrepl.cmdline&quot;</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">                </span><span class="s">&quot;--middleware&quot;</span><span class="w"> </span><span class="s">&quot;[cider.nrepl/cider-middleware]&quot;</span><span class="p">]}</span>
 </code></pre></div></p>
+<p><code>clojure -M:repl/basic</code> starts a REPL with nREPL with a minimal REPL UI</p>
+<p><code>clojure -M:repl/headless</code> starts a REPL with nREPL server but without a REPL prompt (to prevent accidental interaction via the command line)</p>
 <div class="admonition info">
 <p class="admonition-title">Practicalli Clojure CLI Config aliases</p>
 <p><a href="https://practical.li/clojure/clojure-cli/practicalli-config/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Clojure CLI config</a> defines aliases for a wide range of community tools and libraries that extend the features of Clojure CLI</p>
@@ -2626,18 +2675,9 @@
 </div>
 </div>
 </div>
-<h2 id="fundamentals">Fundamentals<a class="headerlink" href="#fundamentals" title="Permanent link">λ︎</a></h2>
-<p><code>,eb</code> to evaluate all the Clojure source code in the current buffer, or <code>,ef</code> to evaluate the current function.  The result is displayed inline until the cursor moves.  Open the REPL buffer to see larger results or a complete history.</p>
-<div class="admonition info">
-<p class="admonition-title">Conjure School interative tutorial</p>
-<p><code>:ConjureSchool</code> runs an interactive tutorial in Neovim, walking through the essential Conjure commands and key bindings. Use the commands provided to move through the guide or <span class="keys"><kbd>j</kbd></span> / <span class="keys"><kbd>k</kbd></span> to scroll through the guide content.</p>
-</div>
-<details class="warning">
-<summary>Practicalli Neovim config replaces some key bindings</summary>
-<p><a href="https://github.com/practicalli/neovim-config-redux" target="_blank">practicalli/neovim-config-redux</a> replaces several key bindings to make them consistent with other Clojure editors</p>
-</details>
 <h2 id="evaluation">Evaluation<a class="headerlink" href="#evaluation" title="Permanent link">λ︎</a></h2>
 <p>Clojure REPL workflow encourages code expressions to be evaluated as the are written, providing instant feedback to ensure expected results are returned (or learn the kind of results a function returns).</p>
+<p>Results of evaluating an expression are shown in-line.  <a href="#repl-log">Open the REPL log</a> to see larger results and a complete REPL history for the current session.</p>
 <p><code>,eb</code> - evaluate current buffer - used after first starting the REPL to load in a whole namespace and any required namespaces. Use to ensure all changes have been evaluated in the REPL (except those within a <code>(comment )</code> form or otherwise commented)</p>
 <p><code>,er</code> - evaluate top-level expression (root), ignoring a surrounding <code>(comment )</code> form to support the rich comments approach</p>
 <p><code>,ee</code> - evaluate expression (from start of current form) - especially useful for nested forms</p>
@@ -2646,7 +2686,7 @@
 <p><code>,e!</code> - replace form with its result - helps understand a more complex function by replacing code with a specific value</p>
 <p><code>,emf</code> - evaluate marked form - mark forms regularly re-evaluted with <code>mf</code> (or any character with <code>m</code>) to avoid jumping to that form each time . A capital letter to mark form in a different namespace and evaluate  from the current buffer. </p>
 <p><code>"cp</code> - paste contents of the register into buffer. The result of every evaluation is stored in a Neovim register as well as the log.</p>
-<h2 id="repl-buffer-log">REPL buffer (log)<a class="headerlink" href="#repl-buffer-log" title="Permanent link">λ︎</a></h2>
+<h2 id="repl-log">REPL log<a class="headerlink" href="#repl-log" title="Permanent link">λ︎</a></h2>
 <p>The Conjure REPL log shows the results of every evaluation for the current session.</p>
 <p><code>,lt</code> opens log in a new tab page (tab), <code>,ls</code> in horizontal split, <code>,ls</code> in vertical tab</p>
 <p><code>,lq</code> - close log window / tab page</p>
@@ -2663,6 +2703,24 @@
 <p>Rich comments are a useful way to contain experimental expressions, or expresisons only evaluated directly by a person developing the code (e.g. starting / stoping services, testing api calls, etc.)</p>
 <p>Expressions in rich comments are not included when evaluating the buffer or when expressions are evaluated via a namespace require.</p>
 <p><code>,er</code> to evaluate the top level form within the rich comment, without evaluating the comment expression itself.</p>
+<details class="info">
+<summary>Start REPL from Neovim</summary>
+<p>Practicalli Configurations require the <a href="https://github.com/clojure-vim/vim-jack-in" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span> vim-jack-in</a> plugin to be added before this approach will work.</p>
+<p>Start Neovim with a Clojure file, e.g. <code>nvim src/practialli/playground.clj</code> or run <code>nvim</code> and open a Clojure file, e.g. <code>*.clj</code>, <code>*.cljc</code>, <code>*.cljs</code> or <code>.edn</code>.</p>
+<ul>
+<li><code>:Clj</code> command to start a REPL using Clojure CLI Tools</li>
+<li><code>:Lein</code> command to start a REPL using Leiningen</li>
+</ul>
+<blockquote>
+<p>Neovim switches to a terminal state, use <code>C-\ C-n</code> to leave the terminal state.  Use <code>:N</code> or <code>:previous</code> to switch back to the source code buffer</p>
+</blockquote>
+<p><code>, c f</code> to connect to the REPL from Conjure, or simply open a Clojure file.  Automated connection will be added in a future version on Conjure.</p>
+<blockquote>
+<p>The <code>vim-jack-in</code> plugin enables Neovim to call out to Clojure tools or Leiningen to start a REPL and connect to it once its started.</p>
+</blockquote>
+<p>A full screen REPL log is displayed.  <code>, l q</code> to close the log window and return to the Clojure file.
+<code>, l v</code> to create a vertical split between code and REPL log, <code>, l h</code> for a horizontal split.</p>
+</details>
 
   <hr>
 <div class="md-source-file">
@@ -2722,13 +2780,13 @@
         
         
           
-          <a href="../language-server-protocol/" class="md-footer__link md-footer__link--next" aria-label="Next: LSP">
+          <a href="../structural-editing/" class="md-footer__link md-footer__link--next" aria-label="Next: Structural Editing">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                LSP
+                Structural Editing
               </div>
             </div>
             <div class="md-footer__button md-icon">

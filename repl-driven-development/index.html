@@ -1331,6 +1331,8 @@
       
         
       
+        
+      
     
     
     
@@ -1397,11 +1399,31 @@
   
   
     <li class="md-nav__item">
-      <a href="language-server-protocol/" class="md-nav__link">
+      <a href="structural-editing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    LSP
+    Structural Editing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="refactor-tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Refactor Tools
   </span>
   
 
@@ -2457,20 +2479,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#clojure-cli-repl-process" class="md-nav__link">
-    Clojure CLI REPL process
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#simplify-the-command-line" class="md-nav__link">
-    Simplify the command line
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     References
   </a>
@@ -2511,50 +2519,25 @@
 <h1 id="repl-driven-development-with-clojure">REPL Driven Development with Clojure<a class="headerlink" href="#repl-driven-development-with-clojure" title="Permanent link">λ︎</a></h1>
 <p>Conjure provides the REPL driven development workflow for Clojure (and many other fun languages) and includes a built-in tutorial.</p>
 <ul>
-<li>Vim style Editing</li>
-<li>Starting a REPL (customise startup, add <code>user</code> namespace for dev tools)</li>
-<li>Evaluating code</li>
-<li>Structural Editing</li>
-<li>Inspecting data - <a href="https://github.com/djblue/portal" target="_blank">portal</a></li>
+<li><a href="/neovim/neovim-basics/multi-modal-editing/">Vim style Editing</a></li>
+<li><a href="conjure/">Starting a REPL &amp; Evaluating code</a> - using Conjure</li>
+<li><a href="structural-editing/">Structural Editing</a> - parinfer or paredit</li>
+<li><a href="refactor-tools/">Refactor tools</a> - Language Server Protocol features</li>
+<li><a href="testing/">Unit Testing</a> - run REPL or external test runners</li>
+<li>Inspecting data, e.g. <a href="https://practical.li/clojure/data-inspector/portal/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Portal</a></li>
 </ul>
-<p>Start a REPL process in a terminal that includes nREPL server.</p>
-<p>Conjure will look for the ``.nrepl port in the root of the current project when a Clojure file is opened and connect to the REPL process via that nREPL server.</p>
-<h2 id="clojure-cli-repl-process">Clojure CLI REPL process<a class="headerlink" href="#clojure-cli-repl-process" title="Permanent link">λ︎</a></h2>
-<p>Start a rich terminal UI for the Clojure REPL, using Rebel Readline</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>clojure -M:repl/rebel
-</code></pre></div>
-<blockquote>
-<p>This guide uses aliases from <a href="https://github.com/practicalli/clojure-deps-edn" target="_blank"><code>practicalli/clojure-deps-edn</code></a></p>
-</blockquote>
-<p>Or start a REPL that also includes the <code>dev</code> and <code>test</code> paths and libraries to hotload dependencies and refresh namespaces, for a reloaded REPL experience.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>clojure -M:env/dev:env/test:lib/reloaded:repl/rebel
-</code></pre></div>
-<h2 id="simplify-the-command-line">Simplify the command line<a class="headerlink" href="#simplify-the-command-line" title="Permanent link">λ︎</a></h2>
-<p>Add <a href="https://practical.li/blog/posts/make-clojure-tasks-simple-and-consistent/" target="_blank">a <code>Makefile</code> to define common tasks to simplify and add consistency to working with Clojure across projects</a>  or shell script to simplify the commands used to call <code>clojure</code> to run common tasks</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nf">repl</span><span class="o">:</span><span class="w">  </span><span class="c">## Run Clojure REPL with rich terminal UI (Rebel Readline)</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>---------<span class="w"> </span>Run<span class="w"> </span>Rebel<span class="w"> </span>REPL<span class="w"> </span>---------<span class="k">)</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span>clojure<span class="w"> </span>-M:env/dev:env/test:repl/rebel
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nf">repl-reloaded</span><span class="o">:</span><span class="w">  </span><span class="c">## Run Clojure REPL with hotload, reload and rich terminal UI (Rebel Readline)</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>---------<span class="w"> </span>Run<span class="w"> </span>Rebel<span class="w"> </span>REPL<span class="w"> </span>---------<span class="k">)</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span>clojure<span class="w"> </span>-M:env/dev:env/test:lib/reloaded:repl/rebel
-</code></pre></div>
-<p>A <code>Makefile</code> can also include supporting commands, such as lint and format tools.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c"># Run MegaLinter with custom configuration</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nf">lint</span><span class="o">:</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>---------<span class="w"> </span>MegaLinter<span class="w"> </span>Runner<span class="w"> </span>---------<span class="k">)</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span>mega-linter-runner<span class="w"> </span>--flavor<span class="w"> </span>java<span class="w"> </span>--env<span class="w"> </span><span class="s1">&#39;MEGALINTER_CONFIG=.github/linters/mega-linter.yml&#39;</span>
-</code></pre></div>
-<div class="admonition hint">
-<p class="admonition-title">Practicalli Makefile</p>
-<p><a href="https://github.com/practicalli/dotfiles/blob/main/Makefile" target="_blank">practicalli/dotfiles/Makefile</a> contains tasks for Clojure development, including running a REPL, preparing dependencies, building an uberjar, lint &amp; format Clojure and configuration files.</p>
-<p>Docker related tasks to build, run and compose common images and containers are also included.</p>
+<div class="admonition info">
+<p class="admonition-title">Practicalli Clojure CLI Config</p>
+<p><a href="https://practical.li/clojure/clojure-cli/practicalli-config/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Clojure CLI config</a> contains aliases used extensively through the Clojure sections of this book</p>
 </div>
+<details class="warning">
+<summary>Practicalli Neovim config replaces some key bindings</summary>
+<p><a href="https://github.com/practicalli/neovim-config-redux" target="_blank">practicalli/neovim-config-redux</a> replaces several key bindings to make them consistent with other Clojure editors</p>
+</details>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">λ︎</a></h2>
 <ul>
 <li><a href="https://practical.li/blog/posts/clojure-which-execution-option-to-use/">Which Clojure CLI execution option - M T X P - should be used</a></li>
-<li><a href="https://practical.li/blog/posts/make-clojure-tasks-simple-and-consistent/">Using a Makefile to simplify Clojure development tasks</a></li>
+<li><a href="https://practical.li/engineering-playbook/build-tool/make/">Make task to simplify Clojure development</a></li>
 </ul>
 
   <hr>
@@ -2562,7 +2545,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 17, 2023</span>
       
     
   </small>
