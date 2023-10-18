@@ -1251,6 +1251,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#markdown" class="md-nav__link">
+    Markdown
+  </a>
+  
+    <nav class="md-nav" aria-label="Markdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text-style" class="md-nav__link">
+    Text style
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvim-surround_1" class="md-nav__link">
+    nvim-surround
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2626,6 +2653,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#markdown" class="md-nav__link">
+    Markdown
+  </a>
+  
+    <nav class="md-nav" aria-label="Markdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text-style" class="md-nav__link">
+    Text style
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvim-surround_1" class="md-nav__link">
+    nvim-surround
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2710,13 +2764,26 @@ delete(functi*on calls)     dsf             function calls
 </div>
 <h2 id="web-links">Web Links<a class="headerlink" href="#web-links" title="Permanent link">λ︎</a></h2>
 <p><span class="keys"><kbd>g</kbd></span> <span class="keys"><kbd>x</kbd></span> on a URL to open in the default browser</p>
+<h2 id="markdown">Markdown<a class="headerlink" href="#markdown" title="Permanent link">λ︎</a></h2>
+<p><code>s</code> in visual mode substitues the selection with the next character typed</p>
+<p><code>v</code> to create visual selection, <code>s</code> to substitute the current selection, <code>****</code> to create a bold style, <code>P</code> with the cursor on the second <code>*</code> pastes the text that was visually selected. </p>
+<h3 id="text-style">Text style<a class="headerlink" href="#text-style" title="Permanent link">λ︎</a></h3>
+<!--TODO: add video of manipulating text for markdown -->
+
+<p><code>ysiw*</code> surrounds current word with <code>*</code> to create italic text, <code>.</code> repeats to make bold text style.</p>
+<p><code>ds*</code> removes <code>*</code> from current word.</p>
+<h3 id="nvim-surround_1">nvim-surround<a class="headerlink" href="#nvim-surround_1" title="Permanent link">λ︎</a></h3>
+<p>nvim-surround plugin assists with adding style characters around text, e.g adding links, italic or bold text, etc.</p>
+<p><code>S</code> on a visual selection will surround the text with the next character.  <code>.</code> repeat not supported.</p>
+<p><strong>Create a link</strong></p>
+<p><code>v</code> and motion keys to select text, <code>S [</code> to surround text with <code>[]</code> creating the text of a link anchor.  Use <code>S (</code> to surround the URL of the link.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 15, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 18, 2023</span>
       
     
   </small>
