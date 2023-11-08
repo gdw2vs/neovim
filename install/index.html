@@ -30,7 +30,7 @@
       
       
       <link rel="icon" href="../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
     
     
       
@@ -38,7 +38,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.35e1ed30.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.4b4a2bd9.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
@@ -2530,6 +2530,7 @@
 <li><a href="neovim/">Neovim 0.9.x or nightly build</a></li>
 <li><a href="packages/index.md">Neovim package manager and packages</a></li>
 <li><a href="https://www.nerdfonts.com/" target="_blank">NerdFonts</a> for icon support in themes and status line</li>
+<li>Optional: <a href="neovide.md">Neovide</a> GUI for neovim</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Neovim 0.9.x latest stable release</p>
@@ -2549,19 +2550,16 @@
 <li><code>luarocks</code> for LSP support in AstroNvim</li>
 </ul>
 </li>
-<li><a href="https://github.com/practicalli/neovim-config-redux" target="_blank">Clone Neovim Config</a></li>
-<li>Run <code>nvim</code> in a terminal and ignore warnings, press <code>RTN</code><ul>
-<li><code>SPC P i</code> or <code>:PackerInstall</code> command in Neovim to install packages</li>
-</ul>
-</li>
+<li>Optionally add a community configuration, e.g. <a href="/neovim/configuration/astronvim/" target="_blank">AstroNvim</a> or <a href="https://github.com/practicalli/neovim-config-redux" target="_blank">Practicalli Neovim Config</a></li>
+<li>Run <code>nvim</code> in a terminal </li>
 <li><a href="clojure/">Install Clojure CLI</a> and supporting tools</li>
 <li>Clone / fork <a href="https://github.com/practicalli/clojure-deps-edn/" target="_blank">practicalli/clojure-deps-edn</a> or add an alias with the <a href="https://github.com/Olical/conjure/wiki/Quick-start:-Clojure#with-clojure-cli" target="_blank">required config to use nrepl and cider-nrepl</a></li>
-<li><a href="/repl-driven-development/">Run a Clojure REPL process</a> - in a terminal session with nREPL, e.g. using one of the REPL aliases from <a href="https://github.com/practicalli/clojure-deps-edn" target="_blank">practicalli/clojure-deps-edn</a><ul>
+<li><a href="/repl-driven-development/">Run a Clojure REPL process</a> - in a terminal session with nREPL, e.g. using one of the REPL aliases from <a href="https://github.com/practicalli/clojure-cli-config" target="_blank">practicalli/clojure-cli-config</a><ul>
 <li><code>clojure -M:repl/rebel</code> for a rich REPL UI with auto-completion &amp; docs</li>
-<li><code>clojure -M:repl/headless</code> - headless REPL process when working exclusively in a Clojure connected editor</li>
+<li><code>clojure -M:repl/headless</code> - headless REPL process when working exclusively in a Clojure connected editor
+. Open a Clojure file in Neovim - Conjure will automatically connect</li>
 </ul>
 </li>
-<li>Open a Clojure file in Neovim - Conjure will automatically connect</li>
 </ul>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">λ︎</a></h2>
 <p><a href="../neovim-basics/">Learn how to use Neovim</a> and how to <a href="../repl-driven-development/conjure/">use Conjure for REPL driven development</a></p>
@@ -2571,7 +2569,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 14, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 8, 2023</span>
       
     
   </small>
@@ -2741,7 +2739,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../assets/javascripts/bundle.81fa17fe.min.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
