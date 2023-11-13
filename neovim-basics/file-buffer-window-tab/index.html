@@ -2713,6 +2713,29 @@
 <div class="tabbed-block">
 <p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>e</kbd></span> toggles neo-tree file browser</p>
 <p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>o</kbd></span> toggles between buffer and neo-tree</p>
+<div class="admonition example">
+<p class="admonition-title">Configure hidden files</p>
+<p>Configure Neotree to display hidden files and directories by default.  They are shown with a different visual style (subtle color) compared to the other files and directories.  </p>
+<p><code>H</code> with the cursor in neotree window will still toggle the display of hidden files and directories.</p>
+<p>Optionally, specify files or directories to never show.
+<div class="highlight"><span class="filename">Practicalli Astronvim-config: plugins/core.lua</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>  <span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="s2">&quot;nvim-neo-tree/neo-tree.nvim&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">opts</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>      <span class="n">filesystem</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="n">filtered_items</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>          <span class="c1">-- when true, they will just be displayed differently than normal items</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>          <span class="n">visible</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>          <span class="c1">-- remains hidden even if visible is toggled to true, this overrides always_show</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>          <span class="n">never_show</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>            <span class="s2">&quot;.DS_Store&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>            <span class="s2">&quot;thumbs.db&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>          <span class="p">},</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="p">},</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>      <span class="p">},</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="p">},</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>  <span class="p">},</span>
+</code></pre></div></p>
+</div>
 </div>
 <div class="tabbed-block">
 <p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>f</kbd></span> <span class="keys"><kbd>t</kbd></span> <span class="keys"><kbd>t</kbd></span> to open file explorer</p>
@@ -2789,7 +2812,7 @@
 <details class="info">
 <summary>Swap file location</summary>
 <p><code>:swapname</code> shows the full path to the swap file for the current buffer, e.g. 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/home/practicalli/.local/state/astronvim/swap//%home%practicalli%projects%practicalli%books%neovim%docs%neovim-basics%files-buffers-windows.md.swp<span class="sb">`</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/home/practicalli/.local/state/astronvim/swap//%home%practicalli%projects%practicalli%books%neovim%docs%neovim-basics%files-buffers-windows.md.swp<span class="sb">`</span>
 </code></pre></div></p>
 </details>
 <p><code>:preserve</code> command will write all text from current buffer to the swap file.</p>
@@ -2812,7 +2835,7 @@
 <p><code>SPC b b</code> to select a buffer from the tab line, pressing the character that appears next to the buffer tab (case sensitive)</p>
 <p><code>SPC b D</code> to delete a buffer from the tab line, pressing the character that appears next to the buffer tab (case sensitive)</p>
 <p>Open multiple buffers when starting Neovim by specifying multiple files to open</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>astro<span class="w"> </span>README.md<span class="w"> </span>deps.edn<span class="w"> </span>src/practicalli/playground.clj<span class="w"> </span>test/practicalli/playground.clj
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>astro<span class="w"> </span>README.md<span class="w"> </span>deps.edn<span class="w"> </span>src/practicalli/playground.clj<span class="w"> </span>test/practicalli/playground.clj
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -2823,7 +2846,7 @@
 <p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-telescope-open-buffer.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Neovim - telescope - swtich between buffers" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-telescope-open-buffer.png" /></a></p>
 <!-- TODO: close a buffer (not just its window) -->
 <p>Open multiple buffers when starting Neovim by specifying multiple files to open</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nvim<span class="w"> </span>README.md<span class="w"> </span>deps.edn<span class="w"> </span>src/practicalli/playground.clj<span class="w"> </span>test/practicalli/playground.clj
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>nvim<span class="w"> </span>README.md<span class="w"> </span>deps.edn<span class="w"> </span>src/practicalli/playground.clj<span class="w"> </span>test/practicalli/playground.clj
 </code></pre></div>
 </div>
 </div>
@@ -2837,7 +2860,7 @@
 </div>
 <div class="tabbed-block">
 <p>line wrap not enabled in configuration by default.</p>
-<div class="highlight"><span class="filename">fnl/config/init.fnl</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="nv">nvim.ex.set</span><span class="w"> </span><span class="ss">:nowrap</span><span class="p">)</span>
+<div class="highlight"><span class="filename">fnl/config/init.fnl</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="nv">nvim.ex.set</span><span class="w"> </span><span class="ss">:nowrap</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -2868,7 +2891,7 @@
 <p><code>:wincmd</code> can be used as an alternative to the Normal mode key bindings</p>
 </blockquote>
 <p>Open file in a new window</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>:sp<span class="w"> </span>relative-or-full-filename-path
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>:sp<span class="w"> </span>relative-or-full-filename-path
 </code></pre></div>
 <p>Resize windows</p>
 <p><code>C-w</code> <code>-</code>, <code>+</code>, <code>&lt;</code> or <code>&gt;</code> for vertical or horizontal size adjustment</p>
@@ -2905,7 +2928,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 5, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 13, 2023</span>
       
     
   </small>
