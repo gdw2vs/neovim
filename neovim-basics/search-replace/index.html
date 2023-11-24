@@ -1250,6 +1250,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#project-wide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project wide
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2584,6 +2593,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#project-wide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project wide
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2659,6 +2677,75 @@
 <li><code>*</code> to select all matching occurances</li>
 <li><code>:%s//replace-text/g</code></li>
 </ul>
+<h2 id="project-wide">Project wide<a class="headerlink" href="#project-wide" title="Permanent link">λ︎</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Evaluating...</p>
+</div>
+<p><a href="https://chrisarcand.com/vims-new-cdo-command/">Vims new :cdo command</a></p>
+<details class="info">
+<summary>:help cdo</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>EXECUTE A COMMAND IN ALL THE BUFFERS IN QUICKFIX OR LOCATION LIST:
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>                            *:cdo*
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>:cdo[!] {cmd}       Execute {cmd} in each valid entry in the quickfix list.
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>            It works like doing this:  
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>                :cfirst
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>                :{cmd}
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>                :cnext
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>                :{cmd}
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>                etc.
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>            When the current file can&#39;t be |abandon|ed and the [!]
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>            is not present, the command fails.
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>            When going to the next entry fails execution stops.
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>            The last buffer (or where an error occurred) becomes
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>            the current buffer.
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>            {cmd} can contain &#39;|&#39; to concatenate several commands.
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>            Only valid entries in the quickfix list are used.
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>            A range can be used to select entries, e.g.:  
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>                :10,$cdo cmd
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>            To skip entries 1 to 9.
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>            Note: While this command is executing, the Syntax
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>            autocommand event is disabled by adding it to
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>            &#39;eventignore&#39;.  This considerably speeds up editing
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>            each buffer.
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>            Also see |:bufdo|, |:tabdo|, |:argdo|, |:windo|,
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>            |:ldo|, |:cfdo| and |:lfdo|.
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>                            *:cfdo*
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>:cfdo[!] {cmd}      Execute {cmd} in each file in the quickfix list.
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>            It works like doing this:  
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>                :cfirst
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>                :{cmd}
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>                :cnfile
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>                :{cmd}
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>                etc.
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>            Otherwise it works the same as `:cdo`.
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>                            *:ldo*
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>:ld[o][!] {cmd}     Execute {cmd} in each valid entry in the location list
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>            for the current window.
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>            It works like doing this:  
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>                :lfirst
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>                :{cmd}
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>                :lnext
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>                :{cmd}
+<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a>                etc.
+<a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>            Only valid entries in the location list are used.
+<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>            Otherwise it works the same as `:cdo`.
+<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a>
+<a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>                            *:lfdo*
+<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a>:lfdo[!] {cmd}      Execute {cmd} in each file in the location list for
+<a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a>            the current window.
+<a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>            It works like doing this:  
+<a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a>                :lfirst
+<a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a>                :{cmd}
+<a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a>                :lnfile
+<a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a>                :{cmd}
+<a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a>                etc.
+<a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a>            Otherwise it works the same as `:ldo`.
+</code></pre></div>
+</details>
 
   <hr>
 <div class="md-source-file">
