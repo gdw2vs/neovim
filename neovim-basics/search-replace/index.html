@@ -30,7 +30,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.12">
     
     
       
@@ -38,7 +38,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fad675c6.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
@@ -1181,6 +1181,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Search Replace
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1190,6 +1201,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vim-sustitute" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vim Sustitute
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vim Sustitute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#confirm-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confirm replacement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Select
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2482,6 +2545,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vim-sustitute" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vim Sustitute
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vim Sustitute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#confirm-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confirm replacement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Select
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2512,13 +2616,25 @@
 
 
 <h1 id="search-and-replace">Search and Replace<a class="headerlink" href="#search-and-replace" title="Permanent link">λ︎</a></h1>
+<p>Search and replace within the current line or buffer:</p>
+<ul>
+<li><code>g m A</code> will match text under curor allowing in-place editing with visual-multi plugin </li>
+<li><code>:%substitue</code> vim-style search and replace (I find this fiddley and not reliable, although could be user errror)</li>
+</ul>
+<p>Search and replace across a project:</p>
+<ul>
+<li>Clojure LSP for symbols, etc.</li>
+</ul>
+<details class="hint">
+<summary>Multiple cursors for multiple substitutions</summary>
+<p><span class="keys"><kbd>g</kbd></span> <span class="keys"><kbd>m</kbd></span> <span class="keys"><kbd>A</kbd></span> with the cursor on a word will start <a href="../multiple-cursors/">multiple cursors</a> with a cursor on each occurance.  Vim-editing tools can be used to replace the text at all cursors simultaneously</p>
+</details>
+<h2 id="vim-sustitute">Vim Sustitute<a class="headerlink" href="#vim-sustitute" title="Permanent link">λ︎</a></h2>
 <p><code>:substitute</code> or <code>:s</code> vim command will highlight the matches for a text pattern and substitute for a new pattern</p>
-<p>Built-in help for the command </p>
+<details class="info">
+<summary>Built-in help for the command</summary>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">:</span>help :substitute
 </code></pre></div>
-<details class="hint">
-<summary>Multiple cursors can also be used for multiple substitutions</summary>
-<p><a href="../multiple-cursors/">multiple cursors</a> created on each occurance can be used to search and replace a pattern</p>
 </details>
 <p>Subsitute the first matching patterns in the current line</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">:</span>s<span class="sr">/current-pattern/</span><span class="k">new</span><span class="p">-</span>pattern
@@ -2529,13 +2645,27 @@
 <p>Use <code>%</code> to specify the current buffer as the scope to change all matches</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">:</span>%s<span class="sr">/current-pattern/</span><span class="k">new</span><span class="p">-</span>pattern/<span class="k">g</span>
 </code></pre></div>
+<h3 id="confirm-replacement">Confirm replacement<a class="headerlink" href="#confirm-replacement" title="Permanent link">λ︎</a></h3>
+<p><span class="keys"><kbd>c</kbd></span> option at the end prompt for confirmation to replace each occurance</p>
+<p><span class="keys"><kbd>y</kbd></span> confirms the repacement </p>
+<h3 id="visual-select">Visual Select<a class="headerlink" href="#visual-select" title="Permanent link">λ︎</a></h3>
+<p>Use a visual select to search and replace, with confirmation</p>
+<p>Note: <code>'&lt;,'&gt;</code> is automatically included when in visual mode and <code>:</code> is pressed to start a command </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">:</span><span class="s1">&#39;&lt;,&#39;</span><span class="p">&gt;</span>s<span class="sr">/search-text/</span>replace<span class="p">-</span>text/<span class="k">g</span>
+</code></pre></div>
+<p>A potentially more effecitve approach:</p>
+<ul>
+<li>visually select the text</li>
+<li><code>*</code> to select all matching occurances</li>
+<li><code>:%s//replace-text/g</code></li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 11, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2023</span>
       
     
   </small>
@@ -2705,7 +2835,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6c14ae12.min.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
