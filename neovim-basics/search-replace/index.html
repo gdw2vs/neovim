@@ -1228,6 +1228,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#substitute-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      Substitute history
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#confirm-replacement" class="md-nav__link">
     <span class="md-ellipsis">
       Confirm replacement
@@ -1235,6 +1244,30 @@
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#regular-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regular expression
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matching-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matching case
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matching case">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#visual-select" class="md-nav__link">
@@ -2571,6 +2604,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#substitute-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      Substitute history
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#confirm-replacement" class="md-nav__link">
     <span class="md-ellipsis">
       Confirm replacement
@@ -2578,6 +2620,30 @@
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#regular-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regular expression
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matching-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matching case
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matching case">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#visual-select" class="md-nav__link">
@@ -2641,6 +2707,7 @@
 </ul>
 <p>Search and replace across a project:</p>
 <ul>
+<li><code>SPC s</code> AstroNvim search and replace commands</li>
 <li>Clojure LSP for symbols, etc.</li>
 </ul>
 <details class="hint">
@@ -2650,26 +2717,61 @@
 <h2 id="vim-sustitute">Vim Sustitute<a class="headerlink" href="#vim-sustitute" title="Permanent link">λ︎</a></h2>
 <p><code>:substitute</code> or <code>:s</code> vim command will highlight the matches for a text pattern and substitute for a new pattern</p>
 <details class="info">
-<summary>Built-in help for the command</summary>
+<summary>Neovim :help :substitute</summary>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">:</span>help :substitute
 </code></pre></div>
 </details>
 <p>Subsitute the first matching patterns in the current line</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">:</span>s<span class="sr">/current-pattern/</span><span class="k">new</span><span class="p">-</span>pattern
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">:</span>s<span class="sr">/current-pattern/</span><span class="k">new</span><span class="p">-</span>pattern/
 </code></pre></div>
+<blockquote>
+<p>If the new-pattern text is ommitted, then substitute deletes the current-pattern occurances, e.g <code>:s/current-pattern//</code></p>
+</blockquote>
 <p>Subsitute all the matching patterns in the current line,  <code>g</code> representing all occurances in a line</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">:</span>s<span class="sr">/current-pattern/</span><span class="k">new</span><span class="p">-</span>pattern/<span class="k">g</span>
 </code></pre></div>
 <p>Use <code>%</code> to specify the current buffer as the scope to change all matches</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">:</span>%s<span class="sr">/current-pattern/</span><span class="k">new</span><span class="p">-</span>pattern/<span class="k">g</span>
 </code></pre></div>
+<p>An inclusive line range can be specified to narrow the search</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">:</span><span class="m">4</span><span class="p">,</span><span class="m">24</span>s<span class="sr">/current-pattern/</span><span class="k">new</span><span class="p">-</span>pattern/<span class="k">g</span>
+</code></pre></div>
+<p><code>.</code> can be used to represent the current line of buffer</p>
+<p><code>$</code> to represent the last line of the current buffer</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">:</span>.<span class="p">,</span>$s<span class="sr">/current-pattern/</span><span class="k">new</span><span class="p">-</span>pattern/<span class="k">g</span>
+</code></pre></div>
+<p>Match the whole word </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">:</span>.<span class="p">,</span>$s<span class="sr">/\&lt;current-pattern\&gt;/</span><span class="k">new</span><span class="p">-</span>pattern/<span class="k">g</span>
+</code></pre></div>
+<h3 id="substitute-history">Substitute history<a class="headerlink" href="#substitute-history" title="Permanent link">λ︎</a></h3>
+<p><code>:s</code> and the <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> / <span class="keys"><kbd class="key-arrow-down">Down</kbd></span> will navigate through the substitution history for the current session (from when Neovim was last opened if session was not restored)</p>
 <h3 id="confirm-replacement">Confirm replacement<a class="headerlink" href="#confirm-replacement" title="Permanent link">λ︎</a></h3>
 <p><span class="keys"><kbd>c</kbd></span> option at the end prompt for confirmation to replace each occurance</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">:</span>%s<span class="sr">/current-pattern/</span><span class="k">new</span><span class="p">-</span>pattern/gc
+</code></pre></div>
 <p><span class="keys"><kbd>y</kbd></span> confirms the repacement </p>
+<p><span class="keys"><kbd>l</kbd></span> confirms the repacement and quits</p>
+<p><span class="keys"><kbd>n</kbd></span> skips the current occurance and goes to the next one</p>
+<p><span class="keys"><kbd>y</kbd></span> or <span class="keys"><kbd class="key-escape">Esc</kbd></span> to quit substitution</p>
+<h3 id="regular-expression">Regular expression<a class="headerlink" href="#regular-expression" title="Permanent link">λ︎</a></h3>
+<p>regular expressions can be used as a search pattern. </p>
+<p>To replace all lines starting with ‘foo’ with ‘NeoVim Rocks’:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">:</span>%s<span class="sr">/^foo.*/</span>NeoVim rocks/gc
+</code></pre></div>
+<p>Replace all instances of ‘apple’, ‘orange’, and ‘mango’ with ‘fruit’:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">:</span>%s<span class="sr">/apple\|orange\|mango/</span>fruit/<span class="k">g</span>
+</code></pre></div>
+<p>Remove trailing blank space at the end of each line:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">:</span>%s<span class="sr">/\s\+$/</span>/<span class="k">e</span>
+</code></pre></div>
+<h2 id="matching-case">Matching case<a class="headerlink" href="#matching-case" title="Permanent link">λ︎</a></h2>
+<p><code>i</code> option disables the default case sensitive search</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">:</span>%s<span class="sr">/current-pattern/</span><span class="k">new</span><span class="p">-</span>pattern/gi
+</code></pre></div>
 <h3 id="visual-select">Visual Select<a class="headerlink" href="#visual-select" title="Permanent link">λ︎</a></h3>
 <p>Use a visual select to search and replace, with confirmation</p>
 <p>Note: <code>'&lt;,'&gt;</code> is automatically included when in visual mode and <code>:</code> is pressed to start a command </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">:</span><span class="s1">&#39;&lt;,&#39;</span><span class="p">&gt;</span>s<span class="sr">/search-text/</span>replace<span class="p">-</span>text/<span class="k">g</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">:</span><span class="s1">&#39;&lt;,&#39;</span><span class="p">&gt;</span>s<span class="sr">/search-text/</span>replace<span class="p">-</span>text/<span class="k">g</span>
 </code></pre></div>
 <p>A potentially more effecitve approach:</p>
 <ul>
@@ -2681,71 +2783,99 @@
 <div class="admonition info">
 <p class="admonition-title">Evaluating...</p>
 </div>
-<p><a href="https://chrisarcand.com/vims-new-cdo-command/">Vims new :cdo command</a></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">AstroNvim</label><label for="__tabbed_1_2">Neovim commands</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><a href="https://github.com/nvim-pack/nvim-spectre" target="_blank">Spectre</a> is available via the AstroNvim Community project pack and included in the Practicalli astronvim-config    </p>
+<p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>s</kbd></span> is the search and replace menu</p>
+<p><a href="https://github.com/BurntSushi/ripgrep" target="_blank">ripgrep</a> and <a href="https://www.gnu.org/software/sed/">sed</a> are required.</p>
+<p><a class="md-button" href="https://github.com/nvim-pack/nvim-spectre" target="_blank">Spectre</a>    </p>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+<p><a class="md-button" href="https://chrisarcand.com/vims-new-cdo-command/" target="_blank">Vims new :cdo command</a></p>
 <details class="info">
-<summary>:help cdo</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>EXECUTE A COMMAND IN ALL THE BUFFERS IN QUICKFIX OR LOCATION LIST:
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>                            *:cdo*
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>:cdo[!] {cmd}       Execute {cmd} in each valid entry in the quickfix list.
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>            It works like doing this:  
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>                :cfirst
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>                :{cmd}
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>                :cnext
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>                :{cmd}
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>                etc.
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>            When the current file can&#39;t be |abandon|ed and the [!]
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>            is not present, the command fails.
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>            When going to the next entry fails execution stops.
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>            The last buffer (or where an error occurred) becomes
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>            the current buffer.
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>            {cmd} can contain &#39;|&#39; to concatenate several commands.
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>            Only valid entries in the quickfix list are used.
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>            A range can be used to select entries, e.g.:  
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>                :10,$cdo cmd
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>            To skip entries 1 to 9.
-<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
-<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>            Note: While this command is executing, the Syntax
-<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>            autocommand event is disabled by adding it to
-<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>            &#39;eventignore&#39;.  This considerably speeds up editing
-<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>            each buffer.
-<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>            Also see |:bufdo|, |:tabdo|, |:argdo|, |:windo|,
-<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>            |:ldo|, |:cfdo| and |:lfdo|.
-<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
-<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>                            *:cfdo*
-<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>:cfdo[!] {cmd}      Execute {cmd} in each file in the quickfix list.
-<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>            It works like doing this:  
-<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>                :cfirst
-<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>                :{cmd}
-<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>                :cnfile
-<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>                :{cmd}
-<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>                etc.
-<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>            Otherwise it works the same as `:cdo`.
-<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>
-<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>                            *:ldo*
-<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>:ld[o][!] {cmd}     Execute {cmd} in each valid entry in the location list
-<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>            for the current window.
-<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>            It works like doing this:  
-<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>                :lfirst
-<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>                :{cmd}
-<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>                :lnext
-<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>                :{cmd}
-<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a>                etc.
-<a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>            Only valid entries in the location list are used.
-<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>            Otherwise it works the same as `:cdo`.
-<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a>
-<a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>                            *:lfdo*
-<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a>:lfdo[!] {cmd}      Execute {cmd} in each file in the location list for
-<a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a>            the current window.
-<a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>            It works like doing this:  
-<a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a>                :lfirst
-<a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a>                :{cmd}
-<a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a>                :lnfile
-<a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a>                :{cmd}
-<a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a>                etc.
-<a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a>            Otherwise it works the same as `:ldo`.
+<summary>Neovim :help :cdo</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>EXECUTE A COMMAND IN ALL THE BUFFERS IN QUICKFIX OR LOCATION LIST:
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>                            *:cdo*
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="p">:</span>cdo[<span class="p">!</span>] {cmd}       Execute {cmd} <span class="k">in</span> each valid entry <span class="k">in</span> the quickfix <span class="nb">list</span>.
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>            It works like doing this:  
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>                :<span class="k">cfirst</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>                :{cmd}
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>                :cnext
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>                :{cmd}
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>                etc.
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>            When the current <span class="k">file</span> can&#39;<span class="k">t</span> be <span class="p">|</span>abandon<span class="p">|</span><span class="nb">ed</span> and the [<span class="p">!</span>]
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>            <span class="k">is</span> not present<span class="p">,</span> the command fails.
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>            When going <span class="k">to</span> the next entry fails execution stops.
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>            The last buffer <span class="p">(</span>or where an error occurred<span class="p">)</span> becomes
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>            the current buffer.
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>            {cmd} can contain <span class="s1">&#39;|&#39;</span> <span class="k">to</span> concatenate several commands.
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>            Only valid entries <span class="k">in</span> the quickfix <span class="nb">list</span> are used.
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>            A range can be used <span class="k">to</span> select entries<span class="p">,</span> <span class="k">e</span>.<span class="k">g</span>.:  
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>                :<span class="m">10</span><span class="p">,</span>$cdo cmd
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>            To skip entries <span class="m">1</span> <span class="k">to</span> <span class="m">9</span>.
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>            Note: While this command <span class="k">is</span> executing<span class="p">,</span> the <span class="nb">Syntax</span>
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>            autocommand <span class="nb">event</span> <span class="k">is</span> disabled by adding it <span class="k">to</span>
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>            <span class="s1">&#39;eventignore&#39;</span>.  This considerably speeds <span class="k">up</span> editing
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>            each buffer.
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>            Also see <span class="p">|</span>:<span class="k">bufdo</span><span class="p">|,</span> <span class="p">|</span>:<span class="k">tabdo</span><span class="p">|,</span> <span class="p">|</span>:<span class="k">argdo</span><span class="p">|,</span> <span class="p">|</span>:<span class="k">windo</span><span class="p">|,</span>
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>            <span class="p">|</span>:ldo<span class="p">|,</span> <span class="p">|</span>:cfdo<span class="p">|</span> and <span class="p">|</span>:lfdo<span class="p">|</span>.
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>
+<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>                            *:cfdo*
+<a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a><span class="p">:</span>cfdo[<span class="p">!</span>] {cmd}      Execute {cmd} <span class="k">in</span> each <span class="k">file</span> <span class="k">in</span> the quickfix <span class="nb">list</span>.
+<a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a>            It works like doing this:  
+<a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a>                :<span class="k">cfirst</span>
+<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>                :{cmd}
+<a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a>                :<span class="k">cnfile</span>
+<a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a>                :{cmd}
+<a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a>                etc.
+<a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a>            Otherwise it works the same <span class="k">as</span> `:cdo`.
+<a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a>
+<a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a>                            *:ldo*
+<a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a><span class="p">:</span>ld[<span class="k">o</span>][<span class="p">!</span>] {cmd}     Execute {cmd} <span class="k">in</span> each valid entry <span class="k">in</span> the location <span class="nb">list</span>
+<a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a>            <span class="k">for</span> the current <span class="nb">window</span>.
+<a id="__codelineno-13-42" name="__codelineno-13-42" href="#__codelineno-13-42"></a>            It works like doing this:  
+<a id="__codelineno-13-43" name="__codelineno-13-43" href="#__codelineno-13-43"></a>                :<span class="k">lfirst</span>
+<a id="__codelineno-13-44" name="__codelineno-13-44" href="#__codelineno-13-44"></a>                :{cmd}
+<a id="__codelineno-13-45" name="__codelineno-13-45" href="#__codelineno-13-45"></a>                :lnext
+<a id="__codelineno-13-46" name="__codelineno-13-46" href="#__codelineno-13-46"></a>                :{cmd}
+<a id="__codelineno-13-47" name="__codelineno-13-47" href="#__codelineno-13-47"></a>                etc.
+<a id="__codelineno-13-48" name="__codelineno-13-48" href="#__codelineno-13-48"></a>            Only valid entries <span class="k">in</span> the location <span class="nb">list</span> are used.
+<a id="__codelineno-13-49" name="__codelineno-13-49" href="#__codelineno-13-49"></a>            Otherwise it works the same <span class="k">as</span> `:cdo`.
+<a id="__codelineno-13-50" name="__codelineno-13-50" href="#__codelineno-13-50"></a>
+<a id="__codelineno-13-51" name="__codelineno-13-51" href="#__codelineno-13-51"></a>                            *:lfdo*
+<a id="__codelineno-13-52" name="__codelineno-13-52" href="#__codelineno-13-52"></a><span class="p">:</span>lfdo[<span class="p">!</span>] {cmd}      Execute {cmd} <span class="k">in</span> each <span class="k">file</span> <span class="k">in</span> the location <span class="nb">list</span> <span class="k">for</span>
+<a id="__codelineno-13-53" name="__codelineno-13-53" href="#__codelineno-13-53"></a>            the current <span class="nb">window</span>.
+<a id="__codelineno-13-54" name="__codelineno-13-54" href="#__codelineno-13-54"></a>            It works like doing this:  
+<a id="__codelineno-13-55" name="__codelineno-13-55" href="#__codelineno-13-55"></a>                :<span class="k">lfirst</span>
+<a id="__codelineno-13-56" name="__codelineno-13-56" href="#__codelineno-13-56"></a>                :{cmd}
+<a id="__codelineno-13-57" name="__codelineno-13-57" href="#__codelineno-13-57"></a>                :<span class="k">lnfile</span>
+<a id="__codelineno-13-58" name="__codelineno-13-58" href="#__codelineno-13-58"></a>                :{cmd}
+<a id="__codelineno-13-59" name="__codelineno-13-59" href="#__codelineno-13-59"></a>                etc.
+<a id="__codelineno-13-60" name="__codelineno-13-60" href="#__codelineno-13-60"></a>            Otherwise it works the same <span class="k">as</span> `:ldo`.
 </code></pre></div>
 </details>
+<!-- TODO: review :cdo and similar commands
+
+    use ack.vim/ag.vim with the :cdo command, an intuitive and near-native project-wide find-and-replace solution is now available. 
+
+    To replace all instances of foo with bar:
+
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">:</span>Ack foo
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="p">:</span>cdo s<span class="sr">/foo/</span>bar/<span class="k">g</span> <span class="p">|</span> <span class="k">update</span>
+</code></pre></div>
+
+    :cdo isn’t the only command that was added around this functionality:
+
+    - :cdo[!] {cmd} - Execute {cmd} in each valid entry in the quickfix list.
+    - :cfdo[!] {cmd} - Execute {cmd} in each file in the quickfix list.
+    - :ld[o][!] {cmd} - Execute {cmd} in each valid entry in the location list for the current window.
+    - :lfdo[!] {cmd} - Execute {cmd} in each file in the location list for the current window.
+-->
 
   <hr>
 <div class="md-source-file">
