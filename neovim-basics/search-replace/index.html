@@ -2522,42 +2522,51 @@
 
 
 <h1 id="search-and-replace">Search and Replace<a class="headerlink" href="#search-and-replace" title="Permanent link">λ︎</a></h1>
-<p>Search and replace within the current line or buffer:</p>
+<p>Search and replace within the current buffer:</p>
 <ul>
-<li><code>g m A</code> will match text under curor allowing in-place editing with visual-multi plugin </li>
+<li>use multipe cursors for in-place editing (visual-multi plugin) </li>
 <li><code>:%substitue</code> vim-style search and replace</li>
 </ul>
 <p>Search and replace across a project:</p>
 <ul>
-<li><code>SPC s</code> AstroNvim search and replace commands using Spectre (community plugin)</li>
-<li>Clojure LSP for symbols, etc.</li>
+<li><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>s</kbd></span> search and replace commands using Spectre (AstroNvim community plugin)</li>
+<li><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>l</kbd></span> <span class="keys"><kbd>r</kbd></span> to rename symbols using Clojure LSP (AstroNvim) </li>
 </ul>
-<details class="hint">
-<summary>Multiple cursors for multiple substitutions</summary>
-<p><span class="keys"><kbd>g</kbd></span> <span class="keys"><kbd>m</kbd></span> <span class="keys"><kbd>A</kbd></span> with the cursor on a word will start <a href="multiple-cursors.md">multiple cursors</a> with a cursor on each occurance.  Vim-editing tools can be used to replace the text at all cursors simultaneously</p>
-</details>
 <h2 id="buffer-wide">Buffer wide<a class="headerlink" href="#buffer-wide" title="Permanent link">λ︎</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">AstroNvim</label><label for="__tabbed_1_2">Neovim commands</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><span class="keys"><kbd>g</kbd></span> <span class="keys"><kbd>m</kbd></span> <span class="keys"><kbd>A</kbd></span> uses visual-multi multiple curses to match all instances of the selected text and in-place editing</p>
+<p>Vim-editing tools can be used to replace the text at all cursors simultaneously.</p>
+<blockquote>
+<p><a href="multiple-cursors.md">multiple cursors in more detail</a> </p>
+</blockquote>
+</div>
+<div class="tabbed-block">
 <p>Replace all occurances of the current-pattern with the new pattern within the buffer.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">:</span>%s<span class="sr">/current-pattern/</span><span class="k">new</span><span class="p">-</span>pattern/<span class="k">g</span>
 </code></pre></div>
+<p>Add the <code>c</code> option to confirm each replacement</p>
 <blockquote>
 <p>Further examples of <a href="substitue.md"><code>:substitue</code> neovim command</a></p>
 </blockquote>
+</div>
+</div>
+</div>
 <h2 id="project-wide">Project wide<a class="headerlink" href="#project-wide" title="Permanent link">λ︎</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Evaluating...</p>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">AstroNvim</label><label for="__tabbed_1_2">Neovim commands</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">AstroNvim</label><label for="__tabbed_2_2">Neovim commands</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><a href="https://github.com/nvim-pack/nvim-spectre" target="_blank">Spectre</a> is available via the AstroNvim Community project pack and included in the Practicalli astronvim-config    </p>
 <p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>s</kbd></span> is the search and replace menu</p>
+<p><a class="glightbox" href="https://github.com/windwp/nvim-spectre/wiki/assets/demospectre.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="nvim-spectr" src="https://github.com/windwp/nvim-spectre/wiki/assets/demospectre.gif" /></a></p>
 <p><a href="https://github.com/BurntSushi/ripgrep" target="_blank">ripgrep</a> and <a href="https://www.gnu.org/software/sed/">sed</a> are required.</p>
 <p><a class="md-button" href="https://github.com/nvim-pack/nvim-spectre" target="_blank">Spectre</a>    </p>
 </div>
-<div class="tabbed-block"></div>
-</div>
-</div>
+<div class="tabbed-block">
 <p><a class="md-button" href="https://chrisarcand.com/vims-new-cdo-command/" target="_blank">Vims new :cdo command</a></p>
 <details class="info">
 <summary>Neovim :help :cdo</summary>
@@ -2623,6 +2632,9 @@
 <a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>            Otherwise it works the same <span class="k">as</span> `:ldo`.
 </code></pre></div>
 </details>
+</div>
+</div>
+</div>
 <!-- TODO: review :cdo and similar commands
 
     use ack.vim/ag.vim with the :cdo command, an intuitive and near-native project-wide find-and-replace solution is now available. 
