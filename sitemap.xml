@@ -141,11 +141,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/neovim/neovim-basics/search-replace/</loc>
-         <lastmod>2023-11-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://practical.li/neovim/neovim-basics/snippets/</loc>
          <lastmod>2023-11-24</lastmod>
          <changefreq>daily</changefreq>
@@ -157,6 +152,16 @@
     </url>
     <url>
          <loc>https://practical.li/neovim/neovim-basics/zen-mode/</loc>
+         <lastmod>2023-11-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/neovim/neovim-basics/search-replace/</loc>
+         <lastmod>2023-11-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/neovim/neovim-basics/search-replace/substitute/</loc>
          <lastmod>2023-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
