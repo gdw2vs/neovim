@@ -161,6 +161,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://practical.li/neovim/neovim-basics/search-replace/spectre/</loc>
+         <lastmod>2023-11-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://practical.li/neovim/neovim-basics/search-replace/substitute/</loc>
          <lastmod>2023-11-24</lastmod>
          <changefreq>daily</changefreq>
