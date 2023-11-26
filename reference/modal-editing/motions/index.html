@@ -20,21 +20,21 @@
         <meta name="author" content="Practicalli">
       
       
-        <link rel="canonical" href="https://practical.li/neovim/reference/vim-style/speaking-vim/">
+        <link rel="canonical" href="https://practical.li/neovim/reference/modal-editing/motions/">
       
       
-        <link rel="prev" href="../narrowing/">
+        <link rel="prev" href="../moving-around/">
       
       
-        <link rel="next" href="../vim-quick-reference/">
+        <link rel="next" href="../narrowing/">
       
       
       <link rel="icon" href="../../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.13">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.14">
     
     
       
-        <title>Learning to speak Vim - Practicalli Neovim</title>
+        <title>Motions - Practicalli Neovim</title>
       
     
     
@@ -81,11 +81,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Learning to speak Vim - Practicalli Neovim" >
+        <meta  property="og:title"  content="Motions - Practicalli Neovim" >
       
         <meta  property="og:description"  content="Practical guide to Clojure development with Neovim" >
       
-        <meta  property="og:image"  content="https://practical.li/neovim/assets/images/social/reference/vim-style/speaking-vim.png" >
+        <meta  property="og:image"  content="https://practical.li/neovim/assets/images/social/reference/modal-editing/motions.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -93,15 +93,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://practical.li/neovim/reference/vim-style/speaking-vim/" >
+        <meta  property="og:url"  content="https://practical.li/neovim/reference/modal-editing/motions/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Learning to speak Vim - Practicalli Neovim" >
+        <meta  name="twitter:title"  content="Motions - Practicalli Neovim" >
       
         <meta  name="twitter:description"  content="Practical guide to Clojure development with Neovim" >
       
-        <meta  name="twitter:image"  content="https://practical.li/neovim/assets/images/social/reference/vim-style/speaking-vim.png" >
+        <meta  name="twitter:image"  content="https://practical.li/neovim/assets/images/social/reference/modal-editing/motions.png" >
       
     
     
@@ -138,7 +138,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#learning-to-speak-vim" class="md-skip">
+        <a href="#motions" class="md-skip">
           Skip to content
         </a>
       
@@ -208,7 +208,7 @@
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
-             Learning to speak Vim 
+             Motions 
           </span>
         </div>
       </div>
@@ -2157,7 +2157,7 @@
               
   
   <span class="md-ellipsis">
-    Vim Style Editing
+    Modal Editing
   </span>
   
 
@@ -2173,7 +2173,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9_1">
             <span class="md-nav__icon md-icon"></span>
-            Vim Style Editing
+            Modal Editing
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2267,10 +2267,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../motions/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2279,6 +2288,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -2309,30 +2319,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Learning to speak Vim
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../speaking-vim/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2341,35 +2331,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#examples-of-speaking-vim" class="md-nav__link">
-    <span class="md-ellipsis">
-      Examples of speaking Vim
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2507,6 +2468,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2558,7 +2523,70 @@
         
   
   <span class="md-ellipsis">
-    None
+    Standard Path
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../neovim/quickfix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quickfix
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../neovim/changelist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../neovim/jumplist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jumplist
   </span>
   
 
@@ -2580,27 +2608,6 @@
   
   <span class="md-ellipsis">
     Language Providers
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../neovim/standard-path/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Standard Path
   </span>
   
 
@@ -2701,23 +2708,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#examples-of-speaking-vim" class="md-nav__link">
-    <span class="md-ellipsis">
-      Examples of speaking Vim
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2731,7 +2721,7 @@
                   
 
   
-    <a href="https://github.com/practicalli/neovim/edit/main/docs/reference/vim-style/speaking-vim.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/practicalli/neovim/edit/main/docs/reference/modal-editing/motions.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -2740,135 +2730,25 @@
     
       
     
-    <a href="https://github.com/practicalli/neovim/raw/main/docs/reference/vim-style/speaking-vim.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/practicalli/neovim/raw/main/docs/reference/modal-rawing/motions.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-<h1 id="learning-to-speak-vim">Learning to speak Vim<a class="headerlink" href="#learning-to-speak-vim" title="Permanent link">λ︎</a></h1>
-<p>Neovim is easier to learn and gain much more benefit from if you learn to speak commands as sentences.</p>
-<p>First learn some verbs:</p>
-<ul>
-<li><code>c</code> change </li>
-<li><code>d</code> delete</li>
-<li><code>g</code> go, </li>
-<li><code>v</code> visual select </li>
-<li><code>y</code> yank (copy)</li>
-</ul>
-<p>Then use those verbs with some modifiers</p>
-<ul>
-<li><code>'</code> mark </li>
-<li><code>{ }</code> beginning/end of paragraph</li>
-<li><code>0</code> start of line</li>
-<li><code>^</code> first non white-space character of line</li>
-<li><code>$</code> end of line</li>
-<li><code>a</code> around</li>
-<li><code>f</code> find (includes character)</li>
-<li><code>i</code> inside a range (e.g. word, paren,)</li>
-<li><code>s</code> surround </li>
-<li><code>t</code> till (move just before specified character)</li>
-</ul>
-<p>Then learn the text objects you can apply verbs and modifiers too</p>
-<ul>
-<li><code>b</code> block/parentheses</li>
-<li><code>p</code> paragraph, </li>
-<li><code>s</code> sentence  </li>
-<li><code>t</code> tag e.g. html/xml </li>
-<li><code>w</code> word</li>
-</ul>
-<h2 id="examples-of-speaking-vim">Examples of speaking Vim<a class="headerlink" href="#examples-of-speaking-vim" title="Permanent link">λ︎</a></h2>
-<p>Practice speaking evil with these examples</p>
-<table>
-<thead>
-<tr>
-<th>Keybinding</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>c i s</code></td>
-<td>change inside current sentence (change the whole sentence)</td>
-</tr>
-<tr>
-<td><code>c i "</code></td>
-<td>change inside double quotes</td>
-</tr>
-<tr>
-<td><code>c f )</code></td>
-<td>change from cursor to next <code>)</code> character</td>
-</tr>
-<tr>
-<td><code>c s ' "</code></td>
-<td>change by the surrounding single quotes with double quotes</td>
-</tr>
-<tr>
-<td><code>c t X</code></td>
-<td>change till the character <code>X</code> (not including <code>X</code>)</td>
-</tr>
-<tr>
-<td><code>c /foo</code></td>
-<td>change until the first search result of ‘foo’</td>
-</tr>
-<tr>
-<td><code>d d</code></td>
-<td>delete current line</td>
-</tr>
-<tr>
-<td><code>D</code></td>
-<td>delete current line from cursor onward</td>
-</tr>
-<tr>
-<td><code>d i w</code></td>
-<td>delete inside the current word (delete word)</td>
-</tr>
-<tr>
-<td><code>v t SPC</code></td>
-<td>visual select till the next <code>Space</code> character</td>
-</tr>
-<tr>
-<td><code>v s ]</code></td>
-<td>visually select and surround with <code>[]</code> without spaces</td>
-</tr>
-<tr>
-<td><code>v s [</code></td>
-<td>as above with <code>[ ]</code> with spaces between parens and content</td>
-</tr>
-<tr>
-<td><code>g v</code></td>
-<td>go to last visual selection (select last visual selection)</td>
-</tr>
-<tr>
-<td><code>v a p</code></td>
-<td>visually select around current paragraph</td>
-</tr>
-<tr>
-<td><code>v i w S "</code></td>
-<td>visually select, insert around current word, and surround with quotes</td>
-</tr>
-<tr>
-<td><code>y y</code></td>
-<td>yank (copy) current line</td>
-</tr>
-<tr>
-<td><code>y w</code></td>
-<td>yank (copy) current word</td>
-</tr>
-<tr>
-<td><code>y @ a</code></td>
-<td>yank (copy) to mark <code>a</code> (<code>m a</code> creates a mark called <code>a</code>)</td>
-</tr>
-</tbody>
-</table>
+<h1 id="motions">Motions<a class="headerlink" href="#motions" title="Permanent link">λ︎</a></h1>
+<div class="admonition todo">
+<p class="admonition-title">Todo</p>
+<p>Moving the cursor around by context rather than individual characters</p>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 2, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 26, 2023</span>
       
     
   </small>
@@ -2904,7 +2784,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../narrowing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Narrowing">
+          <a href="../moving-around/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Moving around the cursor">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2914,20 +2794,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Narrowing
+                Moving around the cursor
               </div>
             </div>
           </a>
         
         
           
-          <a href="../vim-quick-reference/" class="md-footer__link md-footer__link--next" aria-label="Next: Neovim Quick Reference">
+          <a href="../narrowing/" class="md-footer__link md-footer__link--next" aria-label="Next: Narrowing">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Neovim Quick Reference
+                Narrowing
               </div>
             </div>
             <div class="md-footer__button md-icon">

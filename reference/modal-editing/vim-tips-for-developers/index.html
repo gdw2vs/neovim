@@ -20,21 +20,21 @@
         <meta name="author" content="Practicalli">
       
       
-        <link rel="canonical" href="https://practical.li/neovim/reference/vim-style/z-menu/">
+        <link rel="canonical" href="https://practical.li/neovim/reference/modal-editing/vim-tips-for-developers/">
       
       
-        <link rel="prev" href="../visual-select/">
+        <link rel="prev" href="../vim-quick-reference/">
       
       
-        <link rel="next" href="../../neovim/">
+        <link rel="next" href="../visual-select/">
       
       
       <link rel="icon" href="../../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.13">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.14">
     
     
       
-        <title>Evil Z menu - Practicalli Neovim</title>
+        <title>Vim editing for Clojure developers - Practicalli Neovim</title>
       
     
     
@@ -81,11 +81,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Evil Z menu - Practicalli Neovim" >
+        <meta  property="og:title"  content="Vim editing for Clojure developers - Practicalli Neovim" >
       
         <meta  property="og:description"  content="Practical guide to Clojure development with Neovim" >
       
-        <meta  property="og:image"  content="https://practical.li/neovim/assets/images/social/reference/vim-style/z-menu.png" >
+        <meta  property="og:image"  content="https://practical.li/neovim/assets/images/social/reference/modal-editing/vim-tips-for-developers.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -93,15 +93,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://practical.li/neovim/reference/vim-style/z-menu/" >
+        <meta  property="og:url"  content="https://practical.li/neovim/reference/modal-editing/vim-tips-for-developers/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Evil Z menu - Practicalli Neovim" >
+        <meta  name="twitter:title"  content="Vim editing for Clojure developers - Practicalli Neovim" >
       
         <meta  name="twitter:description"  content="Practical guide to Clojure development with Neovim" >
       
-        <meta  name="twitter:image"  content="https://practical.li/neovim/assets/images/social/reference/vim-style/z-menu.png" >
+        <meta  name="twitter:image"  content="https://practical.li/neovim/assets/images/social/reference/modal-editing/vim-tips-for-developers.png" >
       
     
     
@@ -138,7 +138,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#evil-z-menu" class="md-skip">
+        <a href="#vim-editing-for-clojure-developers" class="md-skip">
           Skip to content
         </a>
       
@@ -208,7 +208,7 @@
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
-             Evil Z menu 
+             Vim editing for Clojure developers 
           </span>
         </div>
       </div>
@@ -2157,7 +2157,7 @@
               
   
   <span class="md-ellipsis">
-    Vim Style Editing
+    Modal Editing
   </span>
   
 
@@ -2173,7 +2173,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9_1">
             <span class="md-nav__icon md-icon"></span>
-            Vim Style Editing
+            Modal Editing
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2351,10 +2351,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../vim-tips-for-developers/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Vim editing for Clojure developers
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2363,6 +2383,89 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comments-and-commenting-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comments and Commenting code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulated-structural-editing-with-surround" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulated structural editing with surround
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moving-around-quickly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Moving around quickly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selection-find-and-replace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selection, find and replace
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-code-and-configuration-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Source code and configuration files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-folding" class="md-nav__link">
+    <span class="md-ellipsis">
+      code folding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transposing-characters-and-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transposing characters and sections
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2393,30 +2496,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Evil Z menu
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../z-menu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2425,53 +2508,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#folding-code-comments-and-other-content" class="md-nav__link">
-    <span class="md-ellipsis">
-      Folding code, comments and other content
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scrolling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Scrolling
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#spelling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Spelling
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2517,6 +2553,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -2576,7 +2616,70 @@
         
   
   <span class="md-ellipsis">
-    None
+    Standard Path
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../neovim/quickfix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quickfix
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../neovim/changelist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../neovim/jumplist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jumplist
   </span>
   
 
@@ -2598,27 +2701,6 @@
   
   <span class="md-ellipsis">
     Language Providers
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../neovim/standard-path/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Standard Path
   </span>
   
 
@@ -2726,27 +2808,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#folding-code-comments-and-other-content" class="md-nav__link">
+  <a href="#comments-and-commenting-code" class="md-nav__link">
     <span class="md-ellipsis">
-      Folding code, comments and other content
+      Comments and Commenting code
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#scrolling" class="md-nav__link">
+  <a href="#simulated-structural-editing-with-surround" class="md-nav__link">
     <span class="md-ellipsis">
-      Scrolling
+      Simulated structural editing with surround
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#spelling" class="md-nav__link">
+  <a href="#moving-around-quickly" class="md-nav__link">
     <span class="md-ellipsis">
-      Spelling
+      Moving around quickly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selection-find-and-replace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selection, find and replace
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-code-and-configuration-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Source code and configuration files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-folding" class="md-nav__link">
+    <span class="md-ellipsis">
+      code folding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transposing-characters-and-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transposing characters and sections
     </span>
   </a>
   
@@ -2767,7 +2885,7 @@
                   
 
   
-    <a href="https://github.com/practicalli/neovim/edit/main/docs/reference/vim-style/z-menu.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/practicalli/neovim/edit/main/docs/reference/modal-editing/vim-tips-for-developers.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -2776,125 +2894,93 @@
     
       
     
-    <a href="https://github.com/practicalli/neovim/raw/main/docs/reference/vim-style/z-menu.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/practicalli/neovim/raw/main/docs/reference/modal-rawing/vim-tips-for-developers.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-<h1 id="evil-z-menu">Evil Z menu<a class="headerlink" href="#evil-z-menu" title="Permanent link">λ︎</a></h1>
-<p><code>z</code> in normal mode opens a menu of convenient utilities</p>
-<h2 id="folding-code-comments-and-other-content">Folding code, comments and other content<a class="headerlink" href="#folding-code-comments-and-other-content" title="Permanent link">λ︎</a></h2>
-<p>Code folding is very useful for hiding different levels of detail, for example you could hide everything but the function names in a namespace, showing just the API for that namespace.</p>
-<p>Comments and documentation can be folded to help you focus on a specific part of the content.</p>
+<h1 id="vim-editing-for-clojure-developers">Vim editing for Clojure developers<a class="headerlink" href="#vim-editing-for-clojure-developers" title="Permanent link">λ︎</a></h1>
+<!-- TODO: covert from Spacemacs to neovim -->
+
+<p>Vim keybindings that drive Vim editing tools that are common for developers</p>
+<h2 id="comments-and-commenting-code">Comments and Commenting code<a class="headerlink" href="#comments-and-commenting-code" title="Permanent link">λ︎</a></h2>
+<ul>
+<li><code>g c c</code>  comment line</li>
+<li><code>g c c</code>  comment line</li>
+<li><code>v (select) g c</code>  comment region</li>
+<li><code>g c 9 j</code>  comment 9 lines from current, downwards</li>
+</ul>
+<h2 id="simulated-structural-editing-with-surround">Simulated structural editing with surround<a class="headerlink" href="#simulated-structural-editing-with-surround" title="Permanent link">λ︎</a></h2>
 <table>
 <thead>
 <tr>
-<th>Key</th>
+<th>Keybinding</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>z a</code></td>
-<td>toggle fold of code, comment, section, etc.</td>
+<td><code>v s ]</code></td>
+<td>surround with [characters] without spaces</td>
 </tr>
 <tr>
-<td><code>z A</code></td>
-<td>toggle all folds</td>
+<td><code>v s [</code></td>
+<td>surround with [ characters ] without spaces</td>
 </tr>
 <tr>
-<td><code>z c</code></td>
-<td>close fold</td>
+<td><code>c s ( [</code></td>
+<td>change surrounding from ( to [</td>
 </tr>
 <tr>
-<td><code>z f</code></td>
-<td>create fold</td>
+<td><code>c i (</code></td>
+<td>change in (</td>
 </tr>
 <tr>
-<td><code>z M</code></td>
-<td>close all folds</td>
+<td><code>c a (</code></td>
+<td>change “around” (</td>
 </tr>
 <tr>
-<td><code>z o</code></td>
-<td>open fold</td>
+<td><code>%</code></td>
+<td>jump forwards to next paren, further <code>%</code> toggles between open and close parens.</td>
 </tr>
 <tr>
-<td><code>z O</code></td>
-<td>open fold recursive (capital o)</td>
-</tr>
-<tr>
-<td><code>z r</code></td>
-<td>fewer folds</td>
-</tr>
-<tr>
-<td><code>z R</code></td>
-<td>open all folds</td>
-</tr>
-<tr>
-<td><code>z x</code></td>
-<td>update folds</td>
+<td><code>x p</code></td>
+<td>transpose characters (cut current, paste after)</td>
 </tr>
 </tbody>
 </table>
-<p>See <a href="../narrowing/">narrowing</a> for a focused approach to editing.</p>
-<h2 id="scrolling">Scrolling<a class="headerlink" href="#scrolling" title="Permanent link">λ︎</a></h2>
-<p>Jump the current line to the center, top or bottom of the buffer.</p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>z b</code></td>
-<td>scroll the current line to bottom of buffer</td>
-</tr>
-<tr>
-<td><code>z t</code></td>
-<td>scroll the current line to top of buffer</td>
-</tr>
-<tr>
-<td><code>z z</code></td>
-<td>scroll the current line to center of buffer</td>
-</tr>
-</tbody>
-</table>
-<h2 id="spelling">Spelling<a class="headerlink" href="#spelling" title="Permanent link">λ︎</a></h2>
-<p><code>z =</code> with the cursor on a word shows a list of possible spelling and similar words.</p>
-<p>Select a word using its number in tye list to repace the word under the cursor, or <code>q</code> to quit the spelling list.</p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>z =</code></td>
-<td>spelling suggestions</td>
-</tr>
-<tr>
-<td><code>z g</code></td>
-<td>add word to spelling list</td>
-</tr>
-<tr>
-<td><code>z w</code></td>
-<td>mark word as misspelled</td>
-</tr>
-</tbody>
-</table>
+<h2 id="moving-around-quickly">Moving around quickly<a class="headerlink" href="#moving-around-quickly" title="Permanent link">λ︎</a></h2>
+<p><code>f</code> to jump forward to a given character on the current line. <code>F</code> to jump backwards.</p>
+<p><code>zt</code>, <code>zz</code>, and <code>zb</code> to pull the current line to the top/middle/bottom of the screen.</p>
+<p><code>[number] G</code> jump to line number or <code>:22</code> to jump to line 22</p>
+<p><code>:7j</code> to jump 7 lines down</p>
+<p><code>gf</code> jump to file name under the cursor - try this in the summary.md file</p>
+<h2 id="selection-find-and-replace">Selection, find and replace<a class="headerlink" href="#selection-find-and-replace" title="Permanent link">λ︎</a></h2>
+<p><code>viw</code> to visual-select in (within) the current word </p>
+<h2 id="source-code-and-configuration-files">Source code and configuration files<a class="headerlink" href="#source-code-and-configuration-files" title="Permanent link">λ︎</a></h2>
+<p><code>g D</code>open definition in another window</p>
+<p><code>=</code> (code-aware indenting) operator. Nice with the <code>ap</code> (a paragraph) text object.</p>
+<p><code>C-]</code> Jump to definition of keyword under the cursor</p>
+<h2 id="code-folding">code folding<a class="headerlink" href="#code-folding" title="Permanent link">λ︎</a></h2>
+<p><code>zc</code> and <code>zo</code> are useful to close and open folds, which can be a nice way of focusing on certain pieces of code.</p>
+<h2 id="transposing-characters-and-sections">Transposing characters and sections<a class="headerlink" href="#transposing-characters-and-sections" title="Permanent link">λ︎</a></h2>
+<p><code>x p</code>  simple transpose of the current and next character</p>
+<p><code>M-t</code> transpose words before and after cursor position</p>
+<p><code>{</code>, <code>}</code> motions jump to next and previous empty lines.  This motion makes it simple to rearrange paragraphs</p>
+<p><code>{ d }</code> will kill the paragraph (or multiple paragraphs)</p>
+<p><code>{</code> will jump to the start of the previous paragraph</p>
+<p><code>p</code> pastes the killed paragraph before the current paragraph</p>
+<p><code>&gt;</code> and <code>&lt;</code> (indent and dedent) operators, useful with the aforementioned <code>}</code>/<code>{</code> motions.</p>
+<p>/<em> ## multi-replace with iedit and narrowing </em>/</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 19, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 26, 2023</span>
       
     
   </small>
@@ -2930,7 +3016,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../visual-select/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Visual Select">
+          <a href="../vim-quick-reference/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Neovim Quick Reference">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2940,20 +3026,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Visual Select
+                Neovim Quick Reference
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../neovim/" class="md-footer__link md-footer__link--next" aria-label="Next: Neovim Reference">
+          <a href="../visual-select/" class="md-footer__link md-footer__link--next" aria-label="Next: Visual Select">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Neovim Reference
+                Visual Select
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -181,7 +181,77 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://practical.li/neovim/reference/modal-editing/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/neovim/reference/modal-editing/case/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/neovim/reference/modal-editing/g-menu/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/neovim/reference/modal-editing/key-binding-reference/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/neovim/reference/modal-editing/motions/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/neovim/reference/modal-editing/moving-around/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/neovim/reference/modal-editing/narrowing/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/neovim/reference/modal-editing/speaking-vim/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/neovim/reference/modal-editing/vim-quick-reference/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/neovim/reference/modal-editing/vim-tips-for-developers/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/neovim/reference/modal-editing/visual-select/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/neovim/reference/modal-editing/z-menu/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://practical.li/neovim/reference/neovim/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/neovim/reference/neovim/changelist/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/neovim/reference/neovim/jumplist/</loc>
          <lastmod>2023-11-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -191,67 +261,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://practical.li/neovim/reference/neovim/quickfix/</loc>
+         <lastmod>2023-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://practical.li/neovim/reference/neovim/standard-path/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/neovim/reference/vim-style/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/neovim/reference/vim-style/case/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/neovim/reference/vim-style/g-menu/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/neovim/reference/vim-style/key-binding-reference/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/neovim/reference/vim-style/motions/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/neovim/reference/vim-style/moving-around/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/neovim/reference/vim-style/narrowing/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/neovim/reference/vim-style/speaking-vim/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/neovim/reference/vim-style/vim-quick-reference/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/neovim/reference/vim-style/vim-tips-for-developers/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/neovim/reference/vim-style/visual-select/</loc>
-         <lastmod>2023-11-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/neovim/reference/vim-style/z-menu/</loc>
          <lastmod>2023-11-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
