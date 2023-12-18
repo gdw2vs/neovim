@@ -20,13 +20,13 @@
         <meta name="author" content="Practicalli">
       
       
-        <link rel="canonical" href="https://practical.li/neovim/reference/modal-editing/">
+        <link rel="canonical" href="https://practical.li/neovim/install/neovide/">
       
       
-        <link rel="prev" href="../../termux/neovim/">
+        <link rel="prev" href="../neovim/">
       
       
-        <link rel="next" href="case/">
+        <link rel="next" href="../../configuration/">
       
       
       <link rel="icon" href="../../assets/favicon.svg">
@@ -34,7 +34,7 @@
     
     
       
-        <title>Reference: Learn Vim-style Editing - Practicalli Neovim</title>
+        <title>Neovide - Practicalli Neovim</title>
       
     
     
@@ -81,11 +81,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Reference: Learn Vim-style Editing - Practicalli Neovim" >
+        <meta  property="og:title"  content="Neovide - Practicalli Neovim" >
       
         <meta  property="og:description"  content="Practical guide to Clojure development with Neovim" >
       
-        <meta  property="og:image"  content="https://practical.li/neovim/assets/images/social/reference/modal-editing/index.png" >
+        <meta  property="og:image"  content="https://practical.li/neovim/assets/images/social/install/neovide.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -93,15 +93,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://practical.li/neovim/reference/modal-editing/" >
+        <meta  property="og:url"  content="https://practical.li/neovim/install/neovide/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Reference: Learn Vim-style Editing - Practicalli Neovim" >
+        <meta  name="twitter:title"  content="Neovide - Practicalli Neovim" >
       
         <meta  name="twitter:description"  content="Practical guide to Clojure development with Neovim" >
       
-        <meta  name="twitter:image"  content="https://practical.li/neovim/assets/images/social/reference/modal-editing/index.png" >
+        <meta  name="twitter:image"  content="https://practical.li/neovim/assets/images/social/install/neovide.png" >
       
     
     
@@ -135,7 +135,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reference-learn-vim-style-editing" class="md-skip">
+        <a href="#neovide-gui" class="md-skip">
           Skip to content
         </a>
       
@@ -205,7 +205,7 @@
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
-             Reference: Learn Vim-style Editing 
+             Neovide 
           </span>
         </div>
       </div>
@@ -582,6 +582,8 @@
       
   
   
+    
+  
   
   
     
@@ -601,17 +603,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../install/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -628,7 +630,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Install
@@ -644,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../install/clojure/" class="md-nav__link">
+      <a href="../clojure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -665,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../install/neovim/" class="md-nav__link">
+      <a href="../neovim/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -683,10 +685,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../install/neovide/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Neovide
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -695,6 +717,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-neovide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Neovide
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neovide-with-nvim_appname" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neovide with NVIM_APPNAME
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-neovide-font" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Neovide Font
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2077,10 +2146,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -2096,12 +2163,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
           <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
@@ -2115,7 +2182,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             Reference
@@ -2126,8 +2193,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2163,17 +2228,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../../reference/modal-editing/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2184,13 +2249,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9_1">
             <span class="md-nav__icon md-icon"></span>
             Modal Editing
@@ -2206,7 +2271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="case/" class="md-nav__link">
+      <a href="../../reference/modal-editing/case/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2227,7 +2292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="g-menu/" class="md-nav__link">
+      <a href="../../reference/modal-editing/g-menu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2248,7 +2313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="key-binding-reference/" class="md-nav__link">
+      <a href="../../reference/modal-editing/key-binding-reference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2269,7 +2334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="moving-around/" class="md-nav__link">
+      <a href="../../reference/modal-editing/moving-around/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2290,7 +2355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="motions/" class="md-nav__link">
+      <a href="../../reference/modal-editing/motions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2311,7 +2376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="narrowing/" class="md-nav__link">
+      <a href="../../reference/modal-editing/narrowing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2332,7 +2397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="speaking-vim/" class="md-nav__link">
+      <a href="../../reference/modal-editing/speaking-vim/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2353,7 +2418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vim-quick-reference/" class="md-nav__link">
+      <a href="../../reference/modal-editing/vim-quick-reference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2374,7 +2439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vim-tips-for-developers/" class="md-nav__link">
+      <a href="../../reference/modal-editing/vim-tips-for-developers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2395,7 +2460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="visual-select/" class="md-nav__link">
+      <a href="../../reference/modal-editing/visual-select/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2416,7 +2481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="z-menu/" class="md-nav__link">
+      <a href="../../reference/modal-editing/z-menu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2445,7 +2510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aligning-text.md" class="md-nav__link">
+      <a href="../../reference/aligning-text.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2496,7 +2561,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../neovim/" class="md-nav__link ">
+            <a href="../../reference/neovim/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2529,7 +2594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../neovim/standard-path/" class="md-nav__link">
+      <a href="../../reference/neovim/standard-path/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2550,7 +2615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../neovim/quickfix/" class="md-nav__link">
+      <a href="../../reference/neovim/quickfix/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2571,7 +2636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../neovim/changelist/" class="md-nav__link">
+      <a href="../../reference/neovim/changelist/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2592,7 +2657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../neovim/jumplist/" class="md-nav__link">
+      <a href="../../reference/neovim/jumplist/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2613,7 +2678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../neovim/language-providers/" class="md-nav__link">
+      <a href="../../reference/neovim/language-providers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2662,7 +2727,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../lua-language/" class="md-nav__link ">
+            <a href="../../reference/lua-language/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2725,36 +2790,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
+  <a href="#install-neovide" class="md-nav__link">
     <span class="md-ellipsis">
-      Getting started
+      Install Neovide
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#navigation-and-searching" class="md-nav__link">
+  <a href="#neovide-with-nvim_appname" class="md-nav__link">
     <span class="md-ellipsis">
-      Navigation and searching
+      Neovide with NVIM_APPNAME
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#text-wrangling" class="md-nav__link">
+  <a href="#set-neovide-font" class="md-nav__link">
     <span class="md-ellipsis">
-      Text wrangling
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#clojure-editing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Clojure Editing
+      Set Neovide Font
     </span>
   </a>
   
@@ -2775,7 +2831,7 @@
                   
 
   
-    <a href="https://github.com/practicalli/neovim/edit/main/docs/reference/modal-editing/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/practicalli/neovim/edit/main/docs/install/neovide.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -2784,39 +2840,70 @@
     
       
     
-    <a href="https://github.com/practicalli/neovim/raw/main/docs/reference/modal-rawing/index.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/practicalli/neovim/raw/main/docs/install/neovide.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-<h1 id="reference-learn-vim-style-editing">Reference: Learn Vim-style Editing<a class="headerlink" href="#reference-learn-vim-style-editing" title="Permanent link">λ︎</a></h1>
-<p>Learning vim-style multi-modal editing takes time and practice.  Most importantly this approach can be learned in stages, as insert mode is the same editing experience as using most other editors.</p>
-<p>Start with the multi-modal concept and the basics of navigation.  Then adopt more normal and visual mode actions, including motions </p>
-<h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">λ︎</a></h2>
-<p><code>:Tutor</code> runs the intteractive tutorial built into neovim <code>(:help tutor</code> also runs the tutor)</p>
-<blockquote>
-<p>vim adventures isa simple online game to teach you the fundamentals of vim-style editing.</p>
-</blockquote>
-<h2 id="navigation-and-searching">Navigation and searching<a class="headerlink" href="#navigation-and-searching" title="Permanent link">λ︎</a></h2>
-<ul>
-<li>moving the cursor</li>
-<li>Motions </li>
-<li>line numbers </li>
-<li>jumping around a buffer</li>
-<li>search and replace</li>
-</ul>
-<!-- TODO: Include refeences from Practicalli Spacemacs book -->
-
-<h2 id="text-wrangling">Text wrangling<a class="headerlink" href="#text-wrangling" title="Permanent link">λ︎</a></h2>
-<ul>
-<li>iedit</li>
-<li>text case</li>
-</ul>
-<h2 id="clojure-editing">Clojure Editing<a class="headerlink" href="#clojure-editing" title="Permanent link">λ︎</a></h2>
-<p>traversing expressions 
-structural editing </p>
+<h1 id="neovide-gui">Neovide GUI<a class="headerlink" href="#neovide-gui" title="Permanent link">λ︎</a></h1>
+<p><a class="glightbox" href="https://neovide.dev/assets/neovide-128x128.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img align="right" alt="Neovide Gui Screenshot" loading="lazy" src="https://neovide.dev/assets/neovide-128x128.png" style="height:150px" /></a></p>
+<p>Neovide provides a GUI for Neovim and supports the use of AstroNvim community configuration.</p>
+<p><a href="https://neovide.dev/features.html" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Neovide features</a></p>
+<h2 id="install-neovide">Install Neovide<a class="headerlink" href="#install-neovide" title="Permanent link">λ︎</a></h2>
+<p><a href="https://neovide.dev/"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Download from Neovide.dev website</a></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Debian</label><label for="__tabbed_1_2">MacOSX</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><a href="https://github.com/neovide/neovide/releases/latest/download/neovide.AppImage">Download neovide.AppImage</a></p>
+<p>Move the <code>neovide.AppImage</code> to the execution path, e.g. <code>$HOME/.local/bin</code></p>
+<p>Create the <code>$HOME/.local/bin/neovide</code> symbolic link pointing to the neovide.AppImage</p>
+<div class="admonition note">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ln<span class="w"> </span>-s<span class="w"> </span><span class="nv">$HOME</span>/.local/bin/neovide.AppImage<span class="w"> </span><span class="nv">$HOME</span>/.local/bin/neovide
+</code></pre></div>
+</div>
+</div>
+<div class="tabbed-block">
+<p><a href="https://github.com/neovide/neovide/releases/latest/download/neovide.dmg.zip">Download the MacOSX dmg.zip file</a></p>
+<p>Extract the .zip file </p>
+<p>Run the extracted dmg file and use the install wizard to copy Neovide to the Applications directory.</p>
+</div>
+</div>
+</div>
+<h2 id="neovide-with-nvim_appname">Neovide with NVIM_APPNAME<a class="headerlink" href="#neovide-with-nvim_appname" title="Permanent link">λ︎</a></h2>
+<p><code>NVIM_APPNAME</code> sets the configuration used when starting Neovim.</p>
+<p>Use a shell alias to run Neovide with a specific configuration</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Neovide alias with AstroNvim configuration</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">neovide</span><span class="o">=</span><span class="s2">&quot;NVIM_APPNAME=astronvim neovide&quot;</span>
+</code></pre></div>
+<h2 id="set-neovide-font">Set Neovide Font<a class="headerlink" href="#set-neovide-font" title="Permanent link">λ︎</a></h2>
+<p>The <code>guifont</code> Neovim option is used to set a font family and size specifically for a GUI appliction, i.e. Neovide.  It is not used by Neovim itself.</p>
+<div class="admonition example">
+<p class="admonition-title">Neovide font family and size</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">guifont</span> <span class="o">=</span> <span class="s2">&quot;Fira Code:h16&quot;</span>
+</code></pre></div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">AstroNvim Neovide font family and size</p>
+<p><a href="/neovim/configuration/astronvim/#clone-astronvim-user-config"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli AstroNvim Config</a> includes the <code>guifont</code> option in the <code>options.lua</code> file.</p>
+<div class="highlight"><span class="filename">options.lua</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">return</span> <span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  <span class="n">opt</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="c1">-- set to true or false etc.</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">relativenumber</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">-- sets vim.opt.relativenumber</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">number</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>         <span class="c1">-- sets vim.opt.number</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">spell</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>         <span class="c1">-- sets vim.opt.spell</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">signcolumn</span> <span class="o">=</span> <span class="s2">&quot;auto&quot;</span><span class="p">,</span>   <span class="c1">-- sets vim.opt.signcolumn to auto</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="n">wrap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>           <span class="c1">-- sets vim.opt.wrap</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="c1">-- showtabline = 0,    -- sets vim.opt.showtabline - zero hides tabs</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="n">timeoutlen</span> <span class="o">=</span> <span class="mi">420</span><span class="p">,</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="c1">-- neovide font family &amp; size</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="n">guifont</span> <span class="o">=</span> <span class="s2">&quot;Fira Code:h16&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>  <span class="p">},</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="p">}</span>
+</code></pre></div>
+</div>
+<p><a class="glightbox" href="https://neovide.dev/assets/BasicScreenCap.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Neovide Gui Screenshot" loading="lazy" src="https://neovide.dev/assets/BasicScreenCap.png" /></a></p>
 
 
 
@@ -2837,7 +2924,7 @@ structural editing </p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 26, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2023</span>
   </span>
 
     
@@ -2877,7 +2964,7 @@ structural editing </p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../termux/neovim/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Neovim">
+          <a href="../neovim/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Neovim">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2894,13 +2981,13 @@ structural editing </p>
         
         
           
-          <a href="case/" class="md-footer__link md-footer__link--next" aria-label="Next: Modifying text case">
+          <a href="../../configuration/" class="md-footer__link md-footer__link--next" aria-label="Next: Neovim Configuration">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Modifying text case
+                Neovim Configuration
               </div>
             </div>
             <div class="md-footer__button md-icon">

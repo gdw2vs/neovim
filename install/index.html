@@ -30,7 +30,7 @@
       
       
       <link rel="icon" href="../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
     
     
       
@@ -38,7 +38,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.45e1311d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -597,6 +597,8 @@
       
         
       
+        
+      
     
     
     
@@ -670,6 +672,27 @@
   
   <span class="md-ellipsis">
     Neovim
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="neovide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Neovide
   </span>
   
 
@@ -2700,15 +2723,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Install summary
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       Next Steps
@@ -2755,37 +2769,12 @@
 <li><a href="neovim/">Neovim 0.9.x or nightly build</a></li>
 <li><a href="packages/index.md">Neovim package manager and packages</a></li>
 <li><a href="https://www.nerdfonts.com/" target="_blank">NerdFonts</a> for icon support in themes and status line</li>
-<li>Optional: <a href="neovide.md">Neovide</a> GUI for neovim</li>
+<li>Optional: <a href="neovide/">Neovide</a> GUI for neovim</li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Neovim 0.9.x latest stable release</p>
-<p>Content and configuration in this book has been tested against Neovim 0.9.x over the summer of 2023</p>
+<div class="admonition info">
+<p class="admonition-title">Neovim 0.9.4 latest stable release</p>
+<p>Content and configuration in this book has been tested against Neovim 0.9.4 but not against Neovim nightly builds.</p>
 </div>
-<h2 id="install-summary">Install summary<a class="headerlink" href="#install-summary" title="Permanent link">λ︎</a></h2>
-<p>If you are familiar with most of the tools required, then the quick start list below provides an ultra-terse version on how to get started with Neovim and Clojure development.</p>
-<ul>
-<li><a href="https://github.com/neovim/neovim/wiki/Installing-Neovim" target="_blank">Install Neovim 0.9.x or greater</a><ul>
-<li><a href="https://github.com/neovim/neovim/releases/" target="_blank">Linux AppImage</a></li>
-<li><code>brew install --HEAD neovim</code> for Homebrew install of development version</li>
-</ul>
-</li>
-<li>Install supporting tools<ul>
-<li><code>tar</code> &amp; <code>curl</code> and a C compiler, e.g. <code>gcc</code> for Linux or <code>clang</code> for android/termix (required by nvim-treesitter)</li>
-<li><code>ripgrep</code> &amp; <code>fd</code> to search for files (used by telescope)</li>
-<li><code>luarocks</code> for LSP support in AstroNvim</li>
-</ul>
-</li>
-<li>Optionally add a community configuration, e.g. <a href="/neovim/configuration/astronvim/" target="_blank">AstroNvim</a> or <a href="https://github.com/practicalli/neovim-config-redux" target="_blank">Practicalli Neovim Config</a></li>
-<li>Run <code>nvim</code> in a terminal </li>
-<li><a href="clojure/">Install Clojure CLI</a> and supporting tools</li>
-<li>Clone / fork <a href="https://github.com/practicalli/clojure-deps-edn/" target="_blank">practicalli/clojure-deps-edn</a> or add an alias with the <a href="https://github.com/Olical/conjure/wiki/Quick-start:-Clojure#with-clojure-cli" target="_blank">required config to use nrepl and cider-nrepl</a></li>
-<li><a href="/repl-driven-development/">Run a Clojure REPL process</a> - in a terminal session with nREPL, e.g. using one of the REPL aliases from <a href="https://github.com/practicalli/clojure-cli-config" target="_blank">practicalli/clojure-cli-config</a><ul>
-<li><code>clojure -M:repl/rebel</code> for a rich REPL UI with auto-completion &amp; docs</li>
-<li><code>clojure -M:repl/headless</code> - headless REPL process when working exclusively in a Clojure connected editor
-. Open a Clojure file in Neovim - Conjure will automatically connect</li>
-</ul>
-</li>
-</ul>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">λ︎</a></h2>
 <p><a href="../neovim-basics/">Learn how to use Neovim</a> and how to <a href="../repl-driven-development/conjure/">use Conjure for REPL driven development</a></p>
 
@@ -2808,7 +2797,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 8, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2023</span>
   </span>
 
     
