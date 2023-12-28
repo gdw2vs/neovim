@@ -30,7 +30,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
     
     
       
@@ -1728,11 +1728,11 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../version-control/" class="md-nav__link ">
+            <a href="../../source-control/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
-    Version Control
+    Source Control
   </span>
   
 
@@ -1748,7 +1748,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Version Control
+            Source Control
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1761,7 +1761,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../version-control/diff/" class="md-nav__link">
+      <a href="../../source-control/diff/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1782,7 +1782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../version-control/lazygit/" class="md-nav__link">
+      <a href="../../source-control/lazygit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1803,7 +1803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../version-control/neogit/" class="md-nav__link">
+      <a href="../../source-control/neogit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1824,7 +1824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../version-control/octo/" class="md-nav__link">
+      <a href="../../source-control/octo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1845,7 +1845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../version-control/open-in-github/" class="md-nav__link">
+      <a href="../../source-control/open-in-github/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2858,7 +2858,7 @@
 <ul>
 <li><code>ripgrep</code> fast file contents search (used by telescope)</li>
 <li><code>find-fd</code> advanced search tool</li>
-<li><code>xclip</code> x11 clipboard as a provider tools for Neovim copy/paste</li>
+<li><code>xclip</code> x11 clipboard as a provider for Neovim copy/paste (Linux only)</li>
 <li><code>luarocks</code> for LSP servers (AstroNvim)</li>
 </ul>
 <div class="admonition info">
@@ -2871,7 +2871,7 @@
 <p>AstroNvim uses Mason to install LSP servers, format and lint tools. Many of the LSP servers require node.</p>
 <p><a href="https://practical.li/engineering-playbook/programming-languages/javascript/nodejs/" target="_blank">Node.js install - Practicalli Engineering Playbook</a> </p>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Debian Packages</label><label for="__tabbed_1_2">MacOSX Homebrew</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Debian Packages</label><label for="__tabbed_1_2">MacOSX GitHub Release</label><label for="__tabbed_1_3">MacOSX Homebrew</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="admonition note">
@@ -2889,9 +2889,30 @@
 </details>
 </div>
 <div class="tabbed-block">
+<p>From the <a href="https://github.com/neovim/neovim/releases"><strong>Neovim GitHub release page</strong></a>:</p>
+<ol>
+<li>Install <code>libintl</code>and <code>gettext</code> (e.g. via <code>brew install libintl gettext</code>)</li>
+<li>Download <strong>nvim-macos.tar.gz</strong></li>
+<li>Run <code>xattr -c ./nvim-macos.tar.gz</code> (to avoid "unknown developer" warning)</li>
+<li>Make local apps directory for neovim (and other things like node.js, etc.)</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdir<span class="w"> </span>-P<span class="w"> </span>~/.local/apps
+</code></pre></div>
+<ol>
+<li>Extract the neovim download</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>tar<span class="w"> </span>zvxf<span class="w"> </span>nvim-macos.tar.gz<span class="w"> </span>-C<span class="w"> </span>~/.local/apps/
+</code></pre></div>
+<ol>
+<li>Create nvim symbolic link in <code>~/.local/bin</code> to include Neovim on the OS execution path (check <code>.local/bin</code> is added to the execution the path by the Operating System command line shell)</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ln<span class="w"> </span>-s<span class="w"> </span>~/.local/apps/nvim-macos/bin/nvim<span class="w"> </span>~/.local/bin/nvim
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <p>MacOSX requires the libintl and gettext tools as well as the other supporting tools.</p>
 <div class="admonition note">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>brew<span class="w"> </span>install<span class="w"> </span>libintl<span class="w"> </span>gettext<span class="w"> </span>ripgrep<span class="w"> </span>fd<span class="w"> </span>luarocks
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>brew<span class="w"> </span>install<span class="w"> </span>libintl<span class="w"> </span>gettext<span class="w"> </span>ripgrep<span class="w"> </span>fd<span class="w"> </span>luarocks
 </code></pre></div>
 </div>
 </div>
@@ -2903,34 +2924,34 @@
 <div class="tabbed-block">
 <p>Download the <a href="https://github.com/neovim/neovim/releases/" target="_blank">Linux AppImage</a> from the Neovim Release page and place the file on the executable path, e.g. <code>$HOME/.local/bin</code></p>
 <p>Make the AppImage executable</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>chmod<span class="w"> </span>u+x<span class="w"> </span><span class="nv">$HOME</span>/.local/bin/nvim.appimage
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>chmod<span class="w"> </span>u+x<span class="w"> </span><span class="nv">$HOME</span>/.local/bin/nvim.appimage
 </code></pre></div>
 <p>Create a symbolic link called <code>nvim</code> to the nvim.appimage file.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ln<span class="w"> </span>-s<span class="w"> </span><span class="nv">$HOME</span>/.local/bin/nvim.appimage<span class="w"> </span><span class="nv">$HOME</span>/.local/bin/nvim
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ln<span class="w"> </span>-s<span class="w"> </span><span class="nv">$HOME</span>/.local/bin/nvim.appimage<span class="w"> </span><span class="nv">$HOME</span>/.local/bin/nvim
 </code></pre></div>
 <p><code>nvim</code> command can now be run in a terminal from any directory.</p>
 </div>
 <div class="tabbed-block">
 <p>Install from Homebrew or via the Neovim Release page</p>
 <p><strong>Homebrew</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>brew<span class="w"> </span>install<span class="w"> </span>neovim
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>brew<span class="w"> </span>install<span class="w"> </span>neovim
 </code></pre></div></p>
 <p><strong>Neovim Release</strong></p>
 <p>Download <code>nvim-macos.tar.gz</code> From the <a href="https://github.com/neovim/neovim/releases"><strong>Neovim GitHub release page</strong></a></p>
 <p>Avoid "unknown developer" warning from MacOSX</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>xattr<span class="w"> </span>-c<span class="w"> </span>./nvim-macos.tar.gz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>xattr<span class="w"> </span>-c<span class="w"> </span>./nvim-macos.tar.gz
 </code></pre></div>
 <p>Make a local apps directory for neovim (and other things like node.js, etc.)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>mkdir<span class="w"> </span>-P<span class="w"> </span>~/.local/apps
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>mkdir<span class="w"> </span>-P<span class="w"> </span>~/.local/apps
 </code></pre></div>
 <p>Extract the neovim archive</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>tar<span class="w"> </span>zvxf<span class="w"> </span>nvim-macos.tar.gz<span class="w"> </span>-C<span class="w"> </span>~/.local/apps/
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>tar<span class="w"> </span>zvxf<span class="w"> </span>nvim-macos.tar.gz<span class="w"> </span>-C<span class="w"> </span>~/.local/apps/
 </code></pre></div>
 <p>Create the <code>~/.local/bin/nvim</code> symbolic link to include Neovim on the OS execution path </p>
 <blockquote>
 <p><code>echo $PATH</code> to check <code>.local/bin</code> is included in the execution the path by the Operating System command line shell</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>ln<span class="w"> </span>-s<span class="w"> </span>~/.local/apps/nvim-macos/bin/nvim<span class="w"> </span>~/.local/bin/nvim
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>ln<span class="w"> </span>-s<span class="w"> </span>~/.local/apps/nvim-macos/bin/nvim<span class="w"> </span>~/.local/bin/nvim
 </code></pre></div>
 <p>Run <code>nvim</code>  (or setup a Neovim configuration first, e.g. AstroNvim)</p>
 </div>
@@ -2946,20 +2967,20 @@
 <details class="info">
 <summary>Debian Packages</summary>
 <p>Install packages to support building Neovim
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>ninja-build<span class="w"> </span>gettext<span class="w"> </span>cmake<span class="w"> </span>unzip<span class="w"> </span>curl
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>ninja-build<span class="w"> </span>gettext<span class="w"> </span>cmake<span class="w"> </span>unzip<span class="w"> </span>curl
 </code></pre></div></p>
 </details>
 <p>Clone the <a href="https://github.com/neovim/neovim" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span> Neovim GitHub repository</a></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>git<span class="w"> </span>clone<span class="w"> </span>--origin<span class="w"> </span>neovim<span class="w"> </span>https://github.com/neovim/neovim.git
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>git<span class="w"> </span>clone<span class="w"> </span>--origin<span class="w"> </span>neovim<span class="w"> </span>https://github.com/neovim/neovim.git
 </code></pre></div>
 <p>Change into the cloned directory and change to the <code>stable</code> release to build version 0.9.0</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>stable
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>stable
 </code></pre></div>
 <p>Build a release</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>make<span class="w"> </span><span class="nv">CMAKE_BUILD_TYPE</span><span class="o">=</span>Release
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>make<span class="w"> </span><span class="nv">CMAKE_BUILD_TYPE</span><span class="o">=</span>Release
 </code></pre></div>
 <p>Once the nvim release has been built, create a debian package for use with Ubuntu and Debian systems</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>cpack<span class="w"> </span>-G<span class="w"> </span>DEB
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>cpack<span class="w"> </span>-G<span class="w"> </span>DEB
 </code></pre></div>
 </div>
 </div>
@@ -2998,7 +3019,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 28, 2023</span>
   </span>
 
     

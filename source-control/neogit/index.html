@@ -20,21 +20,21 @@
         <meta name="author" content="Practicalli">
       
       
-        <link rel="canonical" href="https://practical.li/neovim/version-control/open-in-github/">
+        <link rel="canonical" href="https://practical.li/neovim/source-control/neogit/">
       
       
-        <link rel="prev" href="../octo/">
+        <link rel="prev" href="../lazygit/">
       
       
-        <link rel="next" href="../../api-tools/">
+        <link rel="next" href="../octo/">
       
       
       <link rel="icon" href="../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
     
     
       
-        <title>Open In GitHub - Practicalli Neovim</title>
+        <title>Neogit - Practicalli Neovim</title>
       
     
     
@@ -81,11 +81,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Open In GitHub - Practicalli Neovim" >
+        <meta  property="og:title"  content="Neogit - Practicalli Neovim" >
       
         <meta  property="og:description"  content="Practical guide to Clojure development with Neovim" >
       
-        <meta  property="og:image"  content="https://practical.li/neovim/assets/images/social/version-control/open-in-github.png" >
+        <meta  property="og:image"  content="https://practical.li/neovim/assets/images/social/source-control/neogit.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -93,15 +93,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://practical.li/neovim/version-control/open-in-github/" >
+        <meta  property="og:url"  content="https://practical.li/neovim/source-control/neogit/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Open In GitHub - Practicalli Neovim" >
+        <meta  name="twitter:title"  content="Neogit - Practicalli Neovim" >
       
         <meta  name="twitter:description"  content="Practical guide to Clojure development with Neovim" >
       
-        <meta  name="twitter:image"  content="https://practical.li/neovim/assets/images/social/version-control/open-in-github.png" >
+        <meta  name="twitter:image"  content="https://practical.li/neovim/assets/images/social/source-control/neogit.png" >
       
     
     
@@ -135,7 +135,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#open-in-github" class="md-skip">
+        <a href="#neogit-interactive-client-for-git" class="md-skip">
           Skip to content
         </a>
       
@@ -205,7 +205,7 @@
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
-             Open In GitHub 
+             Neogit 
           </span>
         </div>
       </div>
@@ -1665,7 +1665,7 @@
               
   
   <span class="md-ellipsis">
-    Version Control
+    Source Control
   </span>
   
 
@@ -1681,7 +1681,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Version Control
+            Source Control
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1733,10 +1733,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../neogit/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Neogit
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1745,6 +1765,89 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#branching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Branching
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#staging-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Staging changes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stashing-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stashing changes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remote changes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commit history
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modify-git-commit-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modify Git commit history
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1775,19 +1878,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../open-in-github/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1796,7 +1890,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -2726,6 +2819,77 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#branching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Branching
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#staging-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Staging changes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stashing-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stashing changes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remote changes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commit history
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modify-git-commit-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modify Git commit history
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2739,7 +2903,7 @@
                   
 
   
-    <a href="https://github.com/practicalli/neovim/edit/main/docs/version-control/open-in-github.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/practicalli/neovim/edit/main/docs/source-control/neogit.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -2748,23 +2912,60 @@
     
       
     
-    <a href="https://github.com/practicalli/neovim/raw/main/docs/version-control/open-in-github.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/practicalli/neovim/raw/main/docs/source-control/neogit.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-<h1 id="open-in-github">Open In GitHub<a class="headerlink" href="#open-in-github" title="Permanent link">λ︎</a></h1>
-<p>Open a file under local version control in the GitHub web UI (browser window).</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Neovim</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><code>:OpenInGHFile</code></p>
-<p><code>:OpenInGHRepo</code></p>
-</div>
-</div>
-</div>
+<h1 id="neogit-interactive-client-for-git">Neogit - interactive client for Git<a class="headerlink" href="#neogit-interactive-client-for-git" title="Permanent link">λ︎</a></h1>
+<p>Neogit is an interactive git client that provides the core features of version control with Git.  Neogit emulates many of the features found in magit.</p>
+<p><code>SPC g s</code> to open <code>:Neogit</code> status buffer</p>
+<p><code>TAB</code> toggles expansion of sections, files and hunks</p>
+<p><code>d</code> provide <a href="diffview.md">a side-by-side view of changes</a></p>
+<p><code>q</code> to quit Neogit and return to the previous tab</p>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-neogit-status.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Neovim Neogit plugin - git status buffer" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-neogit-status.png" /></a></p>
+<blockquote>
+<p>Neovim is configured to use the magit style key bindings in practicalli/neovim-config-redux</p>
+</blockquote>
+<h2 id="branching">Branching<a class="headerlink" href="#branching" title="Permanent link">λ︎</a></h2>
+<p><code>b</code> opens the branch menu,</p>
+<ul>
+<li><code>b</code> - checkout a branch</li>
+<li><code>c</code> - create a new branch</li>
+<li><code>d</code> - delete a branch, <code>D</code> deletes local and remote branch</li>
+<li><code>l</code> - checkout a remote branch and create a local tracking branch</li>
+<li><code>m</code> - rename an existing local branch</li>
+<li><code>n</code> - create a new branch</li>
+</ul>
+<h2 id="staging-changes">Staging changes<a class="headerlink" href="#staging-changes" title="Permanent link">λ︎</a></h2>
+<p><code>s</code> to stage change under cursor, either file or hunk. <code>S</code> to stage all changes</p>
+<p><code>u</code> to unstage change under cursor, <code>U</code> to unstage all changes</p>
+<p><code>v</code> to select lines to stage within a hunk using <code>s</code> or unstage with <code>u</code></p>
+<h2 id="commit">Commit<a class="headerlink" href="#commit" title="Permanent link">λ︎</a></h2>
+<p><code>c</code> for the commit menu</p>
+<p><code>c</code> for a new commit, <code>a</code> to amend the latest commit, <code>w</code> to reword a commit message, <code>e</code> to add staged changes to existing commit</p>
+<p>A new commit or amend commit qill open a new window to write a commit message (using a git commit message template if defined)</p>
+<p><code>:wq</code> to save a commit message and initiate the commit.</p>
+<p><code>:q!</code>  to cancel the commit from the commit message buffer.</p>
+<h2 id="stashing-changes">Stashing changes<a class="headerlink" href="#stashing-changes" title="Permanent link">λ︎</a></h2>
+<p><code>Z</code> to open the stash menu</p>
+<p><code>z</code> to stash the working copy and staged files (index)</p>
+<p><code>i</code> to only stash the staged files (index)</p>
+<h2 id="remote-changes">Remote changes<a class="headerlink" href="#remote-changes" title="Permanent link">λ︎</a></h2>
+<p><code>F</code> to open the pull menu, <code>p</code> to pull changes (fetch and merge) from the remote repository, <code>u</code> t pull from the upstream repository, or <code>e</code> to specify the remote and branch names.</p>
+<p><code>P</code> to open the push menu to open, <code>-u</code> to push to the current remote</p>
+<details class="bug">
+<summary>Confused when remote is not origin</summary>
+<p>Use <code>e</code> option to push to elsewhere when the remote name is not set to <code>origin</code>.  The <code>e</code> option will prompt for a remote name and branch.</p>
+</details>
+<h2 id="commit-history">Commit history<a class="headerlink" href="#commit-history" title="Permanent link">λ︎</a></h2>
+<p><code>L l</code> to view git commit history log</p>
+<p><code>RET</code> on a log entry shows the commit details in a new window (split)</p>
+<p><code>q</code> to close the commit details window</p>
+<h2 id="modify-git-commit-history">Modify Git commit history<a class="headerlink" href="#modify-git-commit-history" title="Permanent link">λ︎</a></h2>
+<p><code>r</code> opens the rebase menu</p>
 
 
 
@@ -2785,7 +2986,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 29, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 28, 2023</span>
   </span>
 
     
@@ -2825,7 +3026,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../octo/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Octo">
+          <a href="../lazygit/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lazygit">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2835,20 +3036,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Octo
+                Lazygit
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../api-tools/" class="md-footer__link md-footer__link--next" aria-label="Next: API Tools">
+          <a href="../octo/" class="md-footer__link md-footer__link--next" aria-label="Next: Octo">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                API Tools
+                Octo
               </div>
             </div>
             <div class="md-footer__button md-icon">
