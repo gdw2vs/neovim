@@ -1749,9 +1749,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-diff" class="md-nav__link">
+  <a href="#diffview" class="md-nav__link">
     <span class="md-ellipsis">
-      Git Diff
+      DiffView
     </span>
   </a>
   
@@ -2790,9 +2790,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-diff" class="md-nav__link">
+  <a href="#diffview" class="md-nav__link">
     <span class="md-ellipsis">
-      Git Diff
+      DiffView
     </span>
   </a>
   
@@ -2836,33 +2836,35 @@
 <p>file path completion helps select the correct file for comparison</p>
 </blockquote>
 <h2 id="nvimdiff">nvimdiff<a class="headerlink" href="#nvimdiff" title="Permanent link">λ︎</a></h2>
-<p><code>git difftool</code> can be configured to use Neovim to show Git diff views of all the files that have changes</p>
+<p>The Git <code>difftool</code> can specify Neovim as a diff viewer to show Git diff views of all the files that have changes</p>
+<div class="admonition note">
+<p class="admonition-title">nvimdiff as a command line option</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>difftool<span class="w"> </span>--tool<span class="o">=</span>nvimdiff<span class="w"> </span>&lt;optional-filename&gt;
+</code></pre></div>
+</div>
+<p><code>git difftool</code> can be configured to use Neovim </p>
 <div class="admonition example">
-<p class="admonition-title">Configure the Git client to use <code>nvimdiff</code> as the <code>difftool</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[diff]
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  # Neovim diff tool
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  tool = nvimdiff
+<p class="admonition-title">Git client config to set <code>nvimdiff</code> as <code>difftool</code></p>
+<div class="highlight"><span class="filename">~/.config/git/config</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[diff]
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  # Neovim diff tool
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  tool = nvimdiff
 </code></pre></div>
 </div>
 <p>Run <code>git difftool</code> in the root of the project to show the diff of each changed file.</p>
 <div class="admonition note">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>difftool
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>difftool<span class="w"> </span>&lt;optional-filename&gt;
 </code></pre></div>
 </div>
 <p><span class="keys"><kbd class="key-colon">:</kbd></span> <span class="keys"><kbd>q</kbd></span> <span class="keys"><kbd>a</kbd></span> to close the current diff view.  The command line prompts to open the next file as a diff view (assuming there are more files to view).</p>
-<h2 id="git-diff">Git Diff<a class="headerlink" href="#git-diff" title="Permanent link">λ︎</a></h2>
+<h2 id="diffview">DiffView<a class="headerlink" href="#diffview" title="Permanent link">λ︎</a></h2>
 <p>DiffView compares working space and staged changes side by side, or a diff for git merge conflicts.</p>
-<p>++SPC++ <span class="keys"><kbd>g</kbd></span> <span class="keys"><kbd>d</kbd></span> or <code>d</code> in neogit status buffer (<code>SPC g s</code>) will open diffview in a new tab</p>
-<p><code>q</code> to return to neogit status buffer</p>
-<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-neogit-diffview-side-by-side.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Neovim diffview plugin - side by side view of changes in git for local working directory and staging" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-neogit-diffview-side-by-side.png" /></a></p>
-<ul>
-<li>Green - added lines</li>
-<li>Yellow - changed line</li>
-<li>Red - deleted lines</li>
-</ul>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">AstroNvim</label><label for="__tabbed_1_2">Practicalli Neovim Config</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
+<p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>g</kbd></span> <span class="keys"><kbd>d</kbd></span> or <code>d</code> in neogit status buffer (<code>SPC g s</code>) will open diffview in a new tab</p>
+<p><span class="keys"><kbd class="key-bracket-left">[</kbd></span> <span class="keys"><kbd>c</kbd></span> to move to previous hunk</p>
+<p><span class="keys"><kbd class="key-bracket-right">]</kbd></span> <span class="keys"><kbd>c</kbd></span> to move to next hunk</p>
+<p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>g</kbd></span> to return to neovim buffer or <span class="keys"><kbd>q</kbd></span> to return to neogit status buffer</p>
 <p><span class="keys"><kbd class="key-control">Ctrl</kbd></span> <span class="keys"><kbd>h</kbd></span> / <span class="keys"><kbd>j</kbd></span> / <span class="keys"><kbd>k</kbd></span> / <span class="keys"><kbd>l</kbd></span> to navigate between open splits</p>
 </div>
 <div class="tabbed-block">
@@ -2872,6 +2874,11 @@
 </div>
 </div>
 <p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-neogit-diffview-side-by-side.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Neovim diffview plugin - side by side view of changes in git for local working directory and staging" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-neogit-diffview-side-by-side.png" /></a></p>
+<ul>
+<li>Green - added lines</li>
+<li>Yellow - changed line</li>
+<li>Red - deleted lines</li>
+</ul>
 
 
 
