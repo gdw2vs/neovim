@@ -2872,8 +2872,8 @@
 <p>Or run and external test runner via a terminal session, optionally using watch mode to re-run tests on every saved change.</p>
 <details class="info">
 <summary>Practicalli sets Kaocha test runner as default</summary>
-<p><a href="https://github.com/practicalli/neovim-config-redux"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> practicalli/neovim-config-redux</a> sets Kaocha as the default test runner</p>
-<p>Kaocha test runner set in <a href="https://github.com/AstroNvim/astrocommunity/tree/main/lua/astrocommunity/pack/clojure"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Astrocommunity Clojure language pack</a></p>
+<p><a href="https://github.com/practicalli/neovim-config-redux"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> practicalli/neovim-config-redux</a> sets Kaocha as the default test runner</p>
+<p>Kaocha test runner set in <a href="https://github.com/AstroNvim/astrocommunity/tree/main/lua/astrocommunity/pack/clojure"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Astrocommunity Clojure language pack</a></p>
 <div class="highlight"><span class="filename">Astrocommunity Clojure language pack</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  <span class="s2">&quot;Olical/conjure&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  <span class="c1">-- load plugin on filetypes</span>
@@ -2908,7 +2908,7 @@
 <h2 id="conjure-test-runners">Conjure Test runners<a class="headerlink" href="#conjure-test-runners" title="Permanent link">λ︎</a></h2>
 <p><code>, t n</code> to run the tests for the current namespace</p>
 <p><code>, t a</code> to run all tests in the project</p>
-<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-conjure-tests-results-hud.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Neovim - Conjure Clojure unit test runner with test results in HUD" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-conjure-tests-results-hud.png" /></a></p>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-conjure-tests-results-hud.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Neovim - Conjure Clojure unit test runner with test results in HUD" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-conjure-tests-results-hud.png" /></a></p>
 <h2 id="external-test-runner">External test runner<a class="headerlink" href="#external-test-runner" title="Permanent link">λ︎</a></h2>
 <p>Open a terminal in Neovim or a separate terminal session to run start a test runner in watch mode.  Tests run automatically when the code changes are saved</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Practicalli Clojure CLI Config</label></div>
@@ -2938,7 +2938,7 @@
 </div>
 </div>
 </div>
-<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/kaocha-test-runner-watch.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Kaocha test runner for Clojure in watch mode" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/kaocha-test-runner-watch.png" /></a></p>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/kaocha-test-runner-watch.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Kaocha test runner for Clojure in watch mode" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/kaocha-test-runner-watch.png" /></a></p>
 <h2 id="test-selectors">Test Selectors<a class="headerlink" href="#test-selectors" title="Permanent link">λ︎</a></h2>
 <p>Use Test selectors to run a sub-set of tests based on selector meta data added to <code>deftest</code> code</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="o">^</span><span class="ss">:infrastructure</span><span class="w"> </span><span class="nv">function-name-test</span>
@@ -2976,7 +2976,7 @@
 </div>
 <div class="admonition hint">
 <p class="admonition-title">Refine the tests that are watched</p>
-<p>Start the watcher with <a href="https://cljdoc.org/d/lambdaisland/kaocha/1.66.1034/doc/6-focusing-and-skipping" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> focused or skiped tests by name or meta data (test selectors)</a></p>
+<p>Start the watcher with <a href="https://cljdoc.org/d/lambdaisland/kaocha/1.66.1034/doc/6-focusing-and-skipping" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> focused or skiped tests by name or meta data (test selectors)</a></p>
 </div>
 </div>
 <div class="tabbed-block">
