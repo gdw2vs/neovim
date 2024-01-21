@@ -151,6 +151,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://practical.li/neovim/neovim-basics/registers/</loc>
+         <lastmod>2024-01-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://practical.li/neovim/neovim-basics/snippets/</loc>
          <lastmod>2024-01-21</lastmod>
          <changefreq>daily</changefreq>
