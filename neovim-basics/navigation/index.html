@@ -1282,6 +1282,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#navigate-position-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigate position history
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#file-marks" class="md-nav__link">
     <span class="md-ellipsis">
       File marks
@@ -2844,6 +2853,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#navigate-position-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigate position history
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#file-marks" class="md-nav__link">
     <span class="md-ellipsis">
       File marks
@@ -2980,12 +2998,27 @@
 <p>Jump to a specific line using the number as a command</p>
 <div class="highlight"><span class="filename">jump to line number</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">:</span><span class="m">127</span>
 </code></pre></div>
+<h2 id="navigate-position-history">Navigate position history<a class="headerlink" href="#navigate-position-history" title="Permanent link">λ︎</a></h2>
+<p>++ctrl+"o" jumps to a previous postion in the cursor history</p>
+<p>++ctrl+"i" jumps to a previous postion in the cursor history</p>
 <h2 id="file-marks">File marks<a class="headerlink" href="#file-marks" title="Permanent link">λ︎</a></h2>
-<p>Navigate within the current file using file marks.</p>
-<p><span class="keys"><kbd>m</kbd></span> followed by a character creates a mark within the current file.</p>
+<p>Navigate within the current file or globally using file marks.</p>
+<p><span class="keys"><kbd>m</kbd></span> followed by a lower case character creates a mark within the current file.</p>
+<p><span class="keys"><kbd>m</kbd></span> followed by an upper case character creates a global mark.</p>
 <p><span class="keys"><kbd class="key-grave">`</kbd></span> (backtick) followed by a character jumps to the mark created</p>
+<p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>f</kbd></span> <span class="keys"><kbd class="key-single-quote">'</kbd></span> displays marks in telescope popup</p>
+<div class="admonition example">
+<p class="admonition-title">File marks within file</p>
 <p><span class="keys"><kbd>m</kbd></span> <span class="keys"><kbd>f</kbd></span> creates a mark lablled <code>f</code></p>
 <p><span class="keys"><kbd class="key-grave">`</kbd></span> <span class="keys"><kbd>f</kbd></span> jumps to the mark labelled <code>f</code></p>
+</div>
+<details class="example">
+<summary>Global mark to jump between source and test code</summary>
+<p><span class="keys"><kbd>m</kbd></span> <span class="keys"><kbd>S</kbd></span> with the cursor in the source code file.</p>
+<p><span class="keys"><kbd>m</kbd></span> <span class="keys"><kbd>T</kbd></span> with the cursor in the test code file.</p>
+<p><span class="keys"><kbd class="key-grave">`</kbd></span> <span class="keys"><kbd>S</kbd></span> to jump to the source code</p>
+<p><span class="keys"><kbd class="key-grave">`</kbd></span> <span class="keys"><kbd>T</kbd></span> to jump to the source code</p>
+</details>
 <h2 id="jumplist">Jumplist<a class="headerlink" href="#jumplist" title="Permanent link">λ︎</a></h2>
 <p><code>:jumps</code> shows the Neovim jumplist containing all points from any buffer recently jumped to using neovim commands</p>
 <ul>
