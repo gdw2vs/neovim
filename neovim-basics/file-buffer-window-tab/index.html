@@ -1240,6 +1240,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#swap-file" class="md-nav__link">
     <span class="md-ellipsis">
       Swap file
@@ -2916,6 +2925,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#swap-file" class="md-nav__link">
     <span class="md-ellipsis">
       Swap file
@@ -3016,8 +3034,8 @@
 <div class="tabbed-block">
 <p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>e</kbd></span> toggles neo-tree file browser</p>
 <p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>o</kbd></span> toggles between buffer and neo-tree</p>
-<div class="admonition example">
-<p class="admonition-title">Configure hidden files</p>
+<details class="example">
+<summary>Configure hidden files</summary>
 <p>Configure Neotree to display hidden files and directories by default.  They are shown with a different visual style (subtle color) compared to the other files and directories.  </p>
 <p><code>H</code> with the cursor in neotree window will still toggle the display of hidden files and directories.</p>
 <p>Optionally, specify files or directories to never show.
@@ -3038,7 +3056,7 @@
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="p">},</span>
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>  <span class="p">},</span>
 </code></pre></div></p>
-</div>
+</details>
 </div>
 <div class="tabbed-block">
 <p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>f</kbd></span> <span class="keys"><kbd>t</kbd></span> <span class="keys"><kbd>t</kbd></span> to open file explorer</p>
@@ -3087,7 +3105,7 @@
 <div class="tabbed-block">
 <p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>w</kbd></span> will write all buffer changes to the associate file.</p>
 <p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>n</kbd></span> creates a new buffer that can be written to a given file using <code>:write path/to/filename</code></p>
-<p><code>:write path/to/filename</code> will write the current buffer to a new file.</p>
+<p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>W</kbd></span> was added to Practicalli Astro Config as a key binding for <code>:write path/to/filename</code> which writes the current buffer to a new file, prompting for the file name.</p>
 </div>
 <div class="tabbed-block">
 <p><code>SPC f b ESC C</code> to create a new file or directory. The base path is shown in the command bar.  Type the name of directories and file name as required. <code>RTN</code> to create or <code>ESC</code> to cancel.  The newly created directories or file name appears n the Telescope list and scan be selected for opening.</p>
@@ -3110,12 +3128,23 @@
 </div>
 </div>
 </div>
+<h3 id="directories">Directories<a class="headerlink" href="#directories" title="Permanent link">λ︎</a></h3>
+<p><span class="keys"><kbd>a</kbd></span> in Neotree to create a file or by adding a ++forward-slash++ at the end of the name a directory is created.</p>
+<p>Use the <code>mkdir</code> shell command to create a new directory, which is created relative to the current path, which can be checked with <code>:lcd</code></p>
+<p><code>:!mkdir full/path/to/new/directory</code></p>
+<p>If a file is already opened, i.e. with <code>:edit</code>, there is some short-hand syntax to simplify the typing</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>:!mkdir<span class="w"> </span>-p<span class="w"> </span>%:h
+</code></pre></div>
+<p><code>mkdir -p</code> - the UNIX command to create a folder, the <code>-p</code> option creating any parts of the path required to make the full path</p>
+<p><code>%</code> - name of the current file </p>
+<p><code>:h</code> - for the current directory (the “head” of the path). </p>
+<p><code>!</code> - the NeoVim terminal shell command</p>
 <h3 id="swap-file">Swap file<a class="headerlink" href="#swap-file" title="Permanent link">λ︎</a></h3>
 <p>Neovim creates a swap file, <code>.swp</code>, containing the changes made in a buffer to minimise loss should there be an issue with the computer or Neovim.  Changes are written to the swap file after 200 characters or after 4 seconds pause. </p>
 <details class="info">
 <summary>Swap file location</summary>
 <p><code>:swapname</code> shows the full path to the swap file for the current buffer, e.g. 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/home/practicalli/.local/state/astronvim/swap//%home%practicalli%projects%practicalli%books%neovim%docs%neovim-basics%files-buffers-windows.md.swp<span class="sb">`</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/home/practicalli/.local/state/astronvim/swap//%home%practicalli%projects%practicalli%books%neovim%docs%neovim-basics%files-buffers-windows.md.swp<span class="sb">`</span>
 </code></pre></div></p>
 </details>
 <p><code>:preserve</code> command will write all text from current buffer to the swap file.</p>
@@ -3138,7 +3167,7 @@
 <p><code>SPC b b</code> to select a buffer from the tab line, pressing the character that appears next to the buffer tab (case sensitive)</p>
 <p><code>SPC b D</code> to delete a buffer from the tab line, pressing the character that appears next to the buffer tab (case sensitive)</p>
 <p>Open multiple buffers when starting Neovim by specifying multiple files to open</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>astro<span class="w"> </span>README.md<span class="w"> </span>deps.edn<span class="w"> </span>src/practicalli/playground.clj<span class="w"> </span>test/practicalli/playground.clj
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>astro<span class="w"> </span>README.md<span class="w"> </span>deps.edn<span class="w"> </span>src/practicalli/playground.clj<span class="w"> </span>test/practicalli/playground.clj
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -3149,7 +3178,7 @@
 <p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-telescope-open-buffer.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Neovim - telescope - swtich between buffers" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-telescope-open-buffer.png" /></a></p>
 <!-- TODO: close a buffer (not just its window) -->
 <p>Open multiple buffers when starting Neovim by specifying multiple files to open</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>nvim<span class="w"> </span>README.md<span class="w"> </span>deps.edn<span class="w"> </span>src/practicalli/playground.clj<span class="w"> </span>test/practicalli/playground.clj
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nvim<span class="w"> </span>README.md<span class="w"> </span>deps.edn<span class="w"> </span>src/practicalli/playground.clj<span class="w"> </span>test/practicalli/playground.clj
 </code></pre></div>
 </div>
 </div>
@@ -3163,7 +3192,7 @@
 </div>
 <div class="tabbed-block">
 <p>line wrap not enabled in configuration by default.</p>
-<div class="highlight"><span class="filename">fnl/config/init.fnl</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="nv">nvim.ex.set</span><span class="w"> </span><span class="ss">:nowrap</span><span class="p">)</span>
+<div class="highlight"><span class="filename">fnl/config/init.fnl</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">(</span><span class="nv">nvim.ex.set</span><span class="w"> </span><span class="ss">:nowrap</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -3194,7 +3223,7 @@
 <p><code>:wincmd</code> can be used as an alternative to the Normal mode key bindings</p>
 </blockquote>
 <p>Open file in a new window</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>:sp<span class="w"> </span>relative-or-full-filename-path
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>:sp<span class="w"> </span>relative-or-full-filename-path
 </code></pre></div>
 <p>Resize windows</p>
 <p><code>C-w</code> <code>-</code>, <code>+</code>, <code>&lt;</code> or <code>&gt;</code> for vertical or horizontal size adjustment</p>
@@ -3245,7 +3274,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 26, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 22, 2024</span>
   </span>
 
     
