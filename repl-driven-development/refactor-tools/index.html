@@ -1498,6 +1498,8 @@
       
         
       
+        
+      
     
     
     
@@ -1548,6 +1550,27 @@
   
   <span class="md-ellipsis">
     Conjure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation
   </span>
   
 
@@ -1641,9 +1664,45 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#key-maps" class="md-nav__link">
+  <a href="#function-documentation" class="md-nav__link">
     <span class="md-ellipsis">
-      Key maps
+      Function documentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagnostics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Actions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
     </span>
   </a>
   
@@ -1651,15 +1710,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Troubleshooting
-    </span>
-  </a>
   
 </li>
       
@@ -2804,9 +2854,45 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#key-maps" class="md-nav__link">
+  <a href="#function-documentation" class="md-nav__link">
     <span class="md-ellipsis">
-      Key maps
+      Function documentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagnostics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Actions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
     </span>
   </a>
   
@@ -2814,15 +2900,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Troubleshooting
-    </span>
-  </a>
   
 </li>
       
@@ -2871,58 +2948,51 @@
 <p>Clojure LSP server and Neovim LSP client support use static analysis of the project source code to allow provide common code refactor tools.</p>
 <h2 id="language-server-protocol-lsp">Language Server Protocol (LSP)<a class="headerlink" href="#language-server-protocol-lsp" title="Permanent link">λ︎</a></h2>
 <p>Using <a href="https://clojure-lsp.io/">clojure-lsp</a> server and <a href="https://tree-sitter.github.io/tree-sitter/">Neovim Treesitter</a> as an LSP client, code is statically analysed to provide auto-completion data, advanced editing actions such as refactor, live formatting, etc.</p>
-<div class="admonition hint">
-<p class="admonition-title">Function help</p>
-<p><code>SPC l h</code> or <span class="keys"><kbd>K</kbd></span> displays help for the function under the cursor</p>
+<h3 id="function-documentation">Function documentation<a class="headerlink" href="#function-documentation" title="Permanent link">λ︎</a></h3>
+<p><span class="keys"><kbd>K</kbd></span> or <span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>l</kbd></span> <span class="keys"><kbd>h</kbd></span> show the doc-string for function or any other var under the cursor.</p>
 <p>Repeat the key binding to move the cursor to the documentation popup window and use <span class="keys"><kbd>j</kbd></span> <span class="keys"><kbd>k</kbd></span> to scroll the documentation</p>
-</div>
-<h3 id="key-maps">Key maps<a class="headerlink" href="#key-maps" title="Permanent link">λ︎</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Practicalli AstroNvim Config</label><label for="__tabbed_1_2">Practicalli Neovim Config Redux</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<ul>
-<li><code>&lt;leader&gt;la</code> code actions (popup with available actions)</li>
-<li><code>&lt;leader&gt;ld</code> hover diagnostics</li>
-<li><code>&lt;leader&gt;lD</code> search diagnostics</li>
-<li><code>&lt;leader&gt;lf</code> format buffer</li>
-<li><code>&lt;leader&gt;lG</code> search workspace symbols</li>
-<li><code>&lt;leader&gt;lh</code> function signature help</li>
-<li><code>&lt;leader&gt;li</code> information about the LSP client and running LSP servers</li>
-<li><code>&lt;leader&gt;lI</code> null-ls information (format &amp; lint tools)</li>
-<li><code>&lt;leader&gt;ll</code> code lens refresh</li>
-<li><code>&lt;leader&gt;lL</code> code lens run</li>
-<li><code>&lt;leader&gt;lr</code> rename current symbol (namespace rename not supported it seems)</li>
-<li><code>&lt;leader&gt;lR</code> search references</li>
-<li><code>&lt;leader&gt;ls</code> search symbols</li>
-<li><code>&lt;leader&gt;lS</code> symbols outline</li>
-</ul>
-</div>
-<div class="tabbed-block">
-<ul>
-<li><code>gd</code> Go to definition</li>
-<li><code>K</code> Show documentations</li>
-<li><code>&lt;leader&gt;ld</code> Function declarations</li>
-<li><code>&lt;leader&gt;lt</code> Type Definitions</li>
-<li><code>&lt;leader&gt;lh</code> Signature Help</li>
-<li><code>&lt;leader&gt;ln</code> Rename</li>
-<li><code>&lt;leader&gt;le</code> Show line diagnostics</li>
-<li><code>&lt;leader&gt;lq</code> Show all diagnostics information</li>
-<li><code>&lt;leader&gt;lf</code> Auto format</li>
-<li><code>&lt;leader&gt;lj</code> Go to next diagnostic</li>
-<li><code>&lt;leader&gt;lk</code> Go to previous diagnostic</li>
-<li><code>&lt;leader&gt;la</code> Open code actions menu (Using telescope plugin interface)</li>
-<li><code>&lt;leader&gt;la</code> Open code actions menu for the selected text in <strong>VISUAL mode</strong> (Using telescope plugin interface)</li>
-<li><code>&lt;leader&gt;lw</code> Open workspace diagnostics list (Using telescope plugin interface)</li>
-<li><code>&lt;leader&gt;lr</code> Show all references list for item under the cursor (Using telescope plugin interface)</li>
-<li><code>&lt;leader&gt;lr</code> Show all implementations list for item under the cursor (Using telescope plugin interface)</li>
-</ul>
-</div>
-</div>
-</div>
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">λ︎</a></h2>
+<p><span class="keys"><kbd class="key-comma">,</kbd></span> <span class="keys"><kbd>l</kbd></span> <span class="keys"><kbd>l</kbd></span> code lens refresh</p>
+<p><span class="keys"><kbd class="key-comma">,</kbd></span> <span class="keys"><kbd>l</kbd></span> <span class="keys"><kbd>L</kbd></span> code lens run</p>
+<h3 id="navigation">Navigation<a class="headerlink" href="#navigation" title="Permanent link">λ︎</a></h3>
+<p><span class="keys"><kbd>g</kbd></span> <span class="keys"><kbd>d</kbd></span> go to definition of current symbol, e.g. function definition</p>
+<p><span class="keys"><kbd class="key-comma">,</kbd></span> <span class="keys"><kbd>l</kbd></span> <span class="keys"><kbd>G</kbd></span> telescope search of all symbols in the project</p>
+<p><span class="keys"><kbd class="key-comma">,</kbd></span> <span class="keys"><kbd>l</kbd></span> <span class="keys"><kbd>R</kbd></span> telescope search of all references in the project</p>
+<p><span class="keys"><kbd class="key-comma">,</kbd></span> <span class="keys"><kbd>l</kbd></span> <span class="keys"><kbd>s</kbd></span> telescope search of symbols</p>
+<p><span class="keys"><kbd class="key-comma">,</kbd></span> <span class="keys"><kbd>l</kbd></span> <span class="keys"><kbd>s</kbd></span> split view of symbols</p>
+<h3 id="diagnostics">Diagnostics<a class="headerlink" href="#diagnostics" title="Permanent link">λ︎</a></h3>
+<p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>l</kbd></span> <span class="keys"><kbd>d</kbd></span> show popup for current diagnostic indicator</p>
+<p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>l</kbd></span> <span class="keys"><kbd>D</kbd></span> search through all diagnostics reports</p>
+<h3 id="code-actions">Code Actions<a class="headerlink" href="#code-actions" title="Permanent link">λ︎</a></h3>
+<p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>l</kbd></span> <span class="keys"><kbd>r</kbd></span> rename current symbol (namespace rename not supported by LSP client)</p>
+<p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>l</kbd></span> <span class="keys"><kbd>a</kbd></span> code actions (popup with available actions)</p>
+<p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>l</kbd></span> <span class="keys"><kbd>f</kbd></span> format buffer</p>
+<!--
+=== "Practicalli Neovim Config Redux"
+
+    - `gd` Go to definition
+    - `K` Show documentations
+    - `<leader>ld` Function declarations
+    - `<leader>lt` Type Definitions
+    - `<leader>lh` Signature Help
+    - `<leader>ln` Rename
+    - `<leader>le` Show line diagnostics
+    - `<leader>lq` Show all diagnostics information
+    - `<leader>lf` Auto format
+    - `<leader>lj` Go to next diagnostic
+    - `<leader>lk` Go to previous diagnostic
+    - `<leader>la` Open code actions menu (Using telescope plugin interface)
+    - `<leader>la` Open code actions menu for the selected text in **VISUAL mode** (Using telescope plugin interface)
+    - `<leader>lw` Open workspace diagnostics list (Using telescope plugin interface)
+    - `<leader>lr` Show all references list for item under the cursor (Using telescope plugin interface)
+    - `<leader>lr` Show all implementations list for item under the cursor (Using telescope plugin interface)
+
+-->
+
+<h3 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">λ︎</a></h3>
 <p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>l</kbd></span> <span class="keys"><kbd>i</kbd></span> shows the LSP server information for the current filetype, e.g. Clojure</p>
 <p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/editors/neovim/astronvim/astronvim-lsp-clojure-server-information-local-install-light.png?raw=true#only-light" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LSP Server information showing local clojure-lsp install" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/editors/neovim/astronvim/astronvim-lsp-clojure-server-information-local-install-light.png?raw=true#only-light" /></a>
 <a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/editors/neovim/astronvim/astronvim-lsp-clojure-server-information-local-install-dark.png?raw=true#only-dark" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LSP Server information showing local clojure-lsp install" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/editors/neovim/astronvim/astronvim-lsp-clojure-server-information-local-install-dark.png?raw=true#only-dark" /></a></p>
+<p><span class="keys"><kbd class="key-space">Space</kbd></span> <span class="keys"><kbd>l</kbd></span> <span class="keys"><kbd>I</kbd></span> shows format and lint tools supported by null-ls for the current filetype, e.g. clojure</p>
 <h2 id="limitations-to-investigate">Limitations to investigate<a class="headerlink" href="#limitations-to-investigate" title="Permanent link">λ︎</a></h2>
 <ul>
 <li>Neovim client does not seem to support namespace rename (AstroNvim)</li>
@@ -2947,7 +3017,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 19, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 15, 2024</span>
   </span>
 
     
