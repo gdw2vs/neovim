@@ -86,6 +86,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://practical.li/neovim/install/tools-fonts/</loc>
+         <lastmod>2024-05-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://practical.li/neovim/introduction/community-projects/</loc>
          <lastmod>2024-05-23</lastmod>
          <changefreq>daily</changefreq>
